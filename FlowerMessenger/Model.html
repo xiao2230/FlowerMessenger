@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內頁模板</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1960 - 300)));
+            list-style: none;
+            font-family: 'PingFang-SC', 'Lucida Grande', 'Helvetica', 'Arial', '微軟正黑體修正', '微軟正黑體', sans-serif;
+            color: #242424;
+            text-decoration: none;
+        }
+
+        body {
+            background: #fafafa;
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <!-- 頂部內容區-LOGO -->
+        <h1 class="header_logo"><a href="index.html" class="logoPic"></a></h1>
+        <!-- 頂部內容區-導覽列 -->
+        <div class="header_nav">
+            <div class="navContent">
+                <a href="index.html"><img src="images/logo02.png" alt=""></a>
+                <input type="checkbox" id="btn">
+                <label for="btn"></label>
+                <ul>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">花言花語</a></li>
+                    <li><a href="#">訂製花束</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="#">BackToTop</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
