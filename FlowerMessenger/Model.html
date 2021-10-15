@@ -6,38 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>內頁模板</title>
+    <link rel="stylesheet" href="css/Model.css">
     <style>
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1960 - 300)));
-            list-style: none;
-            font-family: 'PingFang-SC', 'Lucida Grande', 'Helvetica', 'Arial', '微軟正黑體修正', '微軟正黑體', sans-serif;
-            color: #242424;
-            text-decoration: none;
+        .header {
+            height: 200vh;
+            background: #e0d3b8;
         }
 
-        body {
-            background: #fafafa;
+        .content {
+            height: 200vh;
+            background: #cee6a1;
         }
-
-
-
-        
     </style>
 </head>
 
 <body>
     <section class="header">
-        <!-- 頂部內容區-LOGO -->
-        <h1 class="header_logo"><a href="index.html" class="logoPic"></a></h1>
         <!-- 頂部內容區-導覽列 -->
         <div class="header_nav">
             <div class="navContent">
-                <a href="index.html"><img src="images/logo02.png" alt=""></a>
+                <a href="index.html"><img src="images/common/logo02.png" alt="Logo圖"></a>
                 <input type="checkbox" id="btn">
                 <label for="btn"></label>
                 <ul>
@@ -50,6 +38,48 @@
             </div>
         </div>
     </section>
+    <section class="content"></section>
+    <section class="footer">
+        <!-- 底部內容區-店家資訊&店鋪圖片 -->
+        <div class="footer_detail">
+            <div class="detailText">
+                <p><img src="images/common/logo02.png" alt="Logo圖"></p>
+                <div class="detailText01">
+                    <span>【本舖】</span>
+                    <span>台中市大里區斜巷里鮮花路66號</span>
+                    <span>服務時間：週一至週五 10:00 - 18:00</span>
+                </div>
+                <div class="detailText02">
+                    <ul>
+                        <li>關於</li>
+                        <li><a href="#">花傳意</a></li>
+                        <li><a href="#">人才招募</a></li>
+                        <li><a href="#">公休資訊</a></li>
+                        <li><a href="#">隱私政策</a></li>
+                    </ul>
+                    <ul>
+                        <li>每周鮮花</li>
+                        <li><a href="#">關於配送</a></li>
+                        <li><a href="#">長期訂購</a></li>
+                        <li><a href="#">花草養護</a></li>
+                        <li><a href="#">常見問題</a></li>
+                    </ul>
+                    <ul>
+                        <li>售後服務</li>
+                        <li><a href="#">退貨換貨</a></li>
+                        <li><a href="#">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="detailText03">
+                    <span>© 2021 Flower Messenger. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="detailPic">
+                <img src="images/common/store.jpg" alt="商店圖">
+            </div>
+        </div>
+    </section>
 </body>
+<script src="js/Model.js"></script>
 
 </html>
