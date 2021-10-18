@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,7 +13,6 @@ body {
     background: #fffaf2;
 }
 
-
 /* 頂部內容區-導覽列 */
 
 .header_nav {
@@ -23,6 +20,7 @@ body {
     width: 100%;
     background: #242424;
     position: fixed;
+    z-index: 2;
 }
 
 .header_nav .navContent {
@@ -41,8 +39,7 @@ body {
     transform: translateY(-50%);
 }
 
-.header_nav .navContent input,
-.header_nav .navContent label {
+.header_nav .navContent input, .header_nav .navContent label {
     display: none;
 }
 
@@ -72,6 +69,68 @@ body {
 .header_nav .navContent ul li:hover a {
     box-shadow: 0 0 10px #fafafa;
     border-radius: 5px;
+}
+
+/* 頂部內容區-背景圖&分頁標題註記 */
+
+.header_bannerTitle {
+    background: url(../images/aboutUs/banner_aboutUs.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.header_bannerTitle .tt1 {
+    position: absolute;
+    bottom: -40px;
+    right: 3vw;
+}
+
+.header_bannerTitle .tt1 span {
+    display: block;
+    line-height: 39px;
+}
+
+.header_bannerTitle .tt1 span>span {
+    display: inline-block;
+    color: #fafafa;
+    font-weight: bolder;
+    background-color: #242424;
+}
+
+.header_bannerTitle .tt1 span.tt1-1 span {
+    padding: 5px 15px;
+    font-size: 28px;
+}
+
+.header_bannerTitle .tt1 span.tt1-2 span {
+    padding: 0 15px;
+}
+
+/* 主要內容區-店內角落圖&內文 */
+
+.content_cornerPic {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.content_cornerPic img {
+    width: 40%;
+    margin: 30px 0;
+}
+
+.content_cornerPic .cornerPicText {
+    margin-bottom: 50px;
+}
+
+.content_cornerPic .cornerPicText p {
+    letter-spacing: 1px;
+    line-height: 35px;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -174,9 +233,7 @@ body {
 }
 
 @media screen and (max-width:767px) {
-
     /* 頂部內容區-導覽列 */
-
     .header_nav {
         width: 90%;
         left: 50%;
@@ -185,7 +242,6 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 0 8px #fafafa;
     }
-
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -196,9 +252,7 @@ body {
         height: 30%;
         cursor: pointer;
     }
-
-    .header_nav .navContent label::before,
-    .header_nav .navContent label::after {
+    .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
         height: 3px;
@@ -206,25 +260,20 @@ body {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
-
     .header_nav .navContent label::before {
         top: 0;
     }
-
     .header_nav .navContent label::after {
         top: 100%;
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
-
     .header_nav .navContent ul {
         width: 95%;
         height: 0;
@@ -241,65 +290,82 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
-
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
-
     .header_nav .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
-
     .header_nav .navContent ul li a {
         color: #fafafa;
         padding: 5px;
         transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
     }
-
     .header_nav .navContent ul li:hover a {
         box-shadow: 0 0 10px #fafafa;
         border-radius: 5px;
     }
-
+    /* 頂部內容區-背景圖&分頁標題註記 */
+    .header_bannerTitle {
+        height: 30vh;
+        margin-bottom: 5vh;
+    }
+    .header_bannerTitle .tt1 {
+        bottom: -30px;
+        right: 0;
+    }
+    .header_bannerTitle .tt1 span {
+        line-height: 30px;
+    }
+    .header_bannerTitle .tt1 span.tt1-1 span {
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+    .header_bannerTitle .tt1 span.tt1-2 span {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+    /* 主要內容區-店內角落圖&內文 */
+    .content_cornerPic img {
+        width: 60%;
+    }
+    .content_cornerPic .cornerPicText {
+        padding: 0 10px;
+    }
+    .content_cornerPic .cornerPicText p {
+        letter-spacing: 0;
+        line-height: 30px;
+        font-size: 15px;
+    }
     /* 底部內容區-店家資訊&店鋪圖片 */
-
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .detailText {
         width: 70%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
-
     .detailText p {
         text-align: center;
     }
-
     .detailText01 {
         margin-top: 5%;
     }
-
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
-
     .detailText03 {
         margin-top: 5%;
     }
-
-    .detailText .detailText01 span,
-    .detailText .detailText02 ul li a,
-    .detailText .detailText03 span {
+    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
         font-size: 15px;
     }
-
     .detailPic {
         width: 70%;
         padding-right: 0;

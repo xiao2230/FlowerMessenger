@@ -12,7 +12,7 @@
 }
 
 body {
-    background: #fafafa;
+    background: #fffaf2;
 }
 
 .header {
@@ -986,10 +986,6 @@ h2.appear {
 
     .detailText p {
         text-align: center;
-    }
-
-    .detailText p img {
-        width: 70%;
     }
 
     .detailText01 {
