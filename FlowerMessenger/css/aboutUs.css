@@ -91,13 +91,13 @@ body {
 
 .header_bannerTitle .tt1 span {
     display: block;
-    line-height: 39px;
+    line-height: 40px;
 }
 
 .header_bannerTitle .tt1 span>span {
     display: inline-block;
     color: #fafafa;
-    font-weight: bolder;
+    font-weight: bold;
     background-color: #242424;
 }
 
@@ -110,27 +110,142 @@ body {
     padding: 0 15px;
 }
 
-/* 主要內容區-店內角落圖&內文 */
+/* 主要內容區-店內角落圖&內文&花朵飄散背景 */
 
-.content_cornerPic {
+.content_corner {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     position: relative;
 }
 
-.content_cornerPic img {
+.content_corner img {
     width: 40%;
     margin: 30px 0;
+    opacity: 0;
+    transition: opacity .8s ease-in-out;
 }
 
-.content_cornerPic .cornerPicText {
+.content_corner img.appear {
+    opacity: 1;
+}
+
+.content_corner .cornerText {
     margin-bottom: 50px;
 }
 
-.content_cornerPic .cornerPicText p {
+.content_corner .cornerText p {
     letter-spacing: 1px;
     line-height: 35px;
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    transition: top .8s ease-in-out, opacity .8s ease-in-out;
+}
+
+.content_corner .cornerText p.locate01 {
+    top: 0;
+    opacity: 1;
+}
+
+@keyframes Drop1 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        /* transform如果有複數效果，中間空一格即可 */
+        transform: translate(-400px, 680px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes Drop2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-300px, 680px) rotate(-180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes Drop3 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-350px, 680px) rotate(200deg);
+        opacity: 0;
+    }
+}
+
+.cornerTextBgFlower.locate02 div {
+    background: url(../images/aboutUs/flower.png) no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop01 {
+    left: 50%;
+    animation: Drop1 10s ease-in infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop02 {
+    left: 55%;
+    animation: Drop2 9.4s ease-in-out 0.4s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop03 {
+    left: 57%;
+    animation: Drop3 10.8s ease-in-out 0.8s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop04 {
+    left: 60%;
+    animation: Drop1 9.8s ease-in-out infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop05 {
+    left: 68%;
+    animation: Drop2 8.8s ease-in-out 2s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop06 {
+    left: 70%;
+    animation: Drop3 9.4s ease-in-out 1s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop07 {
+    left: 72%;
+    animation: Drop1 9.4s ease-in-out 2.4s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop08 {
+    left: 75%;
+    animation: Drop2 10s ease-in-out 2.8s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop09 {
+    left: 80%;
+    animation: Drop3 10.8s ease-in-out 0.8s infinite;
+}
+
+.cornerTextBgFlower.locate02 div.flowerDrop10 {
+    left: 81%;
+    animation: Drop1 9.4s ease-in-out 2.4s infinite;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -325,20 +440,23 @@ body {
     }
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
-        font-size: 15px;
     }
-    /* 主要內容區-店內角落圖&內文 */
-    .content_cornerPic img {
-        width: 60%;
+    /* 主要內容區-店內角落圖&內文&花朵飄散背景 */
+    .content_corner img {
+        width: 70%;
     }
-    .content_cornerPic .cornerPicText {
+    .content_corner .cornerText {
         padding: 0 10px;
     }
-    .content_cornerPic .cornerPicText p {
+    .content_corner .cornerText p {
         letter-spacing: 0;
         line-height: 30px;
         font-size: 15px;
     }
+    .cornerTextBgFlower.locate02 div {
+        width: 30px;
+        height: 30px;
+    }    
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
