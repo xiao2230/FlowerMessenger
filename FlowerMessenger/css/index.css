@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,13 +13,68 @@ body {
     background: #fffaf2;
 }
 
+/* 頂部內容區 */
+
 .header {
     height: 100vh;
     background: url(../images/index/banner__index.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
-
 }
+
+/* 頂部內容區-小工具 */
+
+.header_tool {
+    position: absolute;
+    right: 0;
+    width: 170px;
+    height: 55px;
+    background: #242424;
+    border-bottom-left-radius: 12px;
+}
+
+.header_tool {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_tool div {
+    width: 40px;
+    height: 40px;
+}
+
+.header_tool div.toolQA {
+    background: url(../images/common/常見問題01.png) no-repeat;
+    background-size: contain;
+}
+
+.header_tool div.toolCart {
+    background: url(../images/common/購物車01.png) no-repeat;
+    background-size: contain;
+}
+
+.header_tool div.toolMember {
+    background: url(../images/common/會員中心01.png) no-repeat;
+    background-size: contain;
+}
+
+.header_tool div.toolQA:hover {
+    background: url(../images/common/常見問題02.png) no-repeat;
+    background-size: contain;
+}
+
+.header_tool div.toolCart:hover {
+    background: url(../images/common/購物車02.png) no-repeat;
+    background-size: contain;
+}
+
+.header_tool div.toolMember:hover {
+    background: url(../images/common/會員中心02.png) no-repeat;
+    background-size: contain;
+}
+
+/* 頂部內容區-LOGO */
 
 .header_logo {
     height: 90vh;
@@ -37,6 +90,8 @@ body {
     background-size: contain;
     background-position: center center;
 }
+
+/* 頂部內容區-導覽列 */
 
 .header_nav {
     height: 10vh;
@@ -74,10 +129,7 @@ body {
     transform: translateY(-50%);
 }
 
-.header_nav .navContent a img,
-.header_nav .navContent input,
-.header_nav .navContent label,
-.header_nav .navContent ul li:last-child {
+.header_nav .navContent a img, .header_nav .navContent input, .header_nav .navContent label, .header_nav .navContent ul li:last-child {
     display: none;
 }
 
@@ -141,9 +193,13 @@ body {
     left: -10%;
 }
 
+/* 主要內容區 */
+
 .content {
     margin: 0 auto;
 }
+
+/* 主要內容區-關於我們 */
 
 .content_aboutUs {
     height: 60vh;
@@ -264,18 +320,15 @@ body {
         left: -50%;
         bottom: -20%;
     }
-
     40% {
         left: 6%;
         bottom: 5%;
     }
-
     52.5% {
         left: 6%;
         bottom: 5%;
         opacity: 1;
     }
-
     100% {
         left: 110%;
         bottom: 55%;
@@ -289,23 +342,22 @@ body {
         bottom: -10%;
         opacity: 1;
     }
-
     78.5% {
         left: 85%;
         bottom: 55%;
     }
-
     90% {
         left: 85%;
         bottom: 55%;
         opacity: .7;
     }
-
     100% {
         left: 110%;
         bottom: 75%;
     }
 }
+
+/* 主要內容區-商品類別 */
 
 .content_flowerBuy {
     max-width: 1000px;
@@ -364,15 +416,13 @@ h2.appear {
     width: 50%;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a img:first-child,
-.content_flowerBuy ul li:nth-child(2n) a img:last-child {
+.content_flowerBuy ul li:nth-child(2n-1) a img:first-child, .content_flowerBuy ul li:nth-child(2n) a img:last-child {
     position: relative;
     top: 20px;
     transition: top 1s ease-in-out, transform .3s ease-in-out;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a img:last-child,
-.content_flowerBuy ul li:nth-child(2n) a img:first-child {
+.content_flowerBuy ul li:nth-child(2n-1) a img:last-child, .content_flowerBuy ul li:nth-child(2n) a img:first-child {
     position: relative;
     top: -20px;
     transition: top 1s ease-in-out, transform .3s ease-in-out;
@@ -382,13 +432,11 @@ h2.appear {
     top: 0;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a:hover img:first-child,
-.content_flowerBuy ul li:nth-child(2n) a:hover img:last-child {
+.content_flowerBuy ul li:nth-child(2n-1) a:hover img:first-child, .content_flowerBuy ul li:nth-child(2n) a:hover img:last-child {
     transform: translate3d(0, -20px, 0);
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a:hover img:last-child,
-.content_flowerBuy ul li:nth-child(2n) a:hover img:first-child {
+.content_flowerBuy ul li:nth-child(2n-1) a:hover img:last-child, .content_flowerBuy ul li:nth-child(2n) a:hover img:first-child {
     transform: translate3d(0, 20px, 0);
 }
 
@@ -472,6 +520,8 @@ h2.appear {
     background-size: contain;
     background-position: center center;
 }
+
+/* 主要內容區-花朵照護 */
 
 .content_takeCare {
     max-width: 1000px;
@@ -630,9 +680,13 @@ h2.appear {
     opacity: 1;
 }
 
+/* 底部內容區 */
+
 .footer {
     background-color: #242424;
 }
+
+/* 底部內容區-店家資訊&店鋪圖片 */
 
 .footer_detail {
     padding: 5vh 0;
@@ -727,30 +781,26 @@ h2.appear {
     height: 100%;
 }
 
-
 @media screen and (max-height:600px) {
+    /* 主要內容區-關於我們 */
     .content_aboutUs {
         height: 400px;
     }
-
     .content_aboutUs p {
         line-height: 25px;
     }
-
     .content_aboutUs p:last-child {
         padding: 0 10px;
     }
 }
 
-
-
 @media screen and (max-width:767px) {
+    /* 頂部內容區-LOGO */
     .header_logo {
         height: 100vh;
     }
-
-    .header_nav,
-    .header_nav.navFixedBg {
+    /* 頂部內容區-導覽列 */
+    .header_nav, .header_nav.navFixedBg {
         height: 10vh;
         width: 90%;
         display: block;
@@ -764,7 +814,6 @@ h2.appear {
         box-shadow: 0 0 8px #fafafa;
         z-index: 4;
     }
-
     .header_nav .navContent a img {
         position: absolute;
         top: 50%;
@@ -773,7 +822,6 @@ h2.appear {
         margin-left: 10px;
         display: flex;
     }
-
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -785,9 +833,7 @@ h2.appear {
         cursor: pointer;
         z-index: 4;
     }
-
-    .header_nav .navContent label::before,
-    .header_nav .navContent label::after {
+    .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
         height: 3px;
@@ -795,27 +841,21 @@ h2.appear {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
-
     .header_nav .navContent label::before {
         top: 0;
     }
-
     .header_nav .navContent label::after {
         top: 100%;
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
-
-    .header_nav .navContent ul,
-    .header_nav.navFixedBg .navContent ul {
+    .header_nav .navContent ul, .header_nav.navFixedBg .navContent ul {
         width: 95%;
         height: 0;
         position: absolute;
@@ -831,182 +871,141 @@ h2.appear {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
-
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
-
-    .header_nav .navContent ul li,
-    .header_nav.navFixedBg .navContent ul li {
+    .header_nav .navContent ul li, .header_nav.navFixedBg .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
-
-    .header_nav .navContent ul li a::before,
-    .header_nav.navFixedBg .navContent ul li a::before {
+    .header_nav .navContent ul li a::before, .header_nav.navFixedBg .navContent ul li a::before {
         content: none;
     }
-
-    .header_nav .navContent ul li a,
-    .header_nav.navFixedBg .navContent ul li a {
+    .header_nav .navContent ul li a, .header_nav.navFixedBg .navContent ul li a {
         color: #fafafa;
         padding: 5px;
         transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
     }
-
-    .header_nav .navContent ul li:hover a,
-    .header_nav.navFixedBg .navContent ul li:hover a {
+    .header_nav .navContent ul li:hover a, .header_nav.navFixedBg .navContent ul li:hover a {
         box-shadow: 0 0 10px #fafafa;
         border-radius: 5px;
     }
-
+    /* 主要內容區-關於我們 */
     .content_aboutUs::before {
         width: 70%;
     }
-
     .content_aboutUs p {
         line-height: 25px;
         font-size: 15px;
     }
-
     .content_aboutUs p:last-child {
         width: 105px;
         line-height: 20px;
     }
-
     .content_aboutUs p:last-child a {
         font-size: 15px;
     }
-
     .content_aboutUs p:last-child a::after {
         width: 30px;
     }
-
+    /* 主要內容區-商品類別 */
     .content_flowerBuy ul {
         justify-content: center;
     }
-
     .content_flowerBuy ul li {
         width: 80%;
     }
-
     .content_flowerBuy ul li div.flowerBuy {
         margin: 10px 0;
     }
-
     .content_flowerBuy ul li:nth-child(2n) div.flowerBuy {
         position: relative;
         top: 0px;
     }
-
     .content_flowerBuy ul li div.flowerBuy a img:first-child {
         position: relative;
         top: -5px;
     }
-
     .content_flowerBuy ul li div.flowerBuy a img:last-child {
         position: relative;
         top: 15px;
     }
-
     .content_flowerBuy ul li div.flowerBuy a:hover img:first-child {
         transform: translate3d(0, -10px, 0);
     }
-
     .content_flowerBuy ul li div.flowerBuy a:hover img:last-child {
         transform: translate3d(0, 10px, 0);
     }
-
     .flowerBuyText {
         height: 300px;
     }
-
     .flowerBuyText span:nth-child(2) {
         font-size: 18px;
     }
-
     .flowerBuyText h3 {
         font-size: 20px;
     }
-
-    .flowerBuyText p,
-    .flowerBuyText p a {
+    .flowerBuyText p, .flowerBuyText p a {
         font-size: 15px;
     }
-
     .flowerBuyText p:last-child a::after {
         width: 30px;
         height: 18px;
     }
-
+    /* 主要內容區-花朵照護 */
     .takeCareContentText {
         width: 100%;
         padding-top: 50px;
     }
-
     .takeCareContentText p {
         font-size: 15px;
     }
-
     .takeCareContentText p:last-child a {
         font-size: 15px;
         padding: 5px 0 35px 0;
     }
-
     .takeCareContentText p:last-child a::after {
         width: 21px;
         height: 30px;
     }
-
     .takeCareContentPic {
         width: 70%;
     }
-
     .takeCareContentPic div {
         width: 100%;
         height: 400px;
     }
-
     .takeCareContentPic span {
         font-size: 20px;
     }
-
+    /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .detailText {
         width: 70%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
-
     .detailText p {
         text-align: center;
     }
-
     .detailText01 {
         margin-top: 5%;
     }
-
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
-
     .detailText03 {
         margin-top: 5%;
     }
-
-    .detailText .detailText01 span,
-    .detailText .detailText02 ul li a,
-    .detailText .detailText03 span {
+    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
         font-size: 15px;
     }
-
     .detailPic {
         width: 70%;
         padding-right: 0;
@@ -1015,11 +1014,12 @@ h2.appear {
 }
 
 @media screen and (max-width:376px) {
+    /* 主要內容區-商品類別 */
     .flowerBuyText {
         height: 360px;
         padding: 30px 30px 0;
     }
-
+    /* 主要內容區-花朵照護 */
     .takeCareContentPic div {
         height: 300px;
     }

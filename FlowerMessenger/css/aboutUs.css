@@ -148,46 +148,6 @@ body {
     opacity: 1;
 }
 
-@keyframes Drop1 {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        /* transform如果有複數效果，中間空一格即可 */
-        transform: translate(-400px, 680px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes Drop2 {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-300px, 680px) rotate(-180deg);
-        opacity: 0;
-    }
-}
-
-@keyframes Drop3 {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-350px, 680px) rotate(200deg);
-        opacity: 0;
-    }
-}
-
 .cornerTextBgFlower.locate02 div {
     background: url(../images/aboutUs/flower.png) no-repeat;
     background-size: contain;
@@ -246,6 +206,46 @@ body {
 .cornerTextBgFlower.locate02 div.flowerDrop10 {
     left: 81%;
     animation: Drop1 9.4s ease-in-out 2.4s infinite;
+}
+
+@keyframes Drop1 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        /* transform如果有複數效果，中間空一格即可 */
+        transform: translate(-400px, 680px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes Drop2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-300px, 680px) rotate(-180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes Drop3 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-350px, 680px) rotate(200deg);
+        opacity: 0;
+    }
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -456,7 +456,7 @@ body {
     .cornerTextBgFlower.locate02 div {
         width: 30px;
         height: 30px;
-    }    
+    }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
