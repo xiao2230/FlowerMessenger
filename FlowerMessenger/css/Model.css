@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +12,6 @@
 body {
     background: #fffaf2;
 }
-
 
 /* 頂部內容區-導覽列 */
 
@@ -41,8 +38,7 @@ body {
     transform: translateY(-50%);
 }
 
-.header_nav .navContent input,
-.header_nav .navContent label {
+.header_nav .navContent input, .header_nav .navContent label {
     display: none;
 }
 
@@ -64,12 +60,33 @@ body {
 .header_nav .navContent ul li a {
     color: #fafafa;
     letter-spacing: 1.5px;
-    padding: 5px 8px;
-    margin: 0 10px;
+    padding: 5px;
+    margin: 0 2px;
     transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
 }
 
 .header_nav .navContent ul li:hover a {
+    box-shadow: 0 0 10px #fafafa;
+    border-radius: 5px;
+}
+
+.header_nav .navContent ul li.navContentTool {
+    margin: 0 5px;
+}
+
+.header_nav .navContent ul li.navContentTool a {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav .navContent ul li.navContentTool a i {
+    color: #fafafa;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.header_nav .navContent ul li.navContentTool a i:hover {
     box-shadow: 0 0 10px #fafafa;
     border-radius: 5px;
 }
@@ -174,9 +191,7 @@ body {
 }
 
 @media screen and (max-width:767px) {
-
     /* 頂部內容區-導覽列 */
-
     .header_nav {
         width: 90%;
         left: 50%;
@@ -185,7 +200,6 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 0 8px #fafafa;
     }
-
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -196,9 +210,7 @@ body {
         height: 30%;
         cursor: pointer;
     }
-
-    .header_nav .navContent label::before,
-    .header_nav .navContent label::after {
+    .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
         height: 3px;
@@ -206,25 +218,20 @@ body {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
-
     .header_nav .navContent label::before {
         top: 0;
     }
-
     .header_nav .navContent label::after {
         top: 100%;
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
-
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
-
     .header_nav .navContent ul {
         width: 95%;
         height: 0;
@@ -241,65 +248,47 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
-
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
-
     .header_nav .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
-
-    .header_nav .navContent ul li a {
-        color: #fafafa;
-        padding: 5px;
-        transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
+    .header_nav .navContent ul li.navContentTool {
+        margin: 5px 0;
     }
-
-    .header_nav .navContent ul li:hover a {
-        box-shadow: 0 0 10px #fafafa;
-        border-radius: 5px;
+    .header_nav .navContent ul li.navContentTool a i {
+        margin: 0 3px;
     }
-
     /* 底部內容區-店家資訊&店鋪圖片 */
-
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .detailText {
         width: 70%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
-
     .detailText p {
         text-align: center;
     }
-
     .detailText01 {
         margin-top: 5%;
     }
-
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
-
     .detailText03 {
         margin-top: 5%;
     }
-
-    .detailText .detailText01 span,
-    .detailText .detailText02 ul li a,
-    .detailText .detailText03 span {
+    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
         font-size: 15px;
     }
-
     .detailPic {
         width: 70%;
         padding-right: 0;

@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -61,12 +61,33 @@ body {
 .header_nav .navContent ul li a {
     color: #fafafa;
     letter-spacing: 1.5px;
-    padding: 5px 8px;
-    margin: 0 10px;
+    padding: 5px;
+    margin: 0 2px;
     transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
 }
 
 .header_nav .navContent ul li:hover a {
+    box-shadow: 0 0 10px #fafafa;
+    border-radius: 5px;
+}
+
+.header_nav .navContent ul li.navContentTool {
+    margin: 0 5px;
+}
+
+.header_nav .navContent ul li.navContentTool a {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav .navContent ul li.navContentTool a i {
+    color: #fafafa;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.header_nav .navContent ul li.navContentTool a i:hover {
     box-shadow: 0 0 10px #fafafa;
     border-radius: 5px;
 }
@@ -413,14 +434,11 @@ body {
         margin: 10px 0;
         text-align: center;
     }
-    .header_nav .navContent ul li a {
-        color: #fafafa;
-        padding: 5px;
-        transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
+    .header_nav .navContent ul li.navContentTool {
+        margin: 5px 0;
     }
-    .header_nav .navContent ul li:hover a {
-        box-shadow: 0 0 10px #fafafa;
-        border-radius: 5px;
+    .header_nav .navContent ul li.navContentTool a i {
+        margin: 0 3px;
     }
     /* 頂部內容區-背景圖&分頁標題註記 */
     .header_bannerTitle {

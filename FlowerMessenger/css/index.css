@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,51 +27,19 @@ body {
 .header_tool {
     position: absolute;
     right: 0;
-    width: 170px;
-    height: 55px;
     background: #242424;
-    border-bottom-left-radius: 12px;
+    padding: 10px 20px 10px 0;
+    border-bottom-left-radius: 10px;
 }
 
-.header_tool {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.header_tool a i {
+    color: #888;
+    font-size: 25px;
+    margin-left: 20px;
 }
 
-.header_tool div {
-    width: 40px;
-    height: 40px;
-}
-
-.header_tool div.toolQA {
-    background: url(../images/common/常見問題01.png) no-repeat;
-    background-size: contain;
-}
-
-.header_tool div.toolCart {
-    background: url(../images/common/購物車01.png) no-repeat;
-    background-size: contain;
-}
-
-.header_tool div.toolMember {
-    background: url(../images/common/會員中心01.png) no-repeat;
-    background-size: contain;
-}
-
-.header_tool div.toolQA:hover {
-    background: url(../images/common/常見問題02.png) no-repeat;
-    background-size: contain;
-}
-
-.header_tool div.toolCart:hover {
-    background: url(../images/common/購物車02.png) no-repeat;
-    background-size: contain;
-}
-
-.header_tool div.toolMember:hover {
-    background: url(../images/common/會員中心02.png) no-repeat;
-    background-size: contain;
+.header_tool a i:hover {
+    color: #fafafa;
 }
 
 /* 頂部內容區-LOGO */
@@ -129,7 +97,7 @@ body {
     transform: translateY(-50%);
 }
 
-.header_nav .navContent a img, .header_nav .navContent input, .header_nav .navContent label, .header_nav .navContent ul li:last-child {
+.header_nav .navContent a img, .header_nav .navContent input, .header_nav .navContent label, .header_nav .navContent ul li:not(:nth-child(-n+4)) {
     display: none;
 }
 
@@ -153,14 +121,14 @@ body {
     z-index: 2;
 }
 
-.header_nav.navFixedBg .navContent ul li:last-child {
+.header_nav.navFixedBg .navContent ul li:not(:nth-child(-n+4)) {
     display: block;
 }
 
 .header_nav.navFixedBg .navContent ul li a {
     color: #fafafa;
-    padding: 5px 8px;
-    margin: 0 10px;
+    padding: 5px;
+    margin: 0 2px;
     transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
 }
 
@@ -191,6 +159,31 @@ body {
     height: 140%;
     top: -20%;
     left: -10%;
+}
+
+.header_nav.navFixedBg .navContent ul li.navContentTool {
+    margin: 0 5px;
+}
+
+.header_nav.navFixedBg .navContent ul li.navContentTool a {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav.navFixedBg .navContent ul li a::before {
+    content: none;
+}
+
+.header_nav.navFixedBg .navContent ul li.navContentTool a i {
+    color: #fafafa;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.header_nav.navFixedBg .navContent ul li.navContentTool a i:hover {
+    box-shadow: 0 0 10px #fafafa;
+    border-radius: 5px;
 }
 
 /* 主要內容區 */
@@ -795,6 +788,10 @@ h2.appear {
 }
 
 @media screen and (max-width:767px) {
+    /* 頂部內容區-小工具 */
+    .header_tool {
+        display: none;
+    }
     /* 頂部內容區-LOGO */
     .header_logo {
         height: 100vh;
@@ -887,7 +884,27 @@ h2.appear {
         padding: 5px;
         transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
     }
-    .header_nav .navContent ul li:hover a, .header_nav.navFixedBg .navContent ul li:hover a {
+    .header_nav .navContent ul li:hover a {
+        box-shadow: 0 0 10px #fafafa;
+        border-radius: 5px;
+    }
+    .header_nav .navContent ul li.navContentTool {
+        display: block;
+        margin: 0;
+    }
+    .header_nav .navContent ul li.navContentTool a {
+        padding: 0;
+    }
+    .header_nav .navContent ul li.navContentTool:hover a {
+        box-shadow: none;
+    }
+    .header_nav .navContent ul li.navContentTool a i {
+        color: #fafafa;
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px 3px;
+    }
+    .header_nav .navContent ul li.navContentTool a i:hover {
         box-shadow: 0 0 10px #fafafa;
         border-radius: 5px;
     }
