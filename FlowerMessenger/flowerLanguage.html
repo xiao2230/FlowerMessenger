@@ -11,8 +11,30 @@
     <link rel="stylesheet" href="css/flowerLanguage.css">
     <style>
         .content {
-            height: 200vh;
-            background: #cee6a1;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .content_slider {
+            max-width: 1000px;
+            height: 300px;
+            overflow: hidden;
+            cursor: grab;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            column-gap: 2rem;
+        }
+
+        .sliderItem{
+            width: 300px;
+            height: 100%;
+        }
+        
+        .sliderItem img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -53,7 +75,32 @@
         </div>
     </section>
     <!-- 主要內容區 -->
-    <section class="content"></section>
+    <section class="content">
+        <!-- 主要內容區-圖片與花語 -->
+        <div class="content_slider">
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening01.jpg" alt="小蒼蘭">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening02.jpg" alt="桔梗">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening03.jpg" alt="梔子花">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening04.jpg" alt="瑪格麗特">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening05.jpg" alt="鬱金香">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening06.jpg" alt="星辰花">
+            </div>
+            <div class="sliderItem">
+                <img src="images/flowerLanguage/f-maening07.jpg" alt="乒乓菊">
+            </div>
+        </div>
+    </section>
     <!-- 底部內容區 -->
     <section class="footer">
         <!-- 底部內容區-店家資訊&店鋪圖片 -->

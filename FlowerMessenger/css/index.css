@@ -659,13 +659,18 @@ h2.appear {
 }
 
 .takeCareContentPic span {
-    color: #fff;
+    color: #242424;
+    background: #fafafa;
+    padding: 10px 5px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 30px #fafafa;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     opacity: 0;
+    font-weight: 600;
     letter-spacing: 3px;
     writing-mode: vertical-lr;
     transition: opacity .8s ease-in-out;
