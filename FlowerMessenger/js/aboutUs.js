@@ -15,6 +15,7 @@ document.addEventListener('scroll', () => {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的主題圖漸入
 		cornerPic.classList.add('appear');
 	}
+	
 	if (scrollTop >= bannerTitle.offsetTop) {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的內文漸入
 		for (i = 0, t = 0; i < cornerText.length; i++, t += Math.random() * 500) {
