@@ -21,7 +21,7 @@ document.addEventListener('scroll', () => {
 
 	if (scrollTop >= bannerTitle.offsetTop) {
 		// 『主要內容區-圖片與花語』的內容漸入
-		contentSlider.classList.add('locate02');
+		contentSlider.classList.add('appear');
 	}
 
 	if (scrollTop >= content.offsetTop) {
@@ -33,35 +33,19 @@ document.addEventListener('scroll', () => {
 	}
 });
 
-let sliderItem = document.querySelector('.sliderItem');
 
-let clicked = false;
-let xAxis;
-let x;
-
-contentSlider.addEventListener('mouseup',()=>{
-    contentSlider.style.cursor = 'grab';
-})
-
-contentSlider.addEventListener('mousedown',e=>{
-    clicked = true;
-    xAxis = e.offsetX - sliderItem.offsetLeft;
-
-    contentSlider.style.cursor = 'grabbing';
-})
-
-window.addEventListener('mouseup',()=>{
-    clicked = false;
-})
-
-contentSlider.addEventListener('mousemove',e=>{
-    if(!clicked) return;
-    e.preventDefault();
-
-    x = e.offsetX;
-    sliderItem.style.left = `${x-xAxis}px`;
-})
-
-// 似乎還是需要一層slider包住全部的輪播，可以設多一層 寬高100%
-
-
+// 『主要內容區-圖片與花語』的內容設定
+var swiper = new Swiper('.mySwiper', {
+	effect: 'coverflow',
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	coverflowEffect: {
+		rotate: 0,
+		stretch: 0,
+		depth: 0,
+		modifier: 1,
+		slideShadows: true
+	},
+	loop: true
+});

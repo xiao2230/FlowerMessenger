@@ -132,16 +132,10 @@ body {
     padding: 0 15px;
 }
 
-/* 主要內容區 */
-
-.content {
-    max-width: 1000px;
-    margin: 0 auto 50px;
-}
-
 /* 主要內容區-前言 */
 
 .content_preface {
+    max-width: 1000px;
     margin: 50px 0;
     writing-mode: vertical-rl;
     position: relative;
@@ -171,7 +165,7 @@ body {
     width: 200px;
     height: 250px;
     clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 10%, 25% 100%, 100% 100%, 100% 0%);
-    background: #eccfb2;
+    background: rgb(216, 170, 127,.2);
     z-index: -2;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
@@ -184,55 +178,67 @@ body {
 /* 主要內容區-圖片與花語 */
 
 .content_slider {
-    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 50px;
     overflow: hidden;
-    cursor: grab;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
     user-select: none;
-    user-drag: none;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
 }
 
-.content_slider.locate02 {
+.content_slider.appear {
     opacity: 1;
 }
 
-.sliderItem {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    border-radius: 10px;
-    background: rgba(255, 214, 166, 0.2);
+.swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
 }
 
-.sliderItem .sliderItemPic {
-    width: 300px;
-    height: 300px;
+.content_slider .swiper-slide {
+    width: 350px;
+    margin: 0 20px;
 }
 
-.sliderItem .sliderItemPic img {
+.content_slider .swiper-slide .sliderCard {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-user-drag: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    text-align: center;
+    background: #242424;
+    padding: 60px 40px;
+    border-radius: 10px;
 }
 
-.sliderItem .sliderItemText {
-    padding: 15px;
-    letter-spacing: 1.5px;
+.content_slider .swiper-slide .sliderCard p {
+    min-height: 120px;
+    color: #fafafa;
+    letter-spacing: .5px;
+    line-height: 27px;
+    margin-bottom: 20px;
 }
 
-.sliderItem .sliderItemText h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+.content_slider .swiper-slide .sliderCard .sliderCardImg {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #bd7c7c;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-.sliderItem .sliderItemText span {
-    font-size: 17px;
+.content_slider .swiper-slide .sliderCard .sliderCardImg img {
+    width: 150px;
+    height: 150px;
+}
+
+.content_slider .swiper-slide .sliderCard .sliderCardDetail h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.content_slider .swiper-slide .sliderCard .sliderCardDetail h2 span {
+    color: #03a9f4;
+    font-size: 14px;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -430,22 +436,28 @@ body {
         line-height: 60px;
     }
     /* 主要內容區-圖片與花語 */
-    .sliderItem {
-        border-radius: 5px;
+    .content_slider .swiper-slide {
+        width: 250px;
+        margin: 0 10px;
     }
-    .sliderItem .sliderItemPic {
-        width: 200px;
-        height: 200px;
+    .content_slider .swiper-slide .sliderCard {
+        padding: 30px 20px;
     }
-    .sliderItem .sliderItemPic img {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+    .content_slider .swiper-slide .sliderCard p {
+        font-size: 15px;
+        line-height: 23px;
+        margin-bottom: 10px;
     }
-    .sliderItem .sliderItemText h3 {
-        font-size: 18px;
+    .content_slider .swiper-slide .sliderCard .sliderCardImg {
+        width: 120px;
+        height: 120px;
     }
-    .sliderItem .sliderItemText span {
-        font-size: 16px;
+    .content_slider .swiper-slide .sliderCard .sliderCardImg img {
+        width: 120px;
+        height: 120px;
+    }
+    .content_slider .swiper-slide .sliderCard .sliderCardDetail h2 {
+        margin-top: 10px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
