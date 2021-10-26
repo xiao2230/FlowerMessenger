@@ -33,8 +33,6 @@ document.addEventListener('scroll', () => {
 	}
 });
 
-
-// 『主要內容區-圖片與花語』的內容設定
 var swiper = new Swiper('.mySwiper', {
 	effect: 'coverflow',
 	grabCursor: true,
