@@ -11,9 +11,39 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/contactUs.css">
     <style>
-        .content {
-            height: 200vh;
-            background: #cee6a1;
+        
+
+        /* 主要內容區 - 提問表格 */
+
+        .content_ResponseForm {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            padding-bottom: 30px;
+            background: #e3dbd0;
+            border-top: 1px solid #fffaf2;
+            position: relative;
+        }
+
+        .content_ResponseForm::after {
+            content: '';
+            clip-path: polygon(70% 0, 100% 0%, 100% 100%, 30% 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #d7c6af;
+            filter: blur(2px);
+        }
+
+        .content_ResponseForm form {
+            width: 80%;
+            margin: 50px auto;
+            padding: 50px 30px;
+            background: #fffaf2;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -54,7 +84,194 @@
         </div>
     </section>
     <!-- 主要內容區 -->
-    <section class="content"></section>
+    <section class="content">
+        <!-- 主要內容區 - 聯繫資訊 -->
+        <div class="content_info">
+            <div class="infoSoftware">
+                <a href="#"><i class="fab fa-line"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></i></a>
+            </div>
+            <div class="infoStore">
+                <span>
+                    <p><i class="fas fa-map-marker-alt"></i>Address</p>
+                    <p>台中市大里區斜巷里鮮花路66號</p>
+                    <p><i class="fas fa-mobile-alt"></i>Phone</p>
+                    <p>0800-666-666</p>
+                    <p><i class="fas fa-envelope"></i>Email</p>
+                    <p>FM666@gmail.com</p>
+                </span>
+            </div>
+        </div>
+        <!-- 主要內容區 - 提問表格 -->
+        <div class="content_ResponseForm">
+            <form action="" id="form" method="POST">
+                <p class="attentionForm">
+                    以下「任意」項目以外はすべて必須入力項目です。それぞれの項目にご入力くださいませ。<br>
+                    また大変恐れ入りますが、すべてのお問い合わせに必ず対応するものではございません。その点ご了承くださいませ。
+                </p>
+                <dl class="formColumn">
+                    <dt class="formLabel">お名前</dt>
+                    <dd class="formContents">
+                        <input class="m__form__inputText" name="entry.1679550964" placeholder="お名前 太郎" required=""
+                            type="text">
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">会社・団体名など</dt>
+                    <dd class="formContents">
+                        <input class="m__form__inputText" name="entry.1466994666" placeholder="株式会社xxxx" required=""
+                            type="text">
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">メールアドレス</dt>
+                    <dd class="formContents">
+                        <input class="m__form__inputText" name="entry.158658110" placeholder="example@example.com"
+                            required="" type="email">
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">
+                        WebサイトURL
+                        <br>
+                        （任意）
+                    </dt>
+                    <dd class="formContents">
+                        <input class="m__form__inputText" name="entry.524114471" placeholder="https://example.cm"
+                            type="url">
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">お仕事の種類</dt>
+                    <dd class="formContents formContents--column2">
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="type_illustration" name="entry.1496353791" required=""
+                                    type="radio" value="イラスト制作">
+                                <label for="type_illustration">イラスト制作</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="type_graphic" name="entry.1496353791" required=""
+                                    type="radio" value="グラフィックデザイン制作">
+                                <label for="type_graphic">グラフィックデザイン制作</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="type_web" name="entry.1496353791" required=""
+                                    type="radio" value="Web制作">
+                                <label for="type_web">Web制作</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="type_other" name="entry.1496353791" required=""
+                                    type="radio" value="その他">
+                                <label for="type_other">その他</label>
+                            </div>
+                        </div><!-- /.columnParts -->
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">ご予算</dt>
+                    <dd class="formContents">
+                        <input class="m__form__inputText" name="entry.1366999172" placeholder="お決まりでない場合はその旨ご記載ください"
+                            required="" type="text">
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">ご希望納期</dt>
+                    <dd class="formContents formContents--column2">
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="speedy" name="entry.233750168" required="" type="radio"
+                                    value="1ヶ月以内">
+                                <label for="speedy">1ヶ月以内</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="long" name="entry.233750168" required="" type="radio"
+                                    value="1ヶ月以上先">
+                                <label for="long">1ヶ月以上先</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="random" name="entry.233750168" required="" type="radio"
+                                    value="決まっていない（制作スケジュールにあわせること可能）">
+                                <label for="random">
+                                    決まっていない
+                                    <span class="small">（制作スケジュールにあわせること可能）</span>
+                                </label>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="formColumn">
+                    <dt class="formLabel">
+                        ポートフォリオ
+                        <br>
+                        掲載可否
+                    </dt>
+                    <dd class="formContents formContents--column2">
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="yes" name="entry.819734618" required="" type="radio"
+                                    value="掲載可能">
+                                <label for="yes">掲載可能</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="no" name="entry.819734618" required="" type="radio"
+                                    value="掲載不可">
+                                <label for="no">掲載不可</label>
+                            </div>
+                        </div>
+                        <div class="columnParts">
+                            <div class="m__form__radioWrap">
+                                <input class="radioButton" id="requiresConsideration" name="entry.819734618" required=""
+                                    type="radio" value="要確認">
+                                <label for="requiresConsideration">要確認</label>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="formColumn formColumn--column1 inputDetailArea">
+                    <dt class="formLabel">ご依頼内容詳細</dt>
+                    <dd class="formContents">
+                        <p>
+                            以下のことをご記載いただけると以降のコミュニケーションがスムーズです。
+                        </p>
+                        <p class="textExample">
+                            <span class="titleExample">【お仕事種類共通 例】</span>
+                            ご予算について詳細、ご希望の納期詳細、ご依頼担当範囲、ご希望のデザイン・イラストの参考イメージ…etc
+                        </p>
+                        <p class="textExample">
+                            <span class="titleExample">【web制作の場合 例】</span>
+                            webサイトの概要・業種、制作ページ数、各ページのボリューム、デザインのみ・コーディングまでか、CMS構築までご希望の場合は想定仕様、構成案・ワイヤーフレーム有無…etc
+                        </p>
+                        <p class="textExample">
+                            <span class="titleExample">【グラフィックデザインの場合 例】</span>
+                            制作物の種類(リーフレット、冊子、ロゴなど）、紙サイズ、冊子であればページ数、印刷ディレクションの有無…etc
+                        </p>
+                        <p class="textExample">
+                            <span class="titleExample">【イラストレーションの場合 例】</span>
+                            イラストご利用媒体（web、紙、動画など）、イラストサイズ、必要イラスト点数…etc
+                        </p>
+                        <textarea class="m__form__inputtextArea" name="entry.470759625" required=""></textarea>
+                    </dd>
+                </dl>
+                <input class="submit-btn m__button_standardDesign" type="submit" value="この内容で送る">
+            </form>
+        </div>
+    </section>
     <!-- 底部內容區 -->
     <section class="footer">
         <!-- 底部內容區-店家資訊&店鋪圖片 -->

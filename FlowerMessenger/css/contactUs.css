@@ -132,6 +132,134 @@ body {
     padding: 0 15px;
 }
 
+/* 主要內容區 - 聯繫資訊 */
+
+.content_info {
+    max-width: 1000px;
+    margin: 50px auto 0;
+    display: flex;
+}
+
+.content_info .infoSoftware {
+    width: 20%;
+    background: #e3dbd0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #fffaf2;
+    padding: 20px 0;
+}
+
+.content_info .infoSoftware a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(19 19 19 /50%);
+}
+
+.content_info .infoSoftware a i {
+    font-size: 30px;
+    color: #888;
+}
+
+.content_info .infoSoftware a i.fa-youtube {
+    font-size: 25px;
+}
+
+.content_info .infoSoftware a:first-child:hover i {
+    color: #fafafa;
+}
+
+.content_info .infoSoftware a:first-child:hover {
+    background: #4cc764;
+    box-shadow: 0 0 10px 2px #4cc764;
+}
+
+.content_info .infoSoftware a:nth-child(2):hover i {
+    color: #fafafa;
+}
+
+.content_info .infoSoftware a:nth-child(2):hover {
+    background: #dc3175;
+    box-shadow: 0 0 10px 2px #dc3175;
+}
+
+.content_info .infoSoftware a:nth-child(3):hover i {
+    color: #fafafa;
+}
+
+.content_info .infoSoftware a:nth-child(3):hover {
+    background: #ff0000;
+    box-shadow: 0 0 10px 2px #ff0000;
+}
+
+.content_info .infoSoftware a:nth-child(4):hover i {
+    color: #fafafa;
+}
+
+.content_info .infoSoftware a:nth-child(4):hover {
+    background: #17a2f2;
+    box-shadow: 0 0 10px 2px #17a2f2;
+}
+
+.content_info .infoSoftware a:nth-child(5):hover i {
+    color: #fafafa;
+}
+
+.content_info .infoSoftware a:nth-child(5):hover {
+    background: #1877f2;
+    box-shadow: 0 0 10px 2px #1877f2;
+}
+
+.content_info .infoStore {
+    width: 80%;
+    background: #d7c6af;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    position: relative;
+}
+
+.content_info .infoStore::after {
+    content: '';
+    width: 150px;
+    height: 150px;
+    background: url(../images/contactUs/bg.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.content_info .infoStore span {
+    font-weight: 600;
+    z-index: 1;
+}
+
+.content_info .infoStore span p:nth-child(2n-1) {
+    display: inline-flex;
+    align-items: center;
+    border: 1px dashed #d7c6af;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #d7c6af;
+    background: #242424;
+}
+
+.content_info .infoStore span p:nth-child(2n-1) i {
+    color: #d7c6af;
+    padding-right: 5px;
+}
+
+.content_info .infoStore span p:nth-child(2n) {
+    margin: 10px 0;
+}
+
 /* 底部內容區-店家資訊&店鋪圖片 */
 
 .footer {
@@ -321,6 +449,35 @@ body {
     }
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
+    }
+    /* 主要內容區 - 聯繫資訊 */
+    .content_info .infoSoftware {
+        padding: 10px 0;
+    }
+    .content_info .infoSoftware a {
+        margin: 5px 0;
+        width: 35px;
+        height: 35px;
+    }
+    .content_info .infoSoftware a i {
+        font-size: 25px;
+    }
+    .content_info .infoSoftware a i.fa-youtube {
+        font-size: 22px;
+    }
+    .content_info .infoStore {
+        padding-left: 5%;
+    }
+    .content_info .infoStore::after {
+        content: '';
+        width: 100px;
+        height: 100px;
+    }
+    .content_info .infoStore span p {
+        font-size: 15px;
+    }
+    .content_info .infoStore span p:nth-child(2n) {
+        margin: 8px 0;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
