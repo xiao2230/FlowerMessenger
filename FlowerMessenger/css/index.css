@@ -660,10 +660,10 @@ h2.appear {
 
 .takeCareContentPic span {
     color: #242424;
-    background: #fafafa;
+    background: #fffaf2;
     padding: 10px 5px;
     border-radius: 20px;
-    box-shadow: 1px 1px 30px #fafafa;
+    box-shadow: 0 0 10px #fffaf2;
     position: absolute;
     top: 50%;
     left: 50%;
