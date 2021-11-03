@@ -55,7 +55,7 @@ body {
 .header_logo .logoPic {
     width: 150px;
     height: 55vh;
-    background: url(../images/common/logo01.png) no-repeat;
+    background: url(../images/index/verticalLogo.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
@@ -253,7 +253,7 @@ body {
 
 .content_aboutUs p:last-child a::after {
     content: '';
-    background: url(../images/common/leaf01.png) no-repeat;
+    background: url(../images/index/leaf01.png) no-repeat;
     background-size: contain;
     background-position: center center;
     width: 30px;
@@ -289,7 +289,7 @@ body {
 }
 
 .content_aboutUs p:last-child:hover a::after {
-    background: url(../images/common/leaf02.png) no-repeat;
+    background: url(../images/index/leaf02.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
@@ -478,7 +478,7 @@ h2.appear {
 
 .flowerBuyText p:last-child a::after {
     content: '';
-    background: url(../images/common/leaf01.png) no-repeat;
+    background: url(../images/index/leaf01.png) no-repeat;
     background-size: contain;
     background-position: center center;
     width: 30px;
@@ -511,7 +511,7 @@ h2.appear {
 }
 
 .flowerBuyText p:last-child:hover a::after {
-    background: url(../images/common/leaf02.png) no-repeat;
+    background: url(../images/index/leaf02.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
@@ -589,7 +589,7 @@ h2.appear {
 
 .takeCareContentText p:last-child a::after {
     content: '';
-    background: url(../images/common/leaf03.png) no-repeat;
+    background: url(../images/index/leaf03.png) no-repeat;
     background-size: contain;
     background-position: center center;
     width: 25px;
@@ -626,7 +626,7 @@ h2.appear {
 }
 
 .takeCareContentText p:last-child a:hover::after {
-    background: url(../images/common/leaf04.png) no-repeat;
+    background: url(../images/index/leaf04.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
