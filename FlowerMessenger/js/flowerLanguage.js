@@ -33,6 +33,7 @@ document.addEventListener('scroll', () => {
 	}
 });
 
+// swiper輪播圖效果JS插件
 var swiper = new Swiper('.mySwiper', {
 	effect: 'coverflow',
 	grabCursor: true,
