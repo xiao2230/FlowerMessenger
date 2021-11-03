@@ -1,8 +1,8 @@
 let aboutUs = document.querySelectorAll('.content_aboutUs p');
 let css = document.getElementById('css').sheet;
 let fly = document.querySelectorAll('.fly');
-let flowerBuy = document.querySelectorAll('.flowerBuy');
-let flowerBuyPic = document.querySelectorAll('.flowerBuy a img');
+let orderBouquet = document.querySelectorAll('.orderBouquet');
+let orderBouquetPic = document.querySelectorAll('.orderBouquet a img');
 let h2 = document.querySelectorAll('h2');
 let takeCareContentText = document.querySelectorAll('.takeCareContentText p');
 let takeCareContentPic = document.querySelector('.takeCareContentPic div');
@@ -10,8 +10,8 @@ let headerNav = document.querySelector('.header_nav');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
-let contentFlowerBuySecond = document.querySelector('.content_flowerBuy ul li:nth-child(2)');
-let contentFlowerBuyLast = document.querySelector('.content_flowerBuy ul li:last-child');
+let contentorderBouquetSecond = document.querySelector('.content_orderBouquet ul li:nth-child(2)');
+let contentorderBouquetLast = document.querySelector('.content_orderBouquet ul li:last-child');
 
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
@@ -35,11 +35,11 @@ document.addEventListener('scroll', () => {
 		headerNav.classList.add('navFixedBg');
 
 		// 『主要內容區-商品類別』前兩項的滑入動態
-		for (i = 0; i < flowerBuy.length / 2; i++) {
-			flowerBuy[i].classList.add('appear');
+		for (i = 0; i < orderBouquet.length / 2; i++) {
+			orderBouquet[i].classList.add('appear');
 		}
-		for (i = 0; i < flowerBuyPic.length / 2; i++) {
-			flowerBuyPic[i].classList.add('locate01');
+		for (i = 0; i < orderBouquetPic.length / 2; i++) {
+			orderBouquetPic[i].classList.add('locate01');
 		}
 		h2[1].classList.add('appear');
 	} else {
@@ -48,18 +48,18 @@ document.addEventListener('scroll', () => {
 	}
 
 	// 『主要內容區-商品類別』後兩項的滑入動態
-	if (scrollTop >= contentFlowerBuySecond.offsetTop) {
-		for (i = flowerBuy.length / 2; i < flowerBuy.length; i++) {
-			flowerBuy[i].classList.add('appear');
+	if (scrollTop >= contentorderBouquetSecond.offsetTop) {
+		for (i = orderBouquet.length / 2; i < orderBouquet.length; i++) {
+			orderBouquet[i].classList.add('appear');
 		}
 
-		for (i = flowerBuyPic.length / 2; i < flowerBuyPic.length; i++) {
-			flowerBuyPic[i].classList.add('locate01');
+		for (i = orderBouquetPic.length / 2; i < orderBouquetPic.length; i++) {
+			orderBouquetPic[i].classList.add('locate01');
 		}
 	}
 
 	// 『主要內容區-花朵照護』的滑入動態
-	if (scrollTop >= contentFlowerBuyLast.offsetTop) {
+	if (scrollTop >= contentorderBouquetLast.offsetTop) {
 		h2[2].classList.add('appear');
 		takeCareContentPic.classList.add('locate03');
 		css.insertRule('.takeCareContentText::after{opacity: .3;top:30px;}', 0);

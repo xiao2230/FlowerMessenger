@@ -354,13 +354,13 @@ body {
 
 /* 主要內容區-商品類別 */
 
-.content_flowerBuy {
+.content_orderBouquet {
     max-width: 1000px;
     margin: 0 auto;
     padding: 5vh 0 15vh;
 }
 
-.content_flowerBuy h2 {
+.content_orderBouquet h2 {
     text-align: center;
     margin: 45px 0;
 }
@@ -375,18 +375,18 @@ h2.appear {
     opacity: 1;
 }
 
-.content_flowerBuy ul {
+.content_orderBouquet ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-.content_flowerBuy ul li {
+.content_orderBouquet ul li {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.content_flowerBuy ul li div.flowerBuy {
+.content_orderBouquet ul li div.orderBouquet {
     width: 90%;
     margin: 15px 0;
     box-shadow: 0 10px 88px 2px rgb(19 19 19/20%);
@@ -394,48 +394,48 @@ h2.appear {
     transition: opacity 1.5s ease-in-out;
 }
 
-.content_flowerBuy ul li div.flowerBuy.appear {
+.content_orderBouquet ul li div.orderBouquet.appear {
     opacity: 1;
 }
 
-.content_flowerBuy ul li:nth-child(2n) div.flowerBuy {
+.content_orderBouquet ul li:nth-child(2n) div.orderBouquet {
     position: relative;
     top: 50px;
 }
 
-.content_flowerBuy ul li a {
+.content_orderBouquet ul li a {
     display: flex;
 }
 
-.content_flowerBuy ul li div.flowerBuy a img {
+.content_orderBouquet ul li div.orderBouquet a img {
     width: 50%;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a img:first-child, .content_flowerBuy ul li:nth-child(2n) a img:last-child {
+.content_orderBouquet ul li:nth-child(2n-1) a img:first-child, .content_orderBouquet ul li:nth-child(2n) a img:last-child {
     position: relative;
     top: 20px;
     transition: top 1s ease-in-out, transform .3s ease-in-out;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a img:last-child, .content_flowerBuy ul li:nth-child(2n) a img:first-child {
+.content_orderBouquet ul li:nth-child(2n-1) a img:last-child, .content_orderBouquet ul li:nth-child(2n) a img:first-child {
     position: relative;
     top: -20px;
     transition: top 1s ease-in-out, transform .3s ease-in-out;
 }
 
-.content_flowerBuy ul li div.flowerBuy a img.locate01 {
+.content_orderBouquet ul li div.orderBouquet a img.locate01 {
     top: 0;
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a:hover img:first-child, .content_flowerBuy ul li:nth-child(2n) a:hover img:last-child {
+.content_orderBouquet ul li:nth-child(2n-1) a:hover img:first-child, .content_orderBouquet ul li:nth-child(2n) a:hover img:last-child {
     transform: translate3d(0, -20px, 0);
 }
 
-.content_flowerBuy ul li:nth-child(2n-1) a:hover img:last-child, .content_flowerBuy ul li:nth-child(2n) a:hover img:first-child {
+.content_orderBouquet ul li:nth-child(2n-1) a:hover img:last-child, .content_orderBouquet ul li:nth-child(2n) a:hover img:first-child {
     transform: translate3d(0, 20px, 0);
 }
 
-.flowerBuyText {
+.orderBouquetText {
     height: 320px;
     display: flex;
     flex-direction: column;
@@ -443,22 +443,22 @@ h2.appear {
     position: relative;
 }
 
-.flowerBuyText span {
+.orderBouquetText span {
     color: rgb(136, 136, 136);
 }
 
-.flowerBuyText span:nth-child(2) {
+.orderBouquetText span:nth-child(2) {
     font-style: italic;
     font-size: 22px;
     font-weight: bold;
 }
 
-.flowerBuyText h3 {
+.orderBouquetText h3 {
     font-size: 25px;
     padding: 5px 0;
 }
 
-.flowerBuyText p:last-child {
+.orderBouquetText p:last-child {
     display: flex;
     justify-content: end;
     margin-top: 15px;
@@ -467,7 +467,7 @@ h2.appear {
     right: 25px;
 }
 
-.flowerBuyText p:last-child a {
+.orderBouquetText p:last-child a {
     border-top: 1px solid #242424;
     border-bottom: 1px solid #242424;
     padding: 0 5px;
@@ -476,7 +476,7 @@ h2.appear {
     transition: color .8s ease-in-out;
 }
 
-.flowerBuyText p:last-child a::after {
+.orderBouquetText p:last-child a::after {
     content: '';
     background: url(../images/index/leaf01.png) no-repeat;
     background-size: contain;
@@ -486,11 +486,11 @@ h2.appear {
     transition: background .8s ease-in-out;
 }
 
-.flowerBuyText p:last-child:hover a {
+.orderBouquetText p:last-child:hover a {
     color: #fafafa;
 }
 
-.flowerBuyText p:last-child a::before {
+.orderBouquetText p:last-child a::before {
     content: '';
     height: 100%;
     width: 0;
@@ -504,13 +504,13 @@ h2.appear {
     z-index: -1;
 }
 
-.flowerBuyText p:last-child:hover a::before {
+.orderBouquetText p:last-child:hover a::before {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     width: 100%;
 }
 
-.flowerBuyText p:last-child:hover a::after {
+.orderBouquetText p:last-child:hover a::after {
     background: url(../images/index/leaf02.png) no-repeat;
     background-size: contain;
     background-position: center center;
@@ -934,46 +934,46 @@ h2.appear {
         width: 30px;
     }
     /* 主要內容區-商品類別 */
-    .content_flowerBuy ul {
+    .content_orderBouquet ul {
         justify-content: center;
     }
-    .content_flowerBuy ul li {
+    .content_orderBouquet ul li {
         width: 80%;
     }
-    .content_flowerBuy ul li div.flowerBuy {
+    .content_orderBouquet ul li div.orderBouquet {
         margin: 10px 0;
     }
-    .content_flowerBuy ul li:nth-child(2n) div.flowerBuy {
+    .content_orderBouquet ul li:nth-child(2n) div.orderBouquet {
         position: relative;
         top: 0px;
     }
-    .content_flowerBuy ul li div.flowerBuy a img:first-child {
+    .content_orderBouquet ul li div.orderBouquet a img:first-child {
         position: relative;
         top: -5px;
     }
-    .content_flowerBuy ul li div.flowerBuy a img:last-child {
+    .content_orderBouquet ul li div.orderBouquet a img:last-child {
         position: relative;
         top: 15px;
     }
-    .content_flowerBuy ul li div.flowerBuy a:hover img:first-child {
+    .content_orderBouquet ul li div.orderBouquet a:hover img:first-child {
         transform: translate3d(0, -10px, 0);
     }
-    .content_flowerBuy ul li div.flowerBuy a:hover img:last-child {
+    .content_orderBouquet ul li div.orderBouquet a:hover img:last-child {
         transform: translate3d(0, 10px, 0);
     }
-    .flowerBuyText {
+    .orderBouquetText {
         height: 300px;
     }
-    .flowerBuyText span:nth-child(2) {
+    .orderBouquetText span:nth-child(2) {
         font-size: 18px;
     }
-    .flowerBuyText h3 {
+    .orderBouquetText h3 {
         font-size: 20px;
     }
-    .flowerBuyText p, .flowerBuyText p a {
+    .orderBouquetText p, .orderBouquetText p a {
         font-size: 15px;
     }
-    .flowerBuyText p:last-child a::after {
+    .orderBouquetText p:last-child a::after {
         width: 30px;
         height: 18px;
     }
@@ -1039,7 +1039,7 @@ h2.appear {
 
 @media screen and (max-width:376px) {
     /* 主要內容區-商品類別 */
-    .flowerBuyText {
+    .orderBouquetText {
         height: 360px;
         padding: 30px 30px 0;
     }
