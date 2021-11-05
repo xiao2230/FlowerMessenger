@@ -6,7 +6,7 @@ let content = document.querySelector('.content');
 document.addEventListener('scroll', () => {
     let scrollTop = document.documentElement.scrollTop;
 
-    if (scrollTop >= content.offsetTop) {
+    if (scrollTop > content.offsetTop) {
         // 『頂部內容區-導覽列』的新增BackToTop
         headerNav.classList.add('navPlusTop');
     } else {

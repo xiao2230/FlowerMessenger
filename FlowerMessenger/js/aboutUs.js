@@ -11,12 +11,12 @@ let content = document.querySelector('.content');
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
 	
-	if (scrollTop >= header.offsetTop) {
+	if (scrollTop > header.offsetTop) {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的主題圖漸入
 		cornerPic.classList.add('appear');
 	}
 	
-	if (scrollTop >= bannerTitle.offsetTop) {
+	if (scrollTop > bannerTitle.offsetTop) {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的內文漸入
 		for (i = 0, t = 0; i < cornerText.length; i++, t += Math.random() * 500) {
 			setTimeout(`cornerText[${i}].classList.add('locate01')`, t);
@@ -25,7 +25,7 @@ document.addEventListener('scroll', () => {
 		cornerTextBgFlower.classList.add('locate02');
 	}
 
-	if (scrollTop >= content.offsetTop) {
+	if (scrollTop > content.offsetTop) {
 		// 『頂部內容區-導覽列』的新增BackToTop
 		headerNav.classList.add('navPlusTop');
 	} else {

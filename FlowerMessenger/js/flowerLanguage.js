@@ -4,14 +4,14 @@ let contentSlider = document.querySelector('.content_slider');
 let contentPrefaceBg = document.querySelector('.content_preface .prefaceBg');
 
 //用來定特效出現的高度參考點
+let header = document.querySelector('.header');
 let content = document.querySelector('.content');
 let bannerTitle = document.querySelector('.header_bannerTitle .tt1');
-let header = document.querySelector('.header');
 
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
 
-	if (scrollTop >= header.offsetTop) {
+	if (scrollTop > header.offsetTop) {
 		// 『主要內容區-前言』的內文漸入，背景漸入
 		for (i = 0, t = 0; i < contentPreface.length; i++, t += 400) {
 			setTimeout(`contentPreface[${i}].classList.add('locate01')`, t);
@@ -19,12 +19,12 @@ document.addEventListener('scroll', () => {
 		contentPrefaceBg.classList.add('appear');
 	}
 
-	if (scrollTop >= bannerTitle.offsetTop) {
+	if (scrollTop > bannerTitle.offsetTop) {
 		// 『主要內容區-圖片與花語』的內容漸入
 		contentSlider.classList.add('appear');
 	}
 
-	if (scrollTop >= content.offsetTop) {
+	if (scrollTop > content.offsetTop) {
 		// 『頂部內容區-導覽列』的新增BackToTop
 		headerNav.classList.add('navPlusTop');
 	} else {

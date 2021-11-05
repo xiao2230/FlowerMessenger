@@ -17,7 +17,7 @@ document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
 
 	// 『主要內容區-關於我們』的滑入動態
-	if (scrollTop >= content.offsetTop / 3) {
+	if (scrollTop > content.offsetTop / 3) {
 		for (i = 0, t = 0; i < aboutUs.length; i++, t += 200) {
 			// 第一格要使用引號包起來，但會將原本須帶入的變數一起包住，造成無法讀取for迴圈的i值，所以有兩種寫法
 			//第一種："aboutUs["+i+"].classList.add('aboutUsIn')"
@@ -30,7 +30,7 @@ document.addEventListener('scroll', () => {
 		h2[0].classList.add('appear');
 	}
 
-	if (scrollTop >= content.offsetTop) {
+	if (scrollTop > content.offsetTop) {
 		// 『頂部內容區-導覽列』的新增置頂
 		headerNav.classList.add('navFixedBg');
 
@@ -48,7 +48,7 @@ document.addEventListener('scroll', () => {
 	}
 
 	// 『主要內容區-商品類別』後兩項的滑入動態
-	if (scrollTop >= contentorderBouquetSecond.offsetTop) {
+	if (scrollTop > contentorderBouquetSecond.offsetTop) {
 		for (i = orderBouquet.length / 2; i < orderBouquet.length; i++) {
 			orderBouquet[i].classList.add('appear');
 		}
@@ -59,7 +59,7 @@ document.addEventListener('scroll', () => {
 	}
 
 	// 『主要內容區-花朵照護』的滑入動態
-	if (scrollTop >= contentorderBouquetLast.offsetTop) {
+	if (scrollTop > contentorderBouquetLast.offsetTop) {
 		h2[2].classList.add('appear');
 		takeCareContentPic.classList.add('locate03');
 		css.insertRule('.takeCareContentText::after{opacity: .3;top:30px;}', 0);
