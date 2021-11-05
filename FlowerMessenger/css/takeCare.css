@@ -96,7 +96,7 @@ body {
 /* 頂部內容區-背景圖&分頁標題註記 */
 
 .header_bannerTitle {
-    background: url(../images/orderBouquet/banner_orderBouquet.jpg) no-repeat;
+    background: url(../images/aboutUs/banner_aboutUs.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -130,198 +130,6 @@ body {
 
 .header_bannerTitle .tt1 span.tt1-2 span {
     padding: 0 15px;
-}
-
-/* 主要內容區-前言 */
-
-.content_preface {
-    max-width: 1000px;
-    margin: 50px auto 100px;
-    writing-mode: vertical-rl;
-    position: relative;
-}
-
-.content_preface p {
-    line-height: 70px;
-    letter-spacing: 3px;
-    position: relative;
-    bottom: -20px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out, bottom .8s ease-in-out;
-}
-
-.content_preface p.locate {
-    bottom: 0;
-    opacity: 1;
-}
-
-.content_preface .prefaceBg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 250px;
-    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 10%, 25% 100%, 100% 100%, 100% 0%);
-    background: linear-gradient(240deg, #feef87, #93e2fe, #fe7e9f);
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.content_preface .prefaceBg.appear {
-    opacity: .3;
-}
-
-/* 主要內容區 - 花束訂購種類 */
-
-.content_Bouquet {
-    max-width: 1000px;
-    margin: 50px auto;
-}
-
-.content_Bouquet .bouquetType {
-    display: flex;
-    width: 95%;
-    margin: 40px auto;
-    box-shadow: 0 10px 88px 2px rgb(19 19 19 / 20%);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.content_Bouquet .bouquetType.appear {
-    opacity: 1;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1) {
-    flex-direction: row-reverse;
-}
-
-.content_Bouquet .bouquetType>a {
-    display: flex;
-    width: 50%;
-}
-
-.content_Bouquet .bouquetType>a img {
-    width: 50%;
-    object-fit: cover;
-    object-position: center center;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1)>a img:first-child, .content_Bouquet .bouquetType:nth-child(2n)>a img:last-child {
-    position: relative;
-    top: 20px;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1)>a img:last-child, .content_Bouquet .bouquetType:nth-child(2n)>a img:first-child {
-    position: relative;
-    top: -20px;
-    transition: top 1s ease-in-out;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1)>a img:first-child.locate, .content_Bouquet .bouquetType:nth-child(2n)>a img:last-child.locate {
-    top: -20px;
-    border: 1px solid #fff;
-    transition: transform .3s ease-in-out, top 1s ease-in-out;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1)>a img:last-child.locate, .content_Bouquet .bouquetType:nth-child(2n)>a img:first-child.locate {
-    top: 0;
-    border: 1px solid #fff;
-}
-
-.content_Bouquet .bouquetType:nth-child(2n-1)>a:hover img:first-child, .content_Bouquet .bouquetType:nth-child(2n)>a:hover img:last-child {
-    transform: translateY(20px);
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText div {
-    color: #888;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText div span {
-    color: #888;
-    font-size: 26px;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText h3 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText>span {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child {
-    text-align: end;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a {
-    border-top: 1px solid #242424;
-    border-bottom: 1px solid #242424;
-    display: inline-flex;
-    width: 103px;
-    margin-top: 20px;
-    position: relative;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: #242424;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: width .8s ease-in-out, border-top-right-radius .8s ease-in-out, border-bottom-right-radius .8s ease-in-out;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a:hover::before {
-    width: 100%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a span {
-    position: relative;
-    padding: 2px 0 2px 5px;
-    font-size: 15px;
-    transition: color .8s ease-in-out;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a:hover span {
-    color: #fafafa;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a span::after {
-    content: '';
-    background: url(../images/common/horizontalLeaf01.png) no-repeat;
-    background-size: contain;
-    background-position: center center;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: -1px;
-    transition: background .8s ease-in-out;
-}
-
-.content_Bouquet .bouquetType .bouquetTypeText p:last-child a:hover span::after {
-    background: url(../images/common/horizontalLeaf02.png) no-repeat;
-    background-size: contain;
-    background-position: center center;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -514,67 +322,6 @@ body {
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
-    /* 主要內容區-前言 */
-    .content_preface p {
-        font-size: 16px;
-    }
-    /* 主要內容區 - 花束訂購種類 */
-    .content_Bouquet .bouquetType {
-        display: block;
-    }
-    .content_Bouquet .bouquetType>a {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin: 0 auto;
-    }
-    .content_Bouquet .bouquetType>a img {
-        width: 50%;
-    }
-    .content_Bouquet .bouquetType:nth-child(2n-1)>a img:first-child, .content_Bouquet .bouquetType:nth-child(2n)>a img:last-child {
-        position: relative;
-        top: 15px;
-    }
-    .content_Bouquet .bouquetType:nth-child(2n-1)>a img:last-child, .content_Bouquet .bouquetType:nth-child(2n)>a img:first-child {
-        position: relative;
-        top: -15px;
-        transition: top 1s ease-in-out;
-    }
-    .content_Bouquet .bouquetType:nth-child(2n-1)>a img:first-child.locate, .content_Bouquet .bouquetType:nth-child(2n)>a img:last-child.locate {
-        top: -15px;
-        transition: transform .3s ease-in-out, top 1s ease-in-out;
-    }
-    .content_Bouquet .bouquetType:nth-child(2n-1)>a img:last-child.locate, .content_Bouquet .bouquetType:nth-child(2n)>a img:first-child.locate {
-        top: 0;
-    }
-    .content_Bouquet .bouquetType:nth-child(2n-1)>a:hover img:first-child, .content_Bouquet .bouquetType:nth-child(2n)>a:hover img:last-child {
-        transform: translateY(15px);
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText {
-        width: 100%;
-        padding: 20px;
-    }
-    * {
-        font-size: 15px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText div span {
-        font-size: 22px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText h3 {
-        font-size: 22px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText>span {
-        font-size: 14px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText p:last-child a {
-        width: 90px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText p:last-child a span {
-        font-size: 13px;
-    }
-    .content_Bouquet .bouquetType .bouquetTypeText p:last-child a span::after {
-        top: 0;
-    }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
@@ -598,6 +345,9 @@ body {
     }
     .detailText03 {
         margin-top: 5%;
+    }
+    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
+        font-size: 15px;
     }
     .detailPic {
         width: 70%;
