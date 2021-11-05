@@ -4,8 +4,8 @@ let fly = document.querySelectorAll('.fly');
 let orderBouquet = document.querySelectorAll('.orderBouquet');
 let orderBouquetPic = document.querySelectorAll('.orderBouquet a img');
 let h2 = document.querySelectorAll('h2');
-let takeCareText = document.querySelectorAll('.takeCareText p');
-let takeCarePic = document.querySelector('.takeCarePic div');
+let nurseryText = document.querySelectorAll('.nurseryText p');
+let nurseryPic = document.querySelector('.nurseryPic div');
 let headerNav = document.querySelector('.header_nav');
 
 //用來定特效出現的高度參考點
@@ -61,11 +61,11 @@ document.addEventListener('scroll', () => {
 	// 『主要內容區-花朵照護』的滑入動態
 	if (scrollTop > contentorderBouquetLast.offsetTop) {
 		h2[2].classList.add('appear');
-		takeCarePic.classList.add('locate03');
-		css.insertRule('.takeCareText::after{opacity: .3;top:30px;}', 0);
+		nurseryPic.classList.add('locate03');
+		css.insertRule('.nurseryText::after{opacity: .3;top:30px;}', 0);
 
-		for (i = 0, t = 0; i < takeCareText.length; i++, t += Math.random() * 500) {
-			setTimeout(`takeCareText[${i}].classList.add('locate02')`, t);
+		for (i = 0, t = 0; i < nurseryText.length; i++, t += Math.random() * 500) {
+			setTimeout(`nurseryText[${i}].classList.add('locate02')`, t);
 		}
 	}
 });

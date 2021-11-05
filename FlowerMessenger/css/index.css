@@ -518,25 +518,25 @@ h2.appear {
 
 /* 主要內容區-花朵照護 */
 
-.content_takeCare {
+.content_nursery {
     max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 20vh;
 }
 
-.content_takeCare h2 {
+.content_nursery h2 {
     text-align: center;
     margin: 45px 0;
 }
 
-.content_takeCare .takeCare {
+.content_nursery .nursery {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.takeCareText {
+.nurseryText {
     width: 50%;
     padding: 0 5vw;
     display: flex;
@@ -547,19 +547,19 @@ h2.appear {
     position: relative;
 }
 
-.takeCareText p {
+.nurseryText p {
     position: relative;
     top: -80px;
     opacity: 0;
     transition: top .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.takeCareText p.locate02 {
+.nurseryText p.locate02 {
     top: 0;
     opacity: 1;
 }
 
-.takeCareText::after {
+.nurseryText::after {
     content: '';
     top: 50%;
     bottom: -50px;
@@ -573,12 +573,12 @@ h2.appear {
     transition: top 2s ease-in-out, opacity 2s ease-in-out;
 }
 
-.takeCareText p:last-child {
+.nurseryText p:last-child {
     text-align: end;
     margin: 0 30px 30px 0;
 }
 
-.takeCareText p:last-child a {
+.nurseryText p:last-child a {
     border-right: 1px solid #242424;
     border-left: 1px solid #242424;
     position: relative;
@@ -587,7 +587,7 @@ h2.appear {
     z-index: 2;
 }
 
-.takeCareText p:last-child a::after {
+.nurseryText p:last-child a::after {
     content: '';
     background: url(../images/index/verticalLeaf01.png) no-repeat;
     background-size: contain;
@@ -601,11 +601,11 @@ h2.appear {
     transition: background .8s ease-in-out;
 }
 
-.takeCareText p:last-child a:hover {
+.nurseryText p:last-child a:hover {
     color: #fafafa;
 }
 
-.takeCareText p:last-child a::before {
+.nurseryText p:last-child a::before {
     content: '';
     height: 0;
     width: 100%;
@@ -619,46 +619,46 @@ h2.appear {
     z-index: -1;
 }
 
-.takeCareText p:last-child a:hover::before {
+.nurseryText p:last-child a:hover::before {
     height: 100%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.takeCareText p:last-child a:hover::after {
+.nurseryText p:last-child a:hover::after {
     background: url(../images/index/verticalLeaf02.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
 
-.takeCarePic {
+.nurseryPic {
     width: 50%;
     overflow: hidden;
     position: relative;
 }
 
-.takeCarePic div {
+.nurseryPic div {
     width: 100%;
     height: 100%;
     opacity: 0;
     transform: scale(1.2);
-    background: url(../images/index/takeCare.jpg) no-repeat;
+    background: url(../images/index/nursery.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     transition: transform .8s ease-in-out, filter .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.takeCarePic div.locate03 {
+.nurseryPic div.locate03 {
     opacity: 1;
     transform: scale(1);
 }
 
-.takeCarePic:hover div {
+.nurseryPic:hover div {
     transform: scale(1.2);
     filter: brightness(.5);
 }
 
-.takeCarePic span {
+.nurseryPic span {
     color: #242424;
     background: #fffaf2;
     padding: 10px 5px;
@@ -676,7 +676,7 @@ h2.appear {
     transition: opacity .8s ease-in-out;
 }
 
-.takeCarePic:hover span {
+.nurseryPic:hover span {
     opacity: 1;
 }
 
@@ -981,29 +981,29 @@ h2.appear {
         height: 18px;
     }
     /* 主要內容區-花朵照護 */
-    .takeCareText {
+    .nurseryText {
         width: 100%;
         padding-top: 50px;
     }
-    .takeCareText p {
+    .nurseryText p {
         font-size: 15px;
     }
-    .takeCareText p:last-child a {
+    .nurseryText p:last-child a {
         font-size: 15px;
         padding: 5px 3px 35px ;
     }
-    .takeCareText p:last-child a::after {
+    .nurseryText p:last-child a::after {
         width: 21px;
         height: 30px;
     }
-    .takeCarePic {
+    .nurseryPic {
         width: 70%;
     }
-    .takeCarePic div {
+    .nurseryPic div {
         width: 100%;
         height: 400px;
     }
-    .takeCarePic span {
+    .nurseryPic span {
         font-size: 20px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
@@ -1047,7 +1047,7 @@ h2.appear {
         padding: 30px 30px 0;
     }
     /* 主要內容區-花朵照護 */
-    .takeCarePic div {
+    .nurseryPic div {
         height: 300px;
     }
 }
