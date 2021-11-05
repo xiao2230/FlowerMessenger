@@ -529,14 +529,14 @@ h2.appear {
     margin: 45px 0;
 }
 
-.content_takeCare .takeCareContent {
+.content_takeCare .takeCare {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.takeCareContentText {
+.takeCareText {
     width: 50%;
     padding: 0 5vw;
     display: flex;
@@ -547,19 +547,19 @@ h2.appear {
     position: relative;
 }
 
-.takeCareContentText p {
+.takeCareText p {
     position: relative;
     top: -80px;
     opacity: 0;
     transition: top .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.takeCareContentText p.locate02 {
+.takeCareText p.locate02 {
     top: 0;
     opacity: 1;
 }
 
-.takeCareContentText::after {
+.takeCareText::after {
     content: '';
     top: 50%;
     bottom: -50px;
@@ -573,12 +573,12 @@ h2.appear {
     transition: top 2s ease-in-out, opacity 2s ease-in-out;
 }
 
-.takeCareContentText p:last-child {
+.takeCareText p:last-child {
     text-align: end;
     margin: 0 30px 30px 0;
 }
 
-.takeCareContentText p:last-child a {
+.takeCareText p:last-child a {
     border-right: 1px solid #242424;
     border-left: 1px solid #242424;
     position: relative;
@@ -587,7 +587,7 @@ h2.appear {
     z-index: 2;
 }
 
-.takeCareContentText p:last-child a::after {
+.takeCareText p:last-child a::after {
     content: '';
     background: url(../images/common/leaf03.png) no-repeat;
     background-size: contain;
@@ -601,11 +601,11 @@ h2.appear {
     transition: background .8s ease-in-out;
 }
 
-.takeCareContentText p:last-child a:hover {
+.takeCareText p:last-child a:hover {
     color: #fafafa;
 }
 
-.takeCareContentText p:last-child a::before {
+.takeCareText p:last-child a::before {
     content: '';
     height: 0;
     width: 100%;
@@ -619,25 +619,25 @@ h2.appear {
     z-index: -1;
 }
 
-.takeCareContentText p:last-child a:hover::before {
+.takeCareText p:last-child a:hover::before {
     height: 100%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.takeCareContentText p:last-child a:hover::after {
+.takeCareText p:last-child a:hover::after {
     background: url(../images/common/leaf04.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
 
-.takeCareContentPic {
+.takeCarePic {
     width: 50%;
     overflow: hidden;
     position: relative;
 }
 
-.takeCareContentPic div {
+.takeCarePic div {
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -648,17 +648,17 @@ h2.appear {
     transition: transform .8s ease-in-out, filter .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.takeCareContentPic div.locate03 {
+.takeCarePic div.locate03 {
     opacity: 1;
     transform: scale(1);
 }
 
-.takeCareContentPic:hover div {
+.takeCarePic:hover div {
     transform: scale(1.2);
     filter: brightness(.5);
 }
 
-.takeCareContentPic span {
+.takeCarePic span {
     color: #242424;
     background: #fffaf2;
     padding: 10px 5px;
@@ -676,7 +676,7 @@ h2.appear {
     transition: opacity .8s ease-in-out;
 }
 
-.takeCareContentPic:hover span {
+.takeCarePic:hover span {
     opacity: 1;
 }
 
@@ -925,7 +925,7 @@ h2.appear {
     }
     .content_aboutUs p:last-child {
         width: 105px;
-        line-height: 20px;
+        line-height: 25px;
     }
     .content_aboutUs p:last-child a {
         font-size: 15px;
@@ -973,34 +973,37 @@ h2.appear {
     .orderBouquetText p, .orderBouquetText p a {
         font-size: 15px;
     }
+    .orderBouquetText p:last-child a {
+        padding: 2px 5px;
+    }
     .orderBouquetText p:last-child a::after {
         width: 30px;
         height: 18px;
     }
     /* 主要內容區-花朵照護 */
-    .takeCareContentText {
+    .takeCareText {
         width: 100%;
         padding-top: 50px;
     }
-    .takeCareContentText p {
+    .takeCareText p {
         font-size: 15px;
     }
-    .takeCareContentText p:last-child a {
+    .takeCareText p:last-child a {
         font-size: 15px;
-        padding: 5px 0 35px 0;
+        padding: 5px 3px 35px ;
     }
-    .takeCareContentText p:last-child a::after {
+    .takeCareText p:last-child a::after {
         width: 21px;
         height: 30px;
     }
-    .takeCareContentPic {
+    .takeCarePic {
         width: 70%;
     }
-    .takeCareContentPic div {
+    .takeCarePic div {
         width: 100%;
         height: 400px;
     }
-    .takeCareContentPic span {
+    .takeCarePic span {
         font-size: 20px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
@@ -1044,7 +1047,7 @@ h2.appear {
         padding: 30px 30px 0;
     }
     /* 主要內容區-花朵照護 */
-    .takeCareContentPic div {
+    .takeCarePic div {
         height: 300px;
     }
 }
