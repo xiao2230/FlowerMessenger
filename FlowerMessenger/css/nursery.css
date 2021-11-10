@@ -132,6 +132,86 @@ body {
     padding: 0 15px;
 }
 
+/* 主要內容區 */
+
+.content_preface, .content_illustration, .content_article, .content_conclusion {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    background: #e3dbd0;
+    position: relative;
+    top: 100px;
+    left: -100px;
+    opacity: 0;
+    transition: top 1.5s ease-in-out, left 1s ease-in-out, opacity 2s ease-in-out;
+}
+
+.content_preface.appear, .content_illustration.appear, .content_article.appear, .content_conclusion.appear {
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+/* 主要內容區-前言 */
+
+.content_preface {
+    padding-top: 40px;
+}
+
+.content_preface h3 {
+    text-align: center;
+    font-size: 28px;
+}
+
+.content_preface span {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px 0 50px 0;
+}
+
+.content_preface p {
+    line-height: 28px;
+}
+
+/* 主要內容區-插圖 */
+
+.content_illustration img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* 主要內容區-文章內容 */
+
+.content_article h4 {
+    padding-top: 30px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.content_article p {
+    line-height: 28px;
+}
+
+.content_article p:last-child {
+    padding-bottom: 30px;
+}
+
+/* 主要內容區-結語 */
+
+.content_conclusion {
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.content_conclusion p {
+    line-height: 28px;
+}
+
+.content_conclusion hr+p {
+    padding-top: 30px;
+}
+
 /* 底部內容區-店家資訊&店鋪圖片 */
 
 .footer {
@@ -322,6 +402,45 @@ body {
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
+    /* 主要內容區 */
+    *{
+        font-size: 15px;
+    }
+    /* 主要內容區-前言 */
+    .content_preface {
+        padding-top: 30px;
+    }
+    .content_preface h3 {
+        font-size: 25px;
+    }
+    .content_preface span {
+        font-size: 14px;
+        margin: 0 0 30px 0;
+    }
+    .content_preface p {
+        line-height: 25px;
+    }
+    /* 主要內容區-文章內容 */
+    .content_article h4 {
+        line-height: 30px;
+        font-size: 18px;
+    }
+    .content_article p {
+        line-height: 25px;
+    }
+    .content_article p:last-child {
+        padding-bottom: 25px;
+    }
+    /* 主要內容區-結語 */
+    .content_conclusion {
+        padding-bottom: 50px;
+    }
+    .content_conclusion p {
+        line-height: 25px;
+    }
+    .content_conclusion hr+p {
+        padding-top: 25px;
+    }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
@@ -345,9 +464,6 @@ body {
     }
     .detailText03 {
         margin-top: 5%;
-    }
-    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
-        font-size: 15px;
     }
     .detailPic {
         width: 70%;

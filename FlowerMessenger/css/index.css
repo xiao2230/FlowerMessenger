@@ -116,6 +116,7 @@ body {
 }
 
 .header_nav .navContent ul li a {
+    font-weight: 600;
     letter-spacing: 1.5px;
     transition: color .3s ease-in-out;
     position: relative;
@@ -218,7 +219,6 @@ body {
     position: absolute;
     top: 13vh;
     z-index: -2;
-    transition: height 2s ease-in-out, opacity 2s ease-in-out;
 }
 
 .content_aboutUs.appear::before {
@@ -231,7 +231,7 @@ body {
     position: absolute;
     top: 13vh;
     z-index: -2;
-    transition: height 2s ease-in-out, opacity 2s ease-in-out;
+    transition: height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .content_aboutUs p {
@@ -583,7 +583,6 @@ h2.appear {
     background: linear-gradient(240deg, #feef87, #93e2fe, #fe7e9f);
     opacity: 0;
     z-index: -1;
-    transition: top 2s ease-in-out, opacity 2s ease-in-out;
 }
 
 .nurseryText.appear::after {
@@ -597,7 +596,7 @@ h2.appear {
     background: linear-gradient(240deg, #feef87, #93e2fe, #fe7e9f);
     opacity: 0.3;
     z-index: -1;
-    transition: top 2s ease-in-out, opacity 2s ease-in-out;
+    transition: top 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 
 .nurseryText p:last-child {
