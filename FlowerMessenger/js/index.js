@@ -1,9 +1,10 @@
-let aboutUs = document.querySelectorAll('.content_aboutUs p');
-let css = document.getElementById('css').sheet;
+let contentAboutUs = document.querySelector('.content_aboutUs');
+let aboutUsText = document.querySelectorAll('.content_aboutUs p');
 let fly = document.querySelectorAll('.fly');
 let orderBouquet = document.querySelectorAll('.orderBouquet');
 let orderBouquetPic = document.querySelectorAll('.orderBouquet a img');
 let h2 = document.querySelectorAll('h2');
+let contentNursery = document.querySelector('.nurseryText');
 let nurseryText = document.querySelectorAll('.nurseryText p');
 let nurseryPic = document.querySelector('.nurseryPic div');
 let headerNav = document.querySelector('.header_nav');
@@ -18,13 +19,15 @@ document.addEventListener('scroll', () => {
 
 	// 『主要內容區-關於我們』的滑入動態
 	if (scrollTop > content.offsetTop / 3) {
-		for (i = 0, t = 0; i < aboutUs.length; i++, t += 200) {
+		for (i = 0, t = 0; i < aboutUsText.length; i++, t += 200) {
 			// 第一格要使用引號包起來，但會將原本須帶入的變數一起包住，造成無法讀取for迴圈的i值，所以有兩種寫法
-			//第一種："aboutUs["+i+"].classList.add('aboutUsIn')"
+			//第一種："aboutUsText["+i+"].classList.add('aboutUsIn')"
 			//第二種用ES6的模板字串符 template literal，如下：
-			setTimeout(`aboutUs[${i}].classList.add('aboutUsIn')`, t);
+			setTimeout(`aboutUsText[${i}].classList.add('aboutUsIn')`, t);
 		}
-		css.insertRule('.content_aboutUs::before{opacity: .3;height: 85%;}', 0);
+		contentAboutUs.classList.remove('disappear');
+		contentAboutUs.classList.add('appear');
+
 		fly[0].classList.add('flygo01');
 		fly[1].classList.add('flygo02');
 		h2[0].classList.add('appear');
@@ -62,7 +65,8 @@ document.addEventListener('scroll', () => {
 	if (scrollTop > contentorderBouquetLast.offsetTop) {
 		h2[2].classList.add('appear');
 		nurseryPic.classList.add('locate03');
-		css.insertRule('.nurseryText::after{opacity: .3;top:30px;}', 0);
+		contentNursery.classList.remove('disappear');
+		contentNursery.classList.add('appear');
 
 		for (i = 0, t = 0; i < nurseryText.length; i++, t += Math.random() * 500) {
 			setTimeout(`nurseryText[${i}].classList.add('locate02')`, t);
