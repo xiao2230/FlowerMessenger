@@ -259,15 +259,16 @@ body {
 .content_info .infoStore span p:nth-child(2n-1) {
     display: inline-flex;
     align-items: center;
-    border: 1px dashed #d7c6af;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 5px 10px;
-    color: #d7c6af;
-    background: #242424;
+    color: #fffaf2;
+    background: #b48f5e;
+    border: 1px solid #fffaf2;
+    box-shadow: 0 0 2px 3px #b48f5e;
 }
 
 .content_info .infoStore span p:nth-child(2n-1) i {
-    color: #d7c6af;
+    color: #fffaf2;
     padding-right: 5px;
 }
 
