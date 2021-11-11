@@ -456,6 +456,9 @@ body {
         text-align: center;
     }
     /* 主要內容區-常見問題內文區 */
+    * {
+        font-size: 15px;
+    }
     .content_qnaText {
         width: 100%;
     }
@@ -466,15 +469,15 @@ body {
         margin: 5px 0;
     }
     .content_qnaText h4 {
-        font-size: 20px;
+        font-size: 19px;
         margin: 30px 0 5px 0;
     }
     .content_qnaText h5 {
-        font-size: 18px;
+        font-size: 17px;
         margin: 10px 0 5px 0;
     }
     .content_qnaText p {
-        line-height: 25px;
+        line-height: 22px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
@@ -499,9 +502,6 @@ body {
     }
     .detailText03 {
         margin-top: 5%;
-    }
-    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
-        font-size: 15px;
     }
     .detailPic {
         width: 70%;

@@ -381,7 +381,7 @@ body {
     }
     .content_publicHoliday h5 {
         font-size: 17px;
-        margin: 10px 0 0 0;
+        margin: 10px 0 5px 0;
     }
     .content_publicHoliday p {
         line-height: 22px;
@@ -409,9 +409,6 @@ body {
     }
     .detailText03 {
         margin-top: 5%;
-    }
-    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
-        font-size: 15px;
     }
     .detailPic {
         width: 70%;

@@ -97,7 +97,7 @@ body {
 /* 頂部內容區-背景圖&分頁標題註記 */
 
 .header_bannerTitle {
-    background: url(../images/recruit/banner_recruit.jpg) no-repeat;
+    background: url(../images/privacyPolicy/banner_privacyPolicy.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -133,9 +133,9 @@ body {
     padding: 0 15px;
 }
 
-/* 主要內容區-招募內文 */
+/* 主要內容區-隱私政策 */
 
-.content_recruit {
+.content_privacyPolicy {
     max-width: 1000px;
     margin: 50px auto;
     padding: 50px 5%;
@@ -147,31 +147,31 @@ body {
     transition: top 1.5s ease-in-out, left 1s ease-in-out, opacity 2s ease-in-out;
 }
 
-.content_recruit.locate {
+.content_privacyPolicy.locate {
     top: 0;
     left: 0;
     opacity: 1;
 }
 
-.content_recruit h3 {
+.content_privacyPolicy h3 {
     font-size: 25px;
 }
 
-.content_recruit hr {
+.content_privacyPolicy hr {
     margin: 10px 0;
 }
 
-.content_recruit h4 {
+.content_privacyPolicy h4 {
     font-size: 22px;
     margin: 50px 0 10px 0;
 }
 
-.content_recruit h5 {
+.content_privacyPolicy h5 {
     font-size: 19px;
     margin: 15px 0 5px 0;
 }
 
-.content_recruit p {
+.content_privacyPolicy p {
     line-height: 28px;
 }
 
@@ -365,25 +365,25 @@ body {
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
-    /* 主要內容區-招募內文 */
-    *{
+    /* 主要內容區-隱私政策 */
+    * {
         font-size: 15px;
     }
-    .content_recruit h3 {
+    .content_privacyPolicy h3 {
         font-size: 22px;
     }
-    .content_recruit hr {
+    .content_privacyPolicy hr {
         margin: 5px 0;
     }
-    .content_recruit h4 {
+    .content_privacyPolicy h4 {
         font-size: 19px;
         margin: 30px 0 5px 0;
     }
-    .content_recruit h5 {
+    .content_privacyPolicy h5 {
         font-size: 17px;
         margin: 10px 0 5px 0;
     }
-    .content_recruit p {
+    .content_privacyPolicy p {
         line-height: 22px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
@@ -409,6 +409,9 @@ body {
     }
     .detailText03 {
         margin-top: 5%;
+    }
+    .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
+        font-size: 15px;
     }
     .detailPic {
         width: 70%;
