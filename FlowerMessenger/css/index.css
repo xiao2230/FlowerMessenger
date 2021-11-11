@@ -28,14 +28,14 @@ body {
     position: absolute;
     right: 0;
     background: #242424;
-    padding: 10px 20px 10px 0;
+    padding: 8px 12px 8px 0;
     border-bottom-left-radius: 10px;
 }
 
 .header_tool a i {
     color: #888;
-    font-size: 25px;
-    margin-left: 20px;
+    font-size: 20px;
+    margin-left: 12px;
     transition: color .3s ease-in-out;
 }
 

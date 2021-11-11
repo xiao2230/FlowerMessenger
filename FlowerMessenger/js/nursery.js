@@ -13,10 +13,10 @@ document.addEventListener('scroll', () => {
 
     if (scrollTop > header.offsetTop) {
         // 『主要內容區』的內容漸入
-        contentPreface.classList.add('appear');
-        contentIllustration.classList.add('appear');
-        contentArticle.classList.add('appear');
-        contentConclusion.classList.add('appear');
+        contentPreface.classList.add('locate');
+        contentIllustration.classList.add('locate');
+        contentArticle.classList.add('locate');
+        contentConclusion.classList.add('locate');
     }
 
     if (scrollTop > content.offsetTop) {
