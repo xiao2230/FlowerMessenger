@@ -42,7 +42,7 @@ document.addEventListener('scroll', () => {
 			orderBouquet[i].classList.add('appear');
 		}
 		for (i = 0; i < orderBouquetPic.length / 2; i++) {
-			orderBouquetPic[i].classList.add('locate01');
+			orderBouquetPic[i].classList.add('locate');
 		}
 		h2[1].classList.add('appear');
 	} else {
@@ -57,19 +57,19 @@ document.addEventListener('scroll', () => {
 		}
 
 		for (i = orderBouquetPic.length / 2; i < orderBouquetPic.length; i++) {
-			orderBouquetPic[i].classList.add('locate01');
+			orderBouquetPic[i].classList.add('locate');
 		}
 	}
 
 	// 『主要內容區-花朵照護』的滑入動態
 	if (scrollTop > contentorderBouquetLast.offsetTop) {
 		h2[2].classList.add('appear');
-		nurseryPic.classList.add('locate03');
+		nurseryPic.classList.add('locate');
 		contentNursery.classList.remove('disappear');
 		contentNursery.classList.add('appear');
 
 		for (i = 0, t = 0; i < nurseryText.length; i++, t += Math.random() * 500) {
-			setTimeout(`nurseryText[${i}].classList.add('locate02')`, t);
+			setTimeout(`nurseryText[${i}].classList.add('locate')`, t);
 		}
 	}
 });

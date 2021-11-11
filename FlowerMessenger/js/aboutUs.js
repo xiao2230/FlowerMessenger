@@ -19,10 +19,10 @@ document.addEventListener('scroll', () => {
 	if (scrollTop > bannerTitle.offsetTop) {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的內文漸入
 		for (i = 0, t = 0; i < cornerText.length; i++, t += Math.random() * 500) {
-			setTimeout(`cornerText[${i}].classList.add('locate01')`, t);
+			setTimeout(`cornerText[${i}].classList.add('locate')`, t);
 		}
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的花朵飄散
-		cornerTextBgFlower.classList.add('locate02');
+		cornerTextBgFlower.classList.add('locate');
 	}
 
 	if (scrollTop > content.offsetTop) {

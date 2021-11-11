@@ -166,12 +166,12 @@ body {
     transition: top .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.content_corner .cornerText p.locate01 {
+.content_corner .cornerText p.locate {
     top: 0;
     opacity: 1;
 }
 
-.cornerTextBgFlower.locate02 div {
+.cornerTextBgFlower.locate div {
     background: url(../images/aboutUs/flower.png) no-repeat;
     background-size: contain;
     width: 40px;
@@ -181,52 +181,52 @@ body {
     right: 0;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop01 {
+.cornerTextBgFlower.locate div.flowerDrop01 {
     left: 50%;
     animation: Drop1 10s ease-in infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop02 {
+.cornerTextBgFlower.locate div.flowerDrop02 {
     left: 55%;
     animation: Drop2 9.4s ease-in-out 0.4s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop03 {
+.cornerTextBgFlower.locate div.flowerDrop03 {
     left: 57%;
     animation: Drop3 10.8s ease-in-out 0.8s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop04 {
+.cornerTextBgFlower.locate div.flowerDrop04 {
     left: 60%;
     animation: Drop1 9.8s ease-in-out infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop05 {
+.cornerTextBgFlower.locate div.flowerDrop05 {
     left: 68%;
     animation: Drop2 8.8s ease-in-out 2s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop06 {
+.cornerTextBgFlower.locate div.flowerDrop06 {
     left: 70%;
     animation: Drop3 9.4s ease-in-out 1s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop07 {
+.cornerTextBgFlower.locate div.flowerDrop07 {
     left: 72%;
     animation: Drop1 9.4s ease-in-out 2.4s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop08 {
+.cornerTextBgFlower.locate div.flowerDrop08 {
     left: 75%;
     animation: Drop2 10s ease-in-out 2.8s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop09 {
+.cornerTextBgFlower.locate div.flowerDrop09 {
     left: 80%;
     animation: Drop3 10.8s ease-in-out 0.8s infinite;
 }
 
-.cornerTextBgFlower.locate02 div.flowerDrop10 {
+.cornerTextBgFlower.locate div.flowerDrop10 {
     left: 81%;
     animation: Drop1 9.4s ease-in-out 2.4s infinite;
 }
@@ -473,7 +473,7 @@ body {
         line-height: 30px;
         font-size: 15px;
     }
-    .cornerTextBgFlower.locate02 div {
+    .cornerTextBgFlower.locate div {
         width: 30px;
         height: 30px;
     }

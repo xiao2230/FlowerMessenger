@@ -436,7 +436,7 @@ h2.appear {
     transition: top 1s ease-in-out, transform .3s ease-in-out;
 }
 
-.content_orderBouquet ul li div.orderBouquet a img.locate01 {
+.content_orderBouquet ul li div.orderBouquet a img.locate {
     top: 0;
 }
 
@@ -567,7 +567,7 @@ h2.appear {
     transition: top .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.nurseryText p.locate02 {
+.nurseryText p.locate {
     top: 0;
     opacity: 1;
 }
@@ -674,7 +674,7 @@ h2.appear {
     transition: transform .8s ease-in-out, filter .8s ease-in-out, opacity .8s ease-in-out;
 }
 
-.nurseryPic div.locate03 {
+.nurseryPic div.locate {
     opacity: 1;
     transform: scale(1);
 }

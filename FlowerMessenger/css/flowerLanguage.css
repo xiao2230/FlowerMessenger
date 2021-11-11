@@ -151,7 +151,7 @@ body {
     transition: opacity 1s ease-in-out, bottom .8s ease-in-out;
 }
 
-.content_preface p.locate01 {
+.content_preface p.locate {
     bottom: 0;
     opacity: 1;
 }
