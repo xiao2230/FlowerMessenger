@@ -1,0 +1,11 @@
+/* 頂部內容區-背景圖&分頁標題註記 */
+
+.header_bannerTitle {
+    background: url(../images/obMixedSeries/banner_obMixedSeries.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    margin-bottom: 10vh;
+}
