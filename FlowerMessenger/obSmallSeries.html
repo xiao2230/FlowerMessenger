@@ -12,12 +12,35 @@
     <link rel="stylesheet" href="css/ob.css">
     <link rel="stylesheet" href="css/obSmallSeries.css">
     <style>
-        .content {
-            height: 200vh;
-            background: #cee6a1;
+        /* 主要內容區-訂購區 */
+
+        .content_orderArea {
+            max-width: 1000px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        /* ob.css把banner設定移出 */
+        .content_orderArea .orderAreaPic {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .content_orderArea .orderAreaPic img:first-child {
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .content_orderArea .orderAreaPic img:not(first-child) {
+            width: 31%;
+        }
+
+        .content_orderArea .orderAreaText {
+            width: 50%;
+        }
     </style>
 </head>
 
@@ -57,7 +80,21 @@
         </div>
     </section>
     <!-- 主要內容區 -->
-    <section class="content"></section>
+    <section class="content">
+        <!-- 主要內容區-訂購區 -->
+        <div class="content_orderArea">
+            <div class="orderAreaPic">
+                {{ pic.image }}
+                <img v-bind:src="pic.image" v-bind:alt="pic.id">
+                <img src="images/obSmallSeries/small01.jpg" alt="">
+                <img src="images/obSmallSeries/small02.jpg" alt="">
+                <img src="images/obSmallSeries/small03.jpg" alt="">
+            </div>
+            <div class="orderAreaText">
+                {{ pic.id }}
+            </div>
+        </div>
+    </section>
     <!-- 底部內容區 -->
     <section class="footer">
         <!-- 底部內容區-店家資訊&店鋪圖片 -->
@@ -100,6 +137,21 @@
         </div>
     </section>
 </body>
+<script src="https://unpkg.com/vue@next"></script>
 <script src="js/ob.js"></script>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                pic:[
+                    {
+                        id:'bigSmall',
+                        image:'images/obSmallSeries/small01.jpg',
+                    }
+                ]
+            }
+        }
+    }).mount('.content_orderArea')
+</script>
 
 </html>
