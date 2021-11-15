@@ -34,8 +34,13 @@
             padding-bottom: 10px;
         }
 
-        .content_orderArea .orderAreaPic img:not(first-child) {
+        .content_orderArea .orderAreaPic img:not(:first-child) {
             width: 31%;
+            cursor: pointer;
+        }
+
+        .content_orderArea .orderAreaPic img.mask {
+            filter: brightness(.5);
         }
 
         .content_orderArea .orderAreaText {
@@ -84,9 +89,14 @@
         <!-- 主要內容區-訂購區 -->
         <div class="content_orderArea">
             <div class="orderAreaPic">
-                <img v-for="pic in SmallSeries" :src="pic.image" :alt="pic.name" :key="pic.id">
+                <img v-for="pic in bouquetPic.smallSeries" :src="pic.image" :alt="pic.name" :key="pic.id" :id="pic.id"
+                    @click="changePic(pic)">
             </div>
             <div class="orderAreaText">
+                <h3>
+                    <span>小花系列</span>
+                    <span>Small Series</span>
+                </h3>
             </div>
         </div>
     </section>
@@ -110,11 +120,11 @@
                         <li><a href="privacyPolicy.html">隱私政策</a></li>
                     </ul>
                     <ul>
-                        <li>每周鮮花</li>
-                        <li><a href="faqDelivery.html">關於配送</a></li>
+                        <li>常見問題</li>
+                        <li><a href="faqBouquet.html">週花QnA</a></li>
+                        <li><a href="faqDelivery.html">配送週花</a></li>
                         <li><a href="faqSubscription.html">長期訂購</a></li>
                         <li><a href="nursery.html">花草養護</a></li>
-                        <li><a href="faqBouquet.html">常見問題</a></li>
                     </ul>
                     <ul>
                         <li>聯絡</li>
@@ -131,39 +141,135 @@
             </div>
         </div>
     </section>
-    
+
 </body>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="js/ob.js"></script>
 <script>
+    // 主要內容區-訂購區
+
     Vue.createApp({
         data() {
             return {
-                SmallSeries:[
-                    {
-                        id:'bigSmall',
-                        name:'小花系列(大圖)',
-                        image:'images/obSmallSeries/small01.jpg'
-                    },
-                    {
-                        id:'miniSmall01',
-                        name:'小花系列(小圖)01',
-                        image:'images/obSmallSeries/small01.jpg'
-                    },
-                    {
-                        id:'miniSmall02',
-                        name:'小花系列(小圖)02',
-                        image:'images/obSmallSeries/small02.jpg'
-                    },
-                    {
-                        id:'miniSmall03',
-                        name:'小花系列(小圖)03',
-                        image:'images/obSmallSeries/small03.jpg'
+                bouquetPic: {
+                    smallSeries: [
+                        {
+                            id: 'small01',
+                            name: '小花系列01',
+                            image: 'images/obSmallSeries/small01.jpg'
+                        },
+                        {
+                            id: 'small02',
+                            name: '小花系列01',
+                            image: 'images/obSmallSeries/small01.jpg'
+                        },
+                        {
+                            id: 'small03',
+                            name: '小花系列02',
+                            image: 'images/obSmallSeries/small02.jpg'
+                        },
+                        {
+                            id: 'small04',
+                            name: '小花系列03',
+                            image: 'images/obSmallSeries/small03.jpg'
+                        }
+                    ],
+                    singleSeries: [
+                        {
+                            id: 'single01',
+                            name: '單品系列01',
+                            image: 'images/obSingleSeries/single01.jpg'
+                        },
+                        {
+                            id: 'single02',
+                            name: '單品系列01',
+                            image: 'images/obSingleSeries/single01.jpg'
+                        },
+                        {
+                            id: 'single03',
+                            name: '單品系列02',
+                            image: 'images/obSingleSeries/single02.jpg'
+                        },
+                        {
+                            id: 'single04',
+                            name: '單品系列03',
+                            image: 'images/obSingleSeries/single03.jpg'
+                        }
+                    ],
+                    mixedSeries: [
+                        {
+                            id: 'mix01',
+                            name: '混合系列01',
+                            image: 'images/obMixedSeries/mix01.jpg'
+                        },
+                        {
+                            id: 'mix02',
+                            name: '混合系列01',
+                            image: 'images/obMixedSeries/mix01.jpg'
+                        },
+                        {
+                            id: 'mix03',
+                            name: '混合系列02',
+                            image: 'images/obMixedSeries/mix02.jpg'
+                        },
+                        {
+                            id: 'mix04',
+                            name: '混合系列03',
+                            image: 'images/obMixedSeries/mix03.jpg'
+                        }
+                    ],
+                    customization: [
+                        {
+                            id: 'customization01',
+                            name: '客製花束01',
+                            image: 'images/obCustomization/customization01.jpg'
+                        },
+                        {
+                            id: 'customization02',
+                            name: '客製花束01',
+                            image: 'images/obCustomization/customization01.jpg'
+                        },
+                        {
+                            id: 'customization03',
+                            name: '客製花束02',
+                            image: 'images/obCustomization/customization02.jpg'
+                        },
+                        {
+                            id: 'customization04',
+                            name: '客製花束03',
+                            image: 'images/obCustomization/customization03.jpg'
+                        }
+                    ]
+                },
+                bouquetText: {
+                    smallSeries:{
+                        chName:'小花系列'
                     }
-                ]
+                }
+            }
+        },
+        methods: {
+            changePic(pic) {
+                let bigPic = document.querySelector('.orderAreaPic img:first-child');
+                let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
+
+                if (pic.id != bigPic.id) {
+                    bigPic.alt = pic.name;
+                    bigPic.src = pic.image;
+
+                    for (i = 0; i < miniPic.length; i++) {
+                        miniPic[i].classList.remove('mask');
+                        if (pic.id == miniPic[i].id) {
+                            miniPic[i].classList.add('mask');
+                        }
+                    }
+                }
             }
         }
     }).mount('.content_orderArea')
+
+    let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
+    miniPic[0].classList.add('mask');
 </script>
 
 </html>
