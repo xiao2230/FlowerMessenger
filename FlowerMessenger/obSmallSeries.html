@@ -46,6 +46,33 @@
         .content_orderArea .orderAreaText {
             width: 50%;
         }
+
+        .content_orderArea .orderAreaText h3 span:first-child {
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .content_orderArea .orderAreaText div p:first-child {
+            font-size: 25px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .content_orderArea .orderAreaText div p:last-child {
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: .5px;
+            opacity: .7;
+            margin-top: 10px;
+        }
+
+        .content_orderArea .orderAreaText>p {
+            margin-top: 10px;
+        }
+
+        .content_orderArea .orderAreaText hr {
+            margin: 20px 0;
+        }
     </style>
 </head>
 
@@ -94,9 +121,21 @@
             </div>
             <div class="orderAreaText">
                 <h3>
-                    <span>小花系列</span>
-                    <span>Small Series</span>
+                    <span>{{bouquetText.chName[0]}}</span>
+                    <span>{{bouquetText.enName[0]}}</span>
                 </h3>
+                <div>
+                    <p>NT$ {{bouquetText.price}}</p>
+                    <p>{{bouquetText.tip}}</p>
+                </div>
+                <p>{{bouquetText.feature[0]}}</p>
+                <hr>
+                <form action="" id="orderForm" method="">
+                    <div class="orderFormOption">
+                        <label for="week01"></label>
+                        <input type="radio" id="week01" name="week" value="1" checked="checked">
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -174,28 +213,6 @@
                             image: 'images/obSmallSeries/small03.jpg'
                         }
                     ],
-                    singleSeries: [
-                        {
-                            id: 'single01',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single02',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single03',
-                            name: '單品系列02',
-                            image: 'images/obSingleSeries/single02.jpg'
-                        },
-                        {
-                            id: 'single04',
-                            name: '單品系列03',
-                            image: 'images/obSingleSeries/single03.jpg'
-                        }
-                    ],
                     mixedSeries: [
                         {
                             id: 'mix01',
@@ -216,6 +233,28 @@
                             id: 'mix04',
                             name: '混合系列03',
                             image: 'images/obMixedSeries/mix03.jpg'
+                        }
+                    ],
+                    singleSeries: [
+                        {
+                            id: 'single01',
+                            name: '單品系列01',
+                            image: 'images/obSingleSeries/single01.jpg'
+                        },
+                        {
+                            id: 'single02',
+                            name: '單品系列01',
+                            image: 'images/obSingleSeries/single01.jpg'
+                        },
+                        {
+                            id: 'single03',
+                            name: '單品系列02',
+                            image: 'images/obSingleSeries/single02.jpg'
+                        },
+                        {
+                            id: 'single04',
+                            name: '單品系列03',
+                            image: 'images/obSingleSeries/single03.jpg'
                         }
                     ],
                     customization: [
@@ -242,15 +281,18 @@
                     ]
                 },
                 bouquetText: {
-                    smallSeries:{
-                        chName:'小花系列',
-                        enName:'Small Series',
-                        tip:'提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
-
+                    chName: ['小花系列', '混合系列', '單品系列'],
+                    enName: ['Small Series', 'Mixed Series', 'Single Series'],
+                    price: '1199',
+                    week: {
+                        val: [1, 4, 8, '長期方案'],
+                        id:['week01','week04','week08','weekLong',],
+                        name:'week'
+                        // 這邊改陣列
                     },
-                    singleSeries:{
-
-                    }
+                    num: '',
+                    tip: '提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
+                    feature: ['單至多種鮮花，隨機搭配花材， 每週一、二（不指定時間）配送至指定地點。 適合工作桌與小空間的一隅。', '每週搭配3種以上新鮮花材， 週一、二（不指定時間）配送至您指定的地點。 推薦給喜歡豐富鮮花的你，適合客廳、玄關等開放空間的一隅。', '每週選擇一種新鮮花材配送給您， 週一、二（不指定時間）配送至您指定的地點。推薦給喜歡簡單的你，生活裡有花就開心。']
                 }
             }
         },
@@ -271,11 +313,12 @@
                     }
                 }
             }
+
         }
     }).mount('.content_orderArea')
 
     let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
-    miniPic[0].classList.add('mask');
+    miniPic[0].classList.add('mask')
 </script>
 
 </html>
