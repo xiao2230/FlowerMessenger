@@ -98,6 +98,106 @@
         </div>
     </section>
 </body>
-<script src="js/ob.js"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/obMixedSeries.js"></script>
+<script>
+    // 主要內容區-訂購區
+
+    Vue.createApp({
+        data() {
+            return {
+                bouquetPic: {
+                    mixedSeries: [
+                        {
+                            id: 'mix01',
+                            name: '混合系列01',
+                            image: 'images/obMixedSeries/mix01.jpg'
+                        },
+                        {
+                            id: 'mix02',
+                            name: '混合系列01',
+                            image: 'images/obMixedSeries/mix01.jpg'
+                        },
+                        {
+                            id: 'mix03',
+                            name: '混合系列02',
+                            image: 'images/obMixedSeries/mix02.jpg'
+                        },
+                        {
+                            id: 'mix04',
+                            name: '混合系列03',
+                            image: 'images/obMixedSeries/mix03.jpg'
+                        }
+                    ],
+                },
+                bouquetText: {
+                    mixedSeries: {
+                        chName: '混合系列',
+                        enName: 'Mixed Series',
+                        price: '1199',
+                        tip: '提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
+                        feature: '每週搭配3種以上新鮮花材， 週一、二（不指定時間）配送至您指定的地點。 推薦給喜歡豐富鮮花的你，適合客廳、玄關等開放空間的一隅。',
+                        weeks: [
+                            {
+                                val: 1,
+                                id: 'obweek01',
+                                name: 'obweek'
+                            },
+                            {
+                                val: 4,
+                                id: 'obweek04',
+                                name: 'obweek'
+                            },
+                            {
+                                val: 8,
+                                id: 'obweek08',
+                                name: 'obweek'
+                            },
+                            {
+                                val: '長期方案',
+                                id: 'obweekLong',
+                                name: 'obweek'
+                            }
+                        ],
+                        num: '',
+                        frequency: [
+                            {
+                                val: '每週配送',
+                                id: 'obfrequency01',
+                                name: 'obfrequency'
+                            },
+                            {
+                                val: '隔週配送',
+                                id: 'obfrequency02',
+                                name: 'obfrequency'
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        methods: {
+            changePic(pic) {
+                let bigPic = document.querySelector('.orderAreaPic img:first-child');
+                let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
+
+                if (pic.id != bigPic.id) {
+                    bigPic.alt = pic.name;
+                    bigPic.src = pic.image;
+
+                    for (i = 0; i < miniPic.length; i++) {
+                        miniPic[i].classList.remove('mask');
+                        if (pic.id == miniPic[i].id) {
+                            miniPic[i].classList.add('mask');
+                        }
+                    }
+                }
+            }
+        }
+    }).mount('.content_orderArea')
+
+    let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
+    miniPic[0].classList.add('mask')
+</script>
 
 </html>

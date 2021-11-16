@@ -19,6 +19,7 @@
             margin: 50px auto;
             display: flex;
             flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         .content_orderArea .orderAreaPic {
@@ -26,7 +27,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 5%;
         }
 
         .content_orderArea .orderAreaPic img:first-child {
@@ -39,12 +39,13 @@
             cursor: pointer;
         }
 
-        .content_orderArea .orderAreaPic img.mask {
+        .content_orderArea .orderAreaPic img.openMask {
             filter: brightness(.5);
         }
 
         .content_orderArea .orderAreaText {
             width: 50%;
+            padding: 10px 0 10px 20px;
         }
 
         .content_orderArea .orderAreaText h3 span:first-child {
@@ -52,13 +53,13 @@
             margin-right: 15px;
         }
 
-        .content_orderArea .orderAreaText div p:first-child {
+        .content_orderArea .orderAreaText>div p:first-child {
             font-size: 25px;
             margin-top: 10px;
             font-weight: 600;
         }
 
-        .content_orderArea .orderAreaText div p:last-child {
+        .content_orderArea .orderAreaText>div p:last-child {
             font-size: 16px;
             line-height: 23px;
             letter-spacing: .5px;
@@ -72,6 +73,35 @@
 
         .content_orderArea .orderAreaText hr {
             margin: 20px 0;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption {
+            margin: 10px 0;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption span input {
+            display: none;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption span label {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 12px;
+            height: 30px;
+            border: 1px solid #ad8316;
+            border-radius: 4px;
+            color: #ad8316;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption span+span label {
+            margin: 5px 0 5px 15px;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption span input[type="radio"]:checked+label {
+            color: #fffaf2;
+            background: #ad8316;
         }
     </style>
 </head>
@@ -116,26 +146,47 @@
         <!-- 主要內容區-訂購區 -->
         <div class="content_orderArea">
             <div class="orderAreaPic">
-                <img v-for="pic in bouquetPic.smallSeries" :src="pic.image" :alt="pic.name" :key="pic.id" :id="pic.id"
-                    @click="changePic(pic)">
+                <img v-for="pic in bouquetPic" :src="pic.image" :alt="pic.name" :key="pic.id" :id="pic.id"
+                    @click="changePic(pic)" :class="pic.mask">
             </div>
             <div class="orderAreaText">
-                <h3>
-                    <span>{{bouquetText.chName[0]}}</span>
-                    <span>{{bouquetText.enName[0]}}</span>
+                <!-- <h3>
+                    <span>{{bouquetText.smallSeries.chName}}</span>
+                    <span>{{bouquetText.smallSeries.enName}}</span>
                 </h3>
                 <div>
-                    <p>NT$ {{bouquetText.price}}</p>
-                    <p>{{bouquetText.tip}}</p>
+                    <p>NT$ {{bouquetText.smallSeries.price}}</p>
+                    <p>{{bouquetText.smallSeries.tip}}</p>
                 </div>
-                <p>{{bouquetText.feature[0]}}</p>
+                <p>{{bouquetText.smallSeries.feature}}</p>
                 <hr>
                 <form action="" id="orderForm" method="">
                     <div class="orderFormOption">
-                        <label for="week01"></label>
-                        <input type="radio" id="week01" name="week" value="1" checked="checked">
+                        <p>1. 請選擇週數 (長期方案請詳閱下方完整須知)</p>
+                        <span v-for="week in bouquetText.smallSeries.weeks">
+                            <input type="radio" :id="week.id" :name="week.name" :value="week.val">
+                            <label :for="week.id">{{ week.val }}</label>
+                        </span>
                     </div>
-                </form>
+                    <div class="orderFormOption">
+                        <p>2. 數量 (每週配送數量)</p>
+                        <input type="number" v-model="bouquetText.smallSeries.num.val"
+                            :id="bouquetText.smallSeries.num.id" :name="bouquetText.smallSeries.num.name">
+                        <label for="bouquetText.smallSeries.num.id"></label>
+                    </div>
+                    <div class="orderFormOption">
+                        <p>3. 開始配送週</p>
+
+
+                    </div>
+                    <div class="orderFormOption">
+                        <p>4. 配送頻率</p>
+                        <span v-for="rate in bouquetText.smallSeries.frequency">
+                            <input type="radio" :id="rate.id" :name="rate.name" :value="rate.val">
+                            <label :for="rate.id">{{ rate.val }}</label>
+                        </span>
+                    </div>
+                </form> -->
             </div>
         </div>
     </section>
@@ -183,142 +234,103 @@
 
 </body>
 <script src="https://unpkg.com/vue@next"></script>
-<script src="js/ob.js"></script>
+<script src="js/obSmallSeries.js"></script>
 <script>
     // 主要內容區-訂購區
 
     Vue.createApp({
         data() {
             return {
-                bouquetPic: {
-                    smallSeries: [
+                bouquetPic: [
+                    {
+                        id: 'small01',
+                        name: '小花系列01',
+                        image: 'images/obSmallSeries/small01.jpg',
+                        mask: 'noMask'
+                    },
+                    {
+                        id: 'small02',
+                        name: '小花系列01',
+                        image: 'images/obSmallSeries/small01.jpg',
+                        mask: 'openMask'
+                    },
+                    {
+                        id: 'small03',
+                        name: '小花系列02',
+                        image: 'images/obSmallSeries/small02.jpg',
+                        mask: 'noMask'
+                    },
+                    {
+                        id: 'small04',
+                        name: '小花系列03',
+                        image: 'images/obSmallSeries/small03.jpg',
+                        mask: 'noMask'
+                    }
+                ],
+                bouquetText: {
+                    chName: '小花系列',
+                    enName: 'Small Series',
+                    price: '1199',
+                    tip: '提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
+                    feature: '單至多種鮮花，隨機搭配花材， 每週一、二（不指定時間）配送至指定地點。 適合工作桌與小空間的一隅。',
+                    weeks: [
                         {
-                            id: 'small01',
-                            name: '小花系列01',
-                            image: 'images/obSmallSeries/small01.jpg'
+                            val: 1,
+                            id: 'obweek01',
+                            name: 'obweek'
                         },
                         {
-                            id: 'small02',
-                            name: '小花系列01',
-                            image: 'images/obSmallSeries/small01.jpg'
+                            val: 4,
+                            id: 'obweek04',
+                            name: 'obweek'
                         },
                         {
-                            id: 'small03',
-                            name: '小花系列02',
-                            image: 'images/obSmallSeries/small02.jpg'
+                            val: 8,
+                            id: 'obweek08',
+                            name: 'obweek'
                         },
                         {
-                            id: 'small04',
-                            name: '小花系列03',
-                            image: 'images/obSmallSeries/small03.jpg'
+                            val: '長期方案',
+                            id: 'obweekLong',
+                            name: 'obweek'
                         }
                     ],
-                    mixedSeries: [
+                    num: {
+                        val: '1',
+                        id: 'obnum',
+                        name: 'obnum'
+                    },
+                    frequency: [
                         {
-                            id: 'mix01',
-                            name: '混合系列01',
-                            image: 'images/obMixedSeries/mix01.jpg'
+                            val: '每週配送',
+                            id: 'obfrequency01',
+                            name: 'obfrequency'
                         },
                         {
-                            id: 'mix02',
-                            name: '混合系列01',
-                            image: 'images/obMixedSeries/mix01.jpg'
-                        },
-                        {
-                            id: 'mix03',
-                            name: '混合系列02',
-                            image: 'images/obMixedSeries/mix02.jpg'
-                        },
-                        {
-                            id: 'mix04',
-                            name: '混合系列03',
-                            image: 'images/obMixedSeries/mix03.jpg'
-                        }
-                    ],
-                    singleSeries: [
-                        {
-                            id: 'single01',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single02',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single03',
-                            name: '單品系列02',
-                            image: 'images/obSingleSeries/single02.jpg'
-                        },
-                        {
-                            id: 'single04',
-                            name: '單品系列03',
-                            image: 'images/obSingleSeries/single03.jpg'
-                        }
-                    ],
-                    customization: [
-                        {
-                            id: 'customization01',
-                            name: '客製花束01',
-                            image: 'images/obCustomization/customization01.jpg'
-                        },
-                        {
-                            id: 'customization02',
-                            name: '客製花束01',
-                            image: 'images/obCustomization/customization01.jpg'
-                        },
-                        {
-                            id: 'customization03',
-                            name: '客製花束02',
-                            image: 'images/obCustomization/customization02.jpg'
-                        },
-                        {
-                            id: 'customization04',
-                            name: '客製花束03',
-                            image: 'images/obCustomization/customization03.jpg'
+                            val: '隔週配送',
+                            id: 'obfrequency02',
+                            name: 'obfrequency'
                         }
                     ]
-                },
-                bouquetText: {
-                    chName: ['小花系列', '混合系列', '單品系列'],
-                    enName: ['Small Series', 'Mixed Series', 'Single Series'],
-                    price: '1199',
-                    week: {
-                        val: [1, 4, 8, '長期方案'],
-                        id:['week01','week04','week08','weekLong',],
-                        name:'week'
-                        // 這邊改陣列
-                    },
-                    num: '',
-                    tip: '提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
-                    feature: ['單至多種鮮花，隨機搭配花材， 每週一、二（不指定時間）配送至指定地點。 適合工作桌與小空間的一隅。', '每週搭配3種以上新鮮花材， 週一、二（不指定時間）配送至您指定的地點。 推薦給喜歡豐富鮮花的你，適合客廳、玄關等開放空間的一隅。', '每週選擇一種新鮮花材配送給您， 週一、二（不指定時間）配送至您指定的地點。推薦給喜歡簡單的你，生活裡有花就開心。']
                 }
             }
         },
         methods: {
             changePic(pic) {
-                let bigPic = document.querySelector('.orderAreaPic img:first-child');
-                let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
+                if (pic.id != this.bouquetPic[0].id) {
+                    this.bouquetPic[0].name = pic.name;
+                    this.bouquetPic[0].image = pic.image;
 
-                if (pic.id != bigPic.id) {
-                    bigPic.alt = pic.name;
-                    bigPic.src = pic.image;
-
-                    for (i = 0; i < miniPic.length; i++) {
-                        miniPic[i].classList.remove('mask');
-                        if (pic.id == miniPic[i].id) {
-                            miniPic[i].classList.add('mask');
+                    for (i = 0; i < this.bouquetPic.length; i++) {
+                        this.bouquetPic[i].mask = 'noMask';
+                        if (pic.name == this.bouquetPic[i].name) {
+                            pic.mask = 'openMask';
                         }
                     }
                 }
             }
-
         }
     }).mount('.content_orderArea')
-
-    let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
-    miniPic[0].classList.add('mask')
 </script>
 
 </html>
