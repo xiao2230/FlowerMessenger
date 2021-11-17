@@ -49,7 +49,66 @@
         </div>
     </section>
     <!-- 主要內容區 -->
-    <section class="content"></section>
+    <section class="content">
+        <!-- 主要內容區-訂購區 -->
+        <div class="content_orderArea">
+            <div class="orderAreaPic">
+                <img v-for="pic in bouquetPic" :src="pic.image" :alt="pic.name" :key="pic.id" :id="pic.id"
+                    @click="changePic(pic)" :class="pic.mask">
+            </div>
+            <div class="orderAreaText">
+                <h3>
+                    <span>{{bouquetText.chName}}</span>
+                    <span>{{bouquetText.enName}}</span>
+                </h3>
+                <div>
+                    <p>NT$ {{totalPrice}}</p>
+                    <p>{{bouquetText.tip}}</p>
+                </div>
+                <p>{{bouquetText.feature}}</p>
+                <hr>
+                <form action="" id="orderForm" method="">
+                    <div class="orderFormOption">
+                        <p>1. 請選擇週數 (長期方案請詳閱<a href="faqSubscription.html" target="_blank">說明</a>)</p>
+                        <span v-for="week in bouquetText.weeks">
+                            <input type="radio" :id="week.id" :name="week.name" :value="week.val"
+                                :checked="week.checked" @click="choosePlan(week)">
+                            <label :for="week.id">{{ week.val }}</label>
+                        </span>
+                    </div>
+                    <div class="orderFormOption">
+                        <label :for="bouquetText.num.id">
+                            <p>2. 數量 (每週配送數量)</p>
+                        </label>
+                        <div class="minusBtn" @click="minus()"><i class="fas fa-minus"></i></div>
+                        <input type="number" v-model="bouquetText.num.val" :id="bouquetText.num.id"
+                            :name="bouquetText.num.name" @keyup="keyRestrict()">
+                        <span class="plusBtn" @click="plus()"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="orderFormOption">
+                        <p>3. 開始配送週</p>
+                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name" readonly>
+                        <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
+                        <div class="calTable">
+                            <!-- 日曆暫緩 -->
+                        </div>
+                    </div>
+                    <div class="orderFormOption">
+                        <p>4. 配送頻率</p>
+                        <span v-for="rate in bouquetText.frequency">
+                            <input type="radio" :id="rate.id" :name="rate.name" :value="rate.val"
+                                :checked="rate.checked" @click="choosePlan(rate)">
+                            <label :for="rate.id">{{ rate.val }}</label>
+                        </span>
+                    </div>
+                    <div class="orderFormSubmit">
+                        <input type="submit" :id="bouquetText.submitBtn.id" :name="bouquetText.submitBtn.name"
+                            :value="bouquetText.submitBtn.val">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     <!-- 底部內容區 -->
     <section class="footer">
         <!-- 底部內容區-店家資訊&店鋪圖片 -->
@@ -94,104 +153,5 @@
 </body>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="js/obSingleSeries.js"></script>
-<script>
-    // 主要內容區-訂購區
-
-    Vue.createApp({
-        data() {
-            return {
-                bouquetPic: {
-                    singleSeries: [
-                        {
-                            id: 'single01',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single02',
-                            name: '單品系列01',
-                            image: 'images/obSingleSeries/single01.jpg'
-                        },
-                        {
-                            id: 'single03',
-                            name: '單品系列02',
-                            image: 'images/obSingleSeries/single02.jpg'
-                        },
-                        {
-                            id: 'single04',
-                            name: '單品系列03',
-                            image: 'images/obSingleSeries/single03.jpg'
-                        }
-                    ]
-                },
-                bouquetText: {
-                    singleSeries: {
-                        chName: '單品系列',
-                        enName: 'Single Series',
-                        price: '1199',
-                        tip: '提示：此價格已包含運費，自取另享物流費用折抵。每週鮮花因集體購買，恕不能指定花材，花藝師會依據當季的花材做搭配， 每週一、二（不指定時間）配送至指定地點。',
-                        feature: '每週選擇一種新鮮花材配送給您， 週一、二（不指定時間）配送至您指定的地點。推薦給喜歡簡單的你，生活裡有花就開心。',
-                        weeks: [
-                            {
-                                val: 1,
-                                id: 'obweek01',
-                                name: 'obweek'
-                            },
-                            {
-                                val: 4,
-                                id: 'obweek04',
-                                name: 'obweek'
-                            },
-                            {
-                                val: 8,
-                                id: 'obweek08',
-                                name: 'obweek'
-                            },
-                            {
-                                val: '長期方案',
-                                id: 'obweekLong',
-                                name: 'obweek'
-                            }
-                        ],
-                        num: '',
-                        frequency: [
-                            {
-                                val: '每週配送',
-                                id: 'obfrequency01',
-                                name: 'obfrequency'
-                            },
-                            {
-                                val: '隔週配送',
-                                id: 'obfrequency02',
-                                name: 'obfrequency'
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-        methods: {
-            changePic(pic) {
-                let bigPic = document.querySelector('.orderAreaPic img:first-child');
-                let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
-
-                if (pic.id != bigPic.id) {
-                    bigPic.alt = pic.name;
-                    bigPic.src = pic.image;
-
-                    for (i = 0; i < miniPic.length; i++) {
-                        miniPic[i].classList.remove('mask');
-                        if (pic.id == miniPic[i].id) {
-                            miniPic[i].classList.add('mask');
-                        }
-                    }
-                }
-            }
-        }
-    }).mount('.content_orderArea')
-
-    let miniPic = document.querySelectorAll('.orderAreaPic img:not(:first-child)');
-    miniPic[0].classList.add('mask')
-</script>
 
 </html>
