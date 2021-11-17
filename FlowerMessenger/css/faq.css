@@ -170,10 +170,10 @@ body {
 }
 
 .content_qnaNav li a {
-    color: #a07812;
+    color: #b48f5e;
     background: #fffaf2;
     padding: 5px 10px;
-    border: 1px solid #a07812;
+    border: 1px solid #b48f5e;
     border-radius: 15px;
     font-weight: 600;
     font-size: 18px;
@@ -181,23 +181,23 @@ body {
 
 .content_qnaNav li a.focus {
     color: #fffaf2;
-    background: #a07812;
+    background: #b48f5e;
     border: 1px solid #fffaf2;
-    box-shadow: 0 0 3px 2px #a07812;
+    box-shadow: 0 0 3px 2px #b48f5e;
 }
 
 .content_qnaNav li a:hover {
     color: #fffaf2;
-    background: #a07812;
+    background: #b48f5e;
     border: 1px solid #fffaf2;
-    box-shadow: 0 0 3px 2px #a07812;
+    box-shadow: 0 0 3px 2px #b48f5e;
 }
 
 .content_qnaNav li a.focus:hover {
     color: #fffaf2;
-    background: #a07812;
+    background: #b48f5e;
     border: 1px solid #fffaf2;
-    box-shadow: 0 0 10px 3px #a07812;
+    box-shadow: 0 0 10px 3px #b48f5e;
 }
 
 /* 主要內容區-常見問題內文區 */

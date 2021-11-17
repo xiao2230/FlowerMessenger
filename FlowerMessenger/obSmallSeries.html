@@ -88,9 +88,9 @@
             align-items: center;
             padding: 0 12px;
             height: 30px;
-            border: 2px solid #ca9d2b;
+            border: 2px solid #b48f5e;
             border-radius: 4px;
-            color: #ca9d2b;
+            color: #b48f5e;
             font-size: 15px;
             cursor: pointer;
             font-weight: 600;
@@ -102,18 +102,18 @@
 
         .content_orderArea .orderAreaText form .orderFormOption span input[type="radio"]:checked+label {
             color: #fffaf2;
-            background: #ca9d2b;
+            background: #b48f5e;
         }
 
         .content_orderArea .orderAreaText form .orderFormOption input[type="number"] {
             margin: 5px 0;
             height: 30px;
             width: 60px;
-            border: 2px solid #ca9d2b;
+            border: 2px solid #b48f5e;
             outline: none;
             text-align: center;
             background: #fffaf2;
-            color: #ca9d2b;
+            color: #b48f5e;
             font-weight: 600;
         }
 
@@ -122,7 +122,7 @@
             align-items: center;
             padding: 0 5px;
             height: 30px;
-            background: #ca9d2b;
+            background: #b48f5e;
             border-bottom-left-radius: 4px;
             border-top-left-radius: 4px;
             cursor: pointer;
@@ -130,16 +130,18 @@
 
         .content_orderArea .orderAreaText form .orderFormOption .plusBtn {
             display: inline-flex;
+            justify-content: center;
             align-items: center;
             padding: 0 5px;
             height: 30px;
-            background: #ca9d2b;
+            background: #b48f5e;
             border-bottom-right-radius: 4px;
             border-top-right-radius: 4px;
             cursor: pointer;
         }
 
-        .content_orderArea .orderAreaText form .orderFormOption ~ div i {
+        .content_orderArea .orderAreaText form .orderFormOption .minusBtn i,
+        .content_orderArea .orderAreaText form .orderFormOption .plusBtn i {
             font-size: 15px;
             font-weight: 600;
             color: #fffaf2;
@@ -153,6 +155,28 @@
 
         input[type=number] {
             -moz-appearance: textfield;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption label.calBtn {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption label.calBtn i {
+            font-size: 22px;
+            font-weight: normal;
+            color: #b48f5e;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption input[type="text"] {
+            height: 30px;
+            border: 2px solid #b48f5e;
+            outline: none;
+            background: #fffaf2;
         }
     </style>
 </head>
@@ -231,7 +255,8 @@
                     </div>
                     <div class="orderFormOption">
                         <p>3. 開始配送週</p>
-
+                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name" readonly>
+                        <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
                     </div>
                     <div class="orderFormOption">
                         <p>4. 配送頻率</p>
@@ -291,7 +316,7 @@
 <script src="https://unpkg.com/vue@next"></script>
 <script src="js/obSmallSeries.js"></script>
 <script>
-    // 主要內容區-訂購區
+    // 『主要內容區-訂購區』使用Vue框架來實現關注點分離
 
     Vue.createApp({
         data() {
@@ -361,6 +386,10 @@
                         id: 'obnum',
                         name: 'obnum',
                     },
+                    calendar: {
+                        id: 'obCal',
+                        name: 'obCal'
+                    },
                     frequency: [
                         {
                             val: '每週配送',
@@ -411,13 +440,13 @@
                 this.bouquetText.num.val > 100 ? this.bouquetText.num.val = 100 : this.bouquetText.num.val <= 0 ? this.bouquetText.num.val = '' : this.bouquetText.num.val;
             },
             // 花束訂購(數量設定)：額外添增的減少數量按鈕，並設定無法低於1的限制。
-            minus(){
-                this.bouquetText.num.val --;
+            minus() {
+                this.bouquetText.num.val--;
                 this.bouquetText.num.val < 1 ? this.bouquetText.num.val = 1 : this.bouquetText.num.val
             },
             // 花束訂購(數量設定)：額外添增的增加數量按鈕，並設定無法高於100的限制。
-            plus(){
-                this.bouquetText.num.val ++;
+            plus() {
+                this.bouquetText.num.val++;
                 this.bouquetText.num.val > 100 ? this.bouquetText.num.val = 100 : this.bouquetText.num.val
             }
         },
