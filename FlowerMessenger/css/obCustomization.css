@@ -407,6 +407,7 @@ body {
     /* 主要內容區-訂購須知 */
     .content_policy p {
         line-height: 30px;
+        font-size: 15px;
     }
     .content_policy p img {
         width: 85%;
