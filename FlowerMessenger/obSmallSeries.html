@@ -88,11 +88,12 @@
             align-items: center;
             padding: 0 12px;
             height: 30px;
-            border: 1px solid #ad8316;
+            border: 2px solid #ca9d2b;
             border-radius: 4px;
-            color: #ad8316;
+            color: #ca9d2b;
             font-size: 15px;
             cursor: pointer;
+            font-weight: 600;
         }
 
         .content_orderArea .orderAreaText form .orderFormOption span+span label {
@@ -101,23 +102,57 @@
 
         .content_orderArea .orderAreaText form .orderFormOption span input[type="radio"]:checked+label {
             color: #fffaf2;
-            background: #ad8316;
+            background: #ca9d2b;
         }
 
         .content_orderArea .orderAreaText form .orderFormOption input[type="number"] {
             margin: 5px 0;
-            padding: 0 5px;
             height: 30px;
-            border: 1px solid #ad8316;
-            border-radius: 4px;
+            width: 60px;
+            border: 2px solid #ca9d2b;
             outline: none;
             text-align: center;
             background: #fffaf2;
+            color: #ca9d2b;
+            font-weight: 600;
         }
 
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            opacity: 1;
+        .content_orderArea .orderAreaText form .orderFormOption .minusBtn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 5px;
+            height: 30px;
+            background: #ca9d2b;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            cursor: pointer;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption .plusBtn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 5px;
+            height: 30px;
+            background: #ca9d2b;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            cursor: pointer;
+        }
+
+        .content_orderArea .orderAreaText form .orderFormOption ~ div i {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fffaf2;
+        }
+
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
         }
     </style>
 </head>
@@ -189,9 +224,10 @@
                         <label :for="bouquetText.num.id">
                             <p>2. 數量 (每週配送數量)</p>
                         </label>
+                        <div class="minusBtn" @click="minus()"><i class="fas fa-minus"></i></div>
                         <input type="number" v-model="bouquetText.num.val" :id="bouquetText.num.id"
-                            :name="bouquetText.num.name" :min="bouquetText.num.minVal" :max="bouquetText.num.maxVal"
-                            @keyup="keyRestrict()">
+                            :name="bouquetText.num.name" @keyup="keyRestrict()">
+                        <span class="plusBtn" @click="plus()"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="orderFormOption">
                         <p>3. 開始配送週</p>
@@ -260,6 +296,7 @@
     Vue.createApp({
         data() {
             return {
+                // 展示圖：資料
                 bouquetPic: [
                     {
                         id: 'small01',
@@ -286,6 +323,7 @@
                         mask: 'noMask'
                     }
                 ],
+                // 花束訂購：資料
                 bouquetText: {
                     chName: '小花系列',
                     enName: 'Small Series',
@@ -322,8 +360,6 @@
                         val: '1',
                         id: 'obnum',
                         name: 'obnum',
-                        minVal: '1',
-                        maxVal: '10'
                     },
                     frequency: [
                         {
@@ -343,6 +379,7 @@
             }
         },
         methods: {
+            // 展示圖：點小圖，更換大圖；被選中小圖，增加灰色遮罩；其他小圖，移除灰色遮罩。
             changePic(p) {
                 if (p.id != this.bouquetPic[0].id) {
                     this.bouquetPic[0].name = p.name;
@@ -356,6 +393,7 @@
                     }
                 }
             },
+            // 花束訂購(選擇週數、配送頻率)：被選中者，checked資料改為true，其餘皆為false
             choosePlan(w) {
                 if (w.name == this.bouquetText.weeks[0].name) {
                     for (i = 0; i < this.bouquetText.weeks.length; i++) {
@@ -368,11 +406,23 @@
                 }
                 w.checked = true
             },
+            // 花束訂購(數量設定)：keyup事件，鍵盤輸入數字，增加max/min限制。
             keyRestrict() {
-                this.bouquetText.num.val > 10 ? this.bouquetText.num.val = 10 : this.bouquetText.num.val <= 0 ? this.bouquetText.num.val = '' : this.bouquetText.num.val;
+                this.bouquetText.num.val > 100 ? this.bouquetText.num.val = 100 : this.bouquetText.num.val <= 0 ? this.bouquetText.num.val = '' : this.bouquetText.num.val;
+            },
+            // 花束訂購(數量設定)：額外添增的減少數量按鈕，並設定無法低於1的限制。
+            minus(){
+                this.bouquetText.num.val --;
+                this.bouquetText.num.val < 1 ? this.bouquetText.num.val = 1 : this.bouquetText.num.val
+            },
+            // 花束訂購(數量設定)：額外添增的增加數量按鈕，並設定無法高於100的限制。
+            plus(){
+                this.bouquetText.num.val ++;
+                this.bouquetText.num.val > 100 ? this.bouquetText.num.val = 100 : this.bouquetText.num.val
             }
         },
         computed: {
+            // 花束訂購(選擇週數)：用於辨別此時被選定的週數(checked=true)為何，對應到的數字是什麼。
             chooseweek() {
                 for (i = 0; i < this.bouquetText.weeks.length; i++) {
                     if (this.bouquetText.weeks[i].checked == true) {
@@ -380,6 +430,7 @@
                     }
                 }
             },
+            // 花束訂購(總金額)：總金額 = 被選定週數 X 花束基本價格 X 數量設定，並加上千分位自動添加。
             totalPrice() {
                 let t = this.chooseweek * this.bouquetText.basicPrice * this.bouquetText.num.val;
                 let tString = t.toString();
@@ -388,7 +439,7 @@
         }
     }).mount('.content_orderArea')
 
-    // 數量按鈕 : 鍵盤輸入，使負數、小數點無效
+    // 花束訂購(數量設定)：使負數、小數點無法鍵盤輸入。
     document.getElementById("obnum").addEventListener("keypress", function (event) {
         if (event.keyCode == 45 || event.keyCode == 46) {
             event.preventDefault();
