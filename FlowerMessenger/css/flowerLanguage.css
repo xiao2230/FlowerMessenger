@@ -433,6 +433,7 @@ body {
     /* 主要內容區-前言 */
     .content_preface p {
         line-height: 60px;
+        font-size: 16px;
     }
     /* 主要內容區-圖片與花語 */
     .content_slider .swiper-slide {

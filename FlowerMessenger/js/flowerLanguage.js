@@ -1,7 +1,7 @@
 let headerNav = document.querySelector('.header_nav');
 let contentPreface = document.querySelectorAll('.content_preface p');
-let contentSlider = document.querySelector('.content_slider');
 let contentPrefaceBg = document.querySelector('.content_preface .prefaceBg');
+let contentSlider = document.querySelector('.content_slider');
 
 //用來定特效出現的高度參考點
 let header = document.querySelector('.header');

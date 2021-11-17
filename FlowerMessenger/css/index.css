@@ -807,19 +807,6 @@ h2.appear {
     height: 100%;
 }
 
-@media screen and (max-height:600px) {
-    /* 主要內容區-關於我們 */
-    .content_aboutUs {
-        height: 400px;
-    }
-    .content_aboutUs p {
-        line-height: 25px;
-    }
-    .content_aboutUs p:last-child {
-        padding: 0 10px;
-    }
-}
-
 @media screen and (max-width:767px) {
     /* 頂部內容區-小工具 */
     .header_tool {
@@ -964,7 +951,7 @@ h2.appear {
         justify-content: center;
     }
     .content_orderBouquet ul li {
-        width: 80%;
+        width: 95%;
     }
     .content_orderBouquet ul li div.orderBouquet {
         margin: 10px 0;
@@ -988,7 +975,8 @@ h2.appear {
         transform: translate3d(0, -10px, 0);
     }
     .orderBouquetText {
-        height: 300px;
+        height: auto;
+        padding: 30px 20px 80px;
     }
     .orderBouquetText span:nth-child(2) {
         font-size: 18px;
@@ -1023,7 +1011,7 @@ h2.appear {
         height: 30px;
     }
     .nurseryPic {
-        width: 70%;
+        width: 85%;
     }
     .nurseryPic div {
         width: 100%;
@@ -1063,17 +1051,5 @@ h2.appear {
         width: 70%;
         padding-right: 0;
         margin: 0 auto;
-    }
-}
-
-@media screen and (max-width:376px) {
-    /* 主要內容區-商品類別 */
-    .orderBouquetText {
-        height: 360px;
-        padding: 30px 30px 0;
-    }
-    /* 主要內容區-花朵照護 */
-    .nurseryPic div {
-        height: 300px;
     }
 }
