@@ -1,7 +1,15 @@
 let headerNav = document.querySelector('.header_nav');
+let contentOrderArea = document.querySelector('.content_orderArea');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
+
+document.addEventListener('DOMContentLoaded', () => {
+    let scrollTop = document.documentElement.scrollTop;
+
+    // 『主要內容區-訂購區』的內容漸入
+    contentOrderArea.classList.add('appear');
+});
 
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;

@@ -131,6 +131,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 0 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content_orderArea.appear {
+    opacity: 1;
 }
 
 .content_orderArea .orderAreaPic {

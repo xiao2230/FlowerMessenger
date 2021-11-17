@@ -4,18 +4,19 @@ let cornerText = document.querySelectorAll('.content_corner .cornerText p');
 let cornerTextBgFlower = document.querySelector('.cornerTextBgFlower');
 
 //用來定特效出現的高度參考點
-let header = document.querySelector('.header');
 let bannerTitle = document.querySelector('.header_bannerTitle .tt1');
 let content = document.querySelector('.content');
 
+document.addEventListener('DOMContentLoaded', () => {
+	let scrollTop = document.documentElement.scrollTop;
+
+	// 『主要內容區-店內角落圖&內文&花朵飄散背景』的主題圖漸入
+	cornerPic.classList.add('appear');
+});
+
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
-	
-	if (scrollTop > header.offsetTop) {
-		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的主題圖漸入
-		cornerPic.classList.add('appear');
-	}
-	
+
 	if (scrollTop > bannerTitle.offsetTop) {
 		// 『主要內容區-店內角落圖&內文&花朵飄散背景』的內文漸入
 		for (i = 0, t = 0; i < cornerText.length; i++, t += Math.random() * 500) {
@@ -33,3 +34,5 @@ document.addEventListener('scroll', () => {
 		headerNav.classList.remove('navPlusTop');
 	}
 });
+
+

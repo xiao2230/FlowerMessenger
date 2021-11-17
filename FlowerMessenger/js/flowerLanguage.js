@@ -4,20 +4,21 @@ let contentPrefaceBg = document.querySelector('.content_preface .prefaceBg');
 let contentSlider = document.querySelector('.content_slider');
 
 //用來定特效出現的高度參考點
-let header = document.querySelector('.header');
 let content = document.querySelector('.content');
 let bannerTitle = document.querySelector('.header_bannerTitle .tt1');
 
-document.addEventListener('scroll', () => {
+document.addEventListener('DOMContentLoaded', () => {
 	let scrollTop = document.documentElement.scrollTop;
 
-	if (scrollTop > header.offsetTop) {
-		// 『主要內容區-前言』的內文漸入，背景漸入
-		for (i = 0, t = 0; i < contentPreface.length; i++, t += 400) {
-			setTimeout(`contentPreface[${i}].classList.add('locate')`, t);
-		}
-		contentPrefaceBg.classList.add('appear');
+	// 『主要內容區-前言』的內文漸入，背景漸入
+	for (i = 0, t = 0; i < contentPreface.length; i++, t += 400) {
+		setTimeout(`contentPreface[${i}].classList.add('locate')`, t);
 	}
+	contentPrefaceBg.classList.add('appear');
+});
+
+document.addEventListener('scroll', () => {
+	let scrollTop = document.documentElement.scrollTop;
 
 	if (scrollTop > bannerTitle.offsetTop) {
 		// 『主要內容區-圖片與花語』的內容漸入

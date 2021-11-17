@@ -187,12 +187,30 @@ body {
     line-height: 35px;
 }
 
+.content_policy p:not(:first-child) {
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    transition: top .8s ease-in-out, opacity .8s ease-in-out;
+}
+
+.content_policy p:not(:first-child).locate {
+    top: 0;
+    opacity: 1;
+}
+
 .content_policy p:first-child {
     margin-bottom: 30px;
 }
 
 .content_policy p img {
     width: 50%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content_policy p img.appear {
+    opacity: 1;
 }
 
 /* 主要內容區-參考作品集 */
@@ -207,6 +225,12 @@ body {
 
 .content_portfolio img {
     width: calc(100%/3);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content_portfolio img.appear {
+    opacity: 1;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
