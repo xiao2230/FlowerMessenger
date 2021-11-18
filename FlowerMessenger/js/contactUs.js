@@ -25,7 +25,7 @@ document.addEventListener('scroll', () => {
 });
 
 // 『主要內容區 - 提問表格』控制表單送出按鈕是否啟用
-cuBtnSend.disabled = true;
+cuBtnSend.setAttribute('disabled',true);
 cuConfirm.addEventListener('click', () => {
 	cuBtnSend.toggleAttribute('disabled');
 });

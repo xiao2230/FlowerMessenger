@@ -69,7 +69,7 @@
                 <hr>
                 <form action="" id="orderForm" method="">
                     <div class="orderFormOption">
-                        <p>1. 請選擇週數 (長期方案請詳閱<a href="faqSubscription.html" target="_blank">說明</a>)</p>
+                        <p>1. 請選擇週數 (長期方案請詳閱 <a href="faqSubscription.html" target="_blank">說明</a> )</p>
                         <span v-for="week in bouquetText.weeks">
                             <input type="radio" :id="week.id" :name="week.name" :value="week.val"
                                 :checked="week.checked" @click="choosePlan(week)">

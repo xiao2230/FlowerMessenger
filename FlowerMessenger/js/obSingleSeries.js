@@ -147,19 +147,17 @@ Vue.createApp({
 		},
 		// 花束訂購(數量設定)：keyup事件，鍵盤輸入數字，增加max/min限制。
 		keyRestrict() {
-			this.bouquetText.num.val > 100
-				? (this.bouquetText.num.val = 100)
-				: this.bouquetText.num.val <= 0 ? (this.bouquetText.num.val = '') : this.bouquetText.num.val;
+			this.bouquetText.num.val = this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val <= 0 ? '' : this.bouquetText.num.val;
 		},
 		// 花束訂購(數量設定)：額外添增的減少數量按鈕，並設定無法低於1的限制。
 		minus() {
 			this.bouquetText.num.val--;
-			this.bouquetText.num.val < 1 ? (this.bouquetText.num.val = 1) : this.bouquetText.num.val;
+			this.bouquetText.num.val = this.bouquetText.num.val < 1 ? 1 : this.bouquetText.num.val;
 		},
 		// 花束訂購(數量設定)：額外添增的增加數量按鈕，並設定無法高於100的限制。
 		plus() {
 			this.bouquetText.num.val++;
-			this.bouquetText.num.val > 100 ? (this.bouquetText.num.val = 100) : this.bouquetText.num.val;
+			this.bouquetText.num.val = this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val;
 		}
 	},
 	computed: {
@@ -182,7 +180,7 @@ Vue.createApp({
 
 // 花束訂購(數量設定)：使負數、小數點無法鍵盤輸入。
 document.getElementById('obnum').addEventListener('keypress', function(event) {
-	if (event.keyCode == 45 || event.keyCode == 46) {
+	if (event.keyCode == 45 || event.keyCode == 46 || event.keyCode == 13) {
 		event.preventDefault();
 	}
 });

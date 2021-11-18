@@ -175,11 +175,13 @@ body {
     height: 45px;
     border-radius: 50%;
     box-shadow: 0 0 10px 2px rgb(19 19 19 /50%);
+    transition: background .3s ease-in-out,box-shadow .3s ease-in-out;
 }
 
 .content_info .infoSoftware a i {
     font-size: 30px;
     color: #888;
+    transition: color .3s ease-in-out;
 }
 
 .content_info .infoSoftware a i.fa-youtube {
@@ -364,9 +366,36 @@ body {
     display: none;
 }
 
+.content_ResponseForm form .ResponseFormConfirm p a,
 .content_ResponseForm form .ResponseFormSubmit label a {
-    color: #bb7008;
+    font-weight: 600;
+    color: #ad8316;
+    position: relative;
+    transition: color .3s ease-in-out;
 }
+
+.content_ResponseForm form .ResponseFormConfirm p a:hover,
+.content_ResponseForm form .ResponseFormSubmit label a:hover {
+    color: #7e5f10;
+}
+
+.content_ResponseForm form .ResponseFormConfirm p a::after,
+.content_ResponseForm form .ResponseFormSubmit label a::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: #7e5f10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease-in-out;
+}
+
+.content_ResponseForm form .ResponseFormConfirm p a:hover::after,
+.content_ResponseForm form .ResponseFormSubmit label a:hover::after {
+    width: 100%;
+}
+/*  */
 
 .content_ResponseForm form .ResponseFormSubmit label span {
     display: inline-block;
@@ -387,7 +416,7 @@ body {
     width: 11px;
     height: 11px;
     border-radius: 2px;
-    background: #bb7008;
+    background: #b48f5e;
 }
 
 .content_ResponseForm form .ResponseFormSubmit input[type="submit"] {
@@ -403,8 +432,12 @@ body {
 }
 
 .content_ResponseForm form .ResponseFormSubmit input[type="checkbox"]:checked~input[type="submit"] {
-    background: #bb7008;
+    background: #b48f5e;
     cursor: pointer;
+}
+
+.content_ResponseForm form .ResponseFormSubmit input[type="checkbox"]:checked~input[type="submit"]:hover {
+    background: #bb7008;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
