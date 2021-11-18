@@ -157,11 +157,11 @@
                 <p>會員登入</p>
                 <form action="" id="alForm" method="">
                     <div class="alFormOption">
-                        <input type="text" id="alUsername" name="alUsername" placeholder="使用者名稱 或 電子郵件" required>
+                        <input type="text" id="alUsername" name="alUsername" placeholder="使用者名稱 或 電子郵件">
                         <label for="alUsername"><i class="fas fa-user"></i></label>
                     </div>
                     <div class="alFormOption">
-                        <input type="password" id="alPassword" name="alPassword" placeholder="請輸入密碼" required>
+                        <input type="password" id="alPassword" name="alPassword" placeholder="請輸入密碼">
                         <label for="alPassword"><i class="fas fa-key"></i></label>
                         <label for="alPassword"><i class="fas fa-eye-slash"></i></label>
                     </div>
@@ -225,6 +225,10 @@
     let usernameInput = document.querySelector('.content_accountLogin .loginArea form .alFormOption:first-child input')
     let passwordInput = document.querySelector('.content_accountLogin .loginArea form .alFormOption:nth-child(2) input')
 
+    // 『主要內容區-會員登入』使用者名稱、密碼設定必填
+    usernameInput.setAttribute('required',true);
+    passwordInput.setAttribute('required',true);
+
     passwordEye.addEventListener('click', () => {
         // 『主要內容區-會員登入』的密碼是否可見，共做兩件事：icon換圖、input修改type。
         passwordEye.classList.toggle('fa-eye');
@@ -237,12 +241,6 @@
     //     usernameInput.value = usernameInput.value.replace(/^(0+)|[^\d]+/g,'');
     //     passwordInput.value = passwordInput.value.replace(/^(0+)|[^\d]+/g,'');
     // })
-
-    // usernameInput.addEventListener('keypress', function(event) {
-	// if (event.keyCode == 13) {
-	// 	passwordInput.add
-	// }
-    // });
 
 
 </script>
