@@ -175,7 +175,7 @@ body {
     height: 45px;
     border-radius: 50%;
     box-shadow: 0 0 10px 2px rgb(19 19 19 /50%);
-    transition: background .3s ease-in-out,box-shadow .3s ease-in-out;
+    transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .content_info .infoSoftware a i {
@@ -229,8 +229,8 @@ body {
 }
 
 .content_info .infoSoftware a:nth-child(5):hover {
-    background: #1877f2;
-    box-shadow: 0 0 10px 2px #1877f2;
+    background: #3a60d0;
+    box-shadow: 0 0 10px 2px #3a60d0;
 }
 
 .content_info .infoStore {
@@ -325,22 +325,34 @@ body {
 .content_ResponseForm form .ResponseFormOption:nth-child(-n+5) input {
     height: 35px;
     margin: 5px 0;
-    border: 1px solid #e1dddd;
-    border-radius: 10px;
+    border: 1px solid #9ba4a4;
+    outline: none;
+    border-radius: 5px;
     padding: 0 15px;
+    font-weight: 600;
+}
+
+.content_ResponseForm form .ResponseFormOption:nth-child(-n+5) input:focus,
+.content_ResponseForm form .ResponseFormOption textarea:focus {
+    border: 2px solid #b48f5e;
+    color: #bb7008;
+    box-shadow: 0 0 5px 1px #b48f5e;
 }
 
 .content_ResponseForm form .ResponseFormOption textarea {
     height: 400px;
     margin: 5px 0;
-    border: 1px solid #e1dddd;
-    border-radius: 10px;
+    border: 1px solid #9ba4a4;
+    outline: none;
+    border-radius: 5px;
     padding: 0 15px;
     line-height: 2;
+    font-weight: 600;
 }
 
 .content_ResponseForm .ResponseFormOption:nth-child(7) input {
     margin: 5px 0;
+    font-weight: 600;
 }
 
 .content_ResponseForm .ResponseFormOption:nth-child(7) p {
@@ -395,6 +407,7 @@ body {
 .content_ResponseForm form .ResponseFormSubmit label a:hover::after {
     width: 100%;
 }
+
 /*  */
 
 .content_ResponseForm form .ResponseFormSubmit label span {
@@ -420,13 +433,12 @@ body {
 }
 
 .content_ResponseForm form .ResponseFormSubmit input[type="submit"] {
-    width: 120px;
     margin: 15px auto 0;
+    padding: 10px 15px;
     border: none;
+    border-radius: 20px;
     color: #fafafa;
     background: #d7c6af;
-    padding: 15px 20px;
-    border-radius: 50px;
     font-weight: 600;
     font-size: 20px;
 }
@@ -540,6 +552,7 @@ body {
 }
 
 @media screen and (max-width:767px) {
+
     /* 頂部內容區-導覽列 */
     .header_nav {
         width: 90%;
@@ -549,6 +562,7 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 0 8px #fafafa;
     }
+
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -559,6 +573,7 @@ body {
         height: 30%;
         cursor: pointer;
     }
+
     .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
@@ -567,20 +582,25 @@ body {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
+
     .header_nav .navContent label::before {
         top: 0;
     }
+
     .header_nav .navContent label::after {
         top: 100%;
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
+
     .header_nav .navContent ul {
         width: 95%;
         height: 0;
@@ -597,133 +617,166 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
+
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
+
     .header_nav .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
+
     .header_nav .navContent ul li.navContentTool {
         margin: 5px 0;
     }
+
     .header_nav .navContent ul li.navContentTool a i {
         margin: 0 3px;
     }
+
     /* 頂部內容區-背景圖&分頁標題註記 */
     .header_bannerTitle {
         height: 30vh;
         margin-bottom: 5vh;
     }
+
     .header_bannerTitle .tt1 {
         bottom: -30px;
         right: 0;
     }
+
     .header_bannerTitle .tt1 span {
         line-height: 30px;
     }
+
     .header_bannerTitle .tt1 span.tt1-1 span {
         padding: 5px 10px;
         font-size: 20px;
     }
+
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
+
     /* 主要內容區 - 聯繫資訊 */
     .content_info .infoSoftware {
         padding: 10px 0;
     }
+
     .content_info .infoSoftware a {
         margin: 5px 0;
         width: 35px;
         height: 35px;
     }
+
     .content_info .infoSoftware a i {
         font-size: 25px;
     }
+
     .content_info .infoSoftware a i.fa-youtube {
         font-size: 22px;
     }
+
     .content_info .infoStore {
         padding-left: 5%;
     }
+
     .content_info .infoStore::after {
         content: '';
         width: 100px;
         height: 100px;
     }
+
     .content_info .infoStore span p:nth-child(2n) {
         margin: 8px 0;
     }
+
     /* 主要內容區 - 提問表格 */
     * {
         font-size: 15px;
     }
+
     .content_ResponseForm form {
         width: 90%;
         margin: 30px auto;
         padding: 30px 25px;
     }
+
     .content_ResponseForm form .ResponseFormPreface {
         margin-bottom: 35px;
     }
+
     .content_ResponseForm form .ResponseFormOption:nth-child(-n+5) input {
         height: 30px;
         border-radius: 8px;
         padding: 0 10px;
     }
+
     .content_ResponseForm form .ResponseFormOption textarea {
         height: 250px;
         border-radius: 8px;
         padding: 0 10px;
     }
+
     .content_ResponseForm .ResponseFormOption:nth-child(7) p {
         font-size: 14px;
     }
+
     .content_ResponseForm form .ResponseFormConfirm {
         margin-top: 30px;
     }
+
     .content_ResponseForm form .ResponseFormSubmit label span {
         width: 13px;
         height: 13px;
         border-radius: 2px;
         margin-right: 3px;
     }
+
     .content_ResponseForm form .ResponseFormSubmit input[type="checkbox"]:checked+label span::after {
         width: 9px;
         height: 9px;
     }
+
     .content_ResponseForm form .ResponseFormSubmit input[type="submit"] {
         width: 110px;
         padding: 10px 0;
         border-radius: 20px;
         font-size: 17px;
     }
+
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
+
     .detailText {
         width: 70%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
+
     .detailText p {
         text-align: center;
     }
+
     .detailText01 {
         margin-top: 5%;
     }
+
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
+
     .detailText03 {
         margin-top: 5%;
     }
+
     .detailPic {
         width: 70%;
         padding-right: 0;

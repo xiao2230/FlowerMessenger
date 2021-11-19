@@ -183,6 +183,7 @@ body {
     background: #b48f5e;
     border: 1px solid #fffaf2;
     box-shadow: 0 0 3px 2px #b48f5e;
+    pointer-events:none;
 }
 
 .content_qnaNav li a:hover {
@@ -190,13 +191,6 @@ body {
     background: #b48f5e;
     border: 1px solid #fffaf2;
     box-shadow: 0 0 3px 2px #b48f5e;
-}
-
-.content_qnaNav li a.focus:hover {
-    color: #fffaf2;
-    background: #b48f5e;
-    border: 1px solid #fffaf2;
-    box-shadow: 0 0 10px 3px #b48f5e;
 }
 
 /* 主要內容區-常見問題內文區 */

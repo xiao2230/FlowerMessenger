@@ -336,6 +336,7 @@ input[type=number] {
 .content_orderArea .orderAreaText form .orderFormOption input[type="text"] {
     height: 30px;
     border: 2px solid #b48f5e;
+    border-radius: 5px;
     outline: none;
     background: #fffaf2;
     cursor: pointer;
