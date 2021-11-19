@@ -24,48 +24,50 @@
             padding: 50px 0;
         }
 
-        .content_account .accountLogin,
-        .content_account .accountRegister,
-        .content_account .forgetPassword {
+        .content_account .hide {
+            display: none;
+        }
+
+        .content_account>div {
             width: 50%;
             display: flex;
             justify-content: center;
         }
 
 
-        .content_account .accountLogin .dataArea {
+        .content_account .dataArea {
             width: 330px;
             box-shadow: 0 0 20px 15px rgb(19 19 19 / 20%);
             padding: 15px 30px;
             background: rgb(19 19 19 / 70%);
         }
 
-        .content_account .accountLogin .dataArea>a {
+        .content_account .dataArea>a {
             display: block;
             width: 70%;
             margin: 10px auto;
         }
 
-        .content_account .accountLogin .dataArea>a img {
+        .content_account .dataArea>a img {
             width: 100%;
         }
 
-        .content_account .accountLogin .dataArea p {
+        .content_account .dataArea p {
             font-weight: 600;
             font-size: 20px;
             color: #fafafa;
         }
 
-        .content_account .accountLogin .dataArea form {
+        .content_account .dataArea form {
             margin-top: 20px;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption {
+        .content_account .dataArea form .aFormOption {
             position: relative;
             margin-bottom: 15px;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption input {
+        .content_account .dataArea form .aFormOption input {
             height: 35px;
             width: 100%;
             font-weight: 600;
@@ -75,40 +77,42 @@
             padding: 0 30px;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption input:focus {
+        .content_account .dataArea form .aFormOption input:focus {
             border: 2px solid #b48f5e;
             color: #bb7008;
             box-shadow: 0 0 5px 1px #b48f5e;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption input+label {
+        .content_account .dataArea form .aFormOption input+label {
             width: 30px;
             text-align: center;
             position: absolute;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
+            cursor: text;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption label+label {
+        .content_account .dataArea form .aFormOption.aPassword label+label {
             width: 30px;
             text-align: center;
             position: absolute;
             top: 50%;
             right: 0;
             transform: translateY(-50%);
+            cursor: pointer;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption label i {
+        .content_account .dataArea form .aFormOption label i {
             font-size: 16px;
             color: #757575;
         }
 
-        .content_account .accountLogin .dataArea form .aFormOption input:focus~label i {
+        .content_account .dataArea form .aFormOption input:focus~label i {
             color: #b48f5e;
         }
 
-        .content_account .accountLogin .dataArea form .aFormSubmit input {
+        .content_account .dataArea form .aFormSubmit input {
             height: 35px;
             width: 100%;
             font-weight: 600;
@@ -121,31 +125,31 @@
             transition: background .3s ease-in-out;
         }
 
-        .content_account .accountLogin .dataArea form .aFormSubmit input:hover {
+        .content_account .dataArea form .aFormSubmit input:hover {
             background: #bb7008;
         }
 
-        .content_account .accountLogin .dataArea .changeArea {
+        .content_account .dataArea .changeArea {
             margin: 8px 0 30px 0;
             width: 100%;
             position: relative;
         }
 
-        .content_account .accountLogin .dataArea .changeArea span {
+        .content_account .dataArea .changeArea span {
             font-size: 15px;
-            position: relative;
             color: #fafafa;
             font-weight: 600;
             cursor: pointer;
             transition: color .3s ease-in-out;
+            position: relative;
         }
 
-        .content_account .accountLogin .dataArea .changeArea span:last-child {
+        .content_account .dataArea .changeArea span:last-child {
             position: absolute;
             right: 0;
         }
 
-        .content_account .accountLogin .dataArea .changeArea span::after {
+        .content_account .dataArea .changeArea span::after {
             content: '';
             width: 0;
             height: 1px;
@@ -156,11 +160,11 @@
             transition: width .3s ease-in-out;
         }
 
-        .content_account .accountLogin .dataArea .changeArea span:hover::after {
+        .content_account .dataArea .changeArea span:hover::after {
             width: 100%;
         }
 
-        .content_account .accountLogin .dataArea .seperate {
+        .content_account .dataArea .seperate {
             width: 100%;
             color: #fafafa;
             text-align: center;
@@ -168,7 +172,7 @@
             position: relative;
         }
 
-        .content_account .accountLogin .dataArea .seperate::before {
+        .content_account .dataArea .seperate::before {
             content: '';
             width: 20%;
             height: 1px;
@@ -179,7 +183,7 @@
             transform: translateY(-50%);
         }
 
-        .content_account .accountLogin .dataArea .seperate::after {
+        .content_account .dataArea .seperate::after {
             content: '';
             width: 20%;
             height: 1px;
@@ -190,11 +194,11 @@
             transform: translateY(-50%);
         }
 
-        .content_account .accountLogin .dataArea .socialLogin {
+        .content_account .dataArea .socialLogin {
             margin: 30px 0;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a {
+        .content_account .dataArea .socialLogin a {
             width: 100%;
             height: 35px;
             display: flex;
@@ -207,27 +211,27 @@
             transition: background .3s ease-in-out;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:not(:last-child) {
+        .content_account .dataArea .socialLogin a:not(:last-child) {
             margin-bottom: 15px;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:first-child {
+        .content_account .dataArea .socialLogin a.slFb {
             background: #3a60d0;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:nth-child(2) {
+        .content_account .dataArea .socialLogin a.slGoogle {
             background: #4285f4;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:nth-child(3) {
+        .content_account .dataArea .socialLogin a.slApple {
             background: #000;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:hover {
+        .content_account .dataArea .socialLogin a:hover {
             background: #bb7008;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a i {
+        .content_account .dataArea .socialLogin a i {
             position: absolute;
             left: 10px;
             top: 50%;
@@ -237,25 +241,18 @@
             font-size: 16px;
         }
 
-        .content_account .accountLogin .dataArea .socialLogin a:nth-child(2) i {
+        .content_account .dataArea .socialLogin a.slGoogle i {
             font-size: 15px;
         }
-        
+
         .content_account .accountPreface {
-            width: 50%;
-            display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
         .content_account .accountPreface p {
             font-size: 20px;
             font-weight: 600;
-        }
-        
-        .content_account .hide{
-            display: none;
         }
     </style>
 </head>
@@ -305,17 +302,17 @@
                     <a href="index.html"><img src="images/common/horizontalLogo.png" alt="Logo圖"></a>
                     <p>會員登入</p>
                     <form action="" id="alForm" method="">
-                        <div class="aFormOption">
-                            <input type="text" id="alUsername" name="alUsername" placeholder="使用者名稱" class="aUsername">
+                        <div class="aFormOption aUsername">
+                            <input type="text" id="alUsername" name="alUsername" placeholder="請輸入使用者名稱">
                             <label for="alUsername"><i class="fas fa-user"></i></label>
                         </div>
-                        <div class="aFormOption">
-                            <input type="password" id="alPassword" name="alPassword" placeholder="請輸入密碼" class="aPassword">
+                        <div class="aFormOption aPassword">
+                            <input type="password" id="alPassword" name="alPassword" placeholder="請輸入密碼">
                             <label for="alPassword"><i class="fas fa-key"></i></label>
                             <label for="alPassword"><i class="fas fa-eye-slash"></i></label>
                         </div>
                         <div class="aFormSubmit">
-                            <input type="submit" id="alBtnLogin" name="alBtnLogin" value="登入" class="aBtnSend">
+                            <input type="submit" id="arLoginBtn" name="arLoginBtn" value="登入">
                         </div>
                     </form>
                     <div class="changeArea">
@@ -324,19 +321,49 @@
                     </div>
                     <div class="seperate">或使用其他帳戶登入</div>
                     <div class="socialLogin">
-                        <a href="#"><i class="fab fa-facebook-f"></i>Facebook 快速登入</a>
-                        <a href="#"><i class="fab fa-google"></i>Google 快速登入</a>
-                        <a href="#"><i class="fab fa-apple"></i>Apple 快速登入</a>
+                        <a href="#" class="slFb"><i class="fab fa-facebook-f"></i>Facebook 快速登入</a>
+                        <a href="#" class="slGoogle"><i class="fab fa-google"></i>Google 快速登入</a>
+                        <a href="#" class="slApple"><i class="fab fa-apple"></i>Apple 快速登入</a>
                     </div>
                 </div>
             </div>
             <!-- 會員註冊 -->
             <div class="accountRegister">
-                會員註冊Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ratione fugiat impedit, provident possimus ipsa temporibus consequatur similique eos. Aperiam sint dolorum eum, illum adipisci quod. Ea est minus facilis.
+                <div class="dataArea">
+                    <a href="index.html"><img src="images/common/horizontalLogo.png" alt="Logo圖"></a>
+                    <p>會員註冊</p>
+                    <form action="" id="arForm" method="">
+                        <div class="aFormOption aUsername">
+                            <input type="text" id="arUsername" name="arUsername" placeholder="請輸入使用者名稱">
+                            <label for="arUsername"><i class="fas fa-user"></i></label>
+                        </div>
+                        <div class="aFormOption aPassword">
+                            <input type="password" id="arPassword" name="arPassword" placeholder="請輸入密碼">
+                            <label for="arPassword"><i class="fas fa-key"></i></label>
+                            <label for="arPassword"><i class="fas fa-eye-slash"></i></label>
+                            <!-- 切換後失去作用!!因為同樣名稱有兩個，.querySelector只取第一個 -->
+                        </div>
+                        <div class="aFormSubmit">
+                            <input type="submit" id="arRegisterBtn" name="arRegisterBtn" value="註冊">
+                        </div>
+                    </form>
+                    <div class="changeArea">
+                        <span class="loginBtn">登入</span>
+                        <span class="forgetPasswordBtn">忘記密碼</span>
+                    </div>
+                    <div class="seperate">或使用其他帳戶登入</div>
+                    <div class="socialLogin">
+                        <a href="#" class="slFb"><i class="fab fa-facebook-f"></i>Facebook 快速登入</a>
+                        <a href="#" class="slGoogle"><i class="fab fa-google"></i>Google 快速登入</a>
+                        <a href="#" class="slApple"><i class="fab fa-apple"></i>Apple 快速登入</a>
+                    </div>
+                </div>
             </div>
             <!-- 忘記密碼 -->
             <div class="forgetPassword">
-                忘記密碼Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, sint assumenda! Obcaecati, magnam. Libero dolor, itaque repellendus quo, soluta blanditiis esse, commodi aspernatur quam eius ea. Eius iste expedita beatae.
+                忘記密碼Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, sint assumenda! Obcaecati, magnam.
+                Libero dolor, itaque repellendus quo, soluta blanditiis esse, commodi aspernatur quam eius ea. Eius iste
+                expedita beatae.
             </div>
             <!-- 前言俳句 -->
             <div class="accountPreface">
@@ -390,51 +417,73 @@
 </body>
 <script src="js/accountLogin.js"></script>
 <script>
-    let loginForm = document.getElementById('alForm');
-    let passwordEye = document.querySelector('.content_account .accountLogin .dataArea form .aFormOption label+label i');
-    let usernameInput = document.querySelector('.content_account .accountLogin .dataArea form .aFormOption:first-child input');
-    let passwordInput = document.querySelector('.content_account .accountLogin .dataArea form .aFormOption:nth-child(2) input');
-    let dataArea = document.querySelector('.content_account .accountLogin');
+    let titleEn = document.querySelector('.header_bannerTitle .tt1-1 span');
+    let titleCh = document.querySelector('.header_bannerTitle .tt1-2 span');
+
+    let usernameInput = document.querySelector('.content_account .dataArea form .aUsername input');
+    let passwordInput = document.querySelector('.content_account .dataArea form .aPassword input');
+    let passwordEye = document.querySelector('.content_account .dataArea form .aPassword label+label i.fa-eye-slash');
+
+    let loginArea = document.querySelector('.content_account .accountLogin');
     let registerArea = document.querySelector('.content_account .accountRegister');
     let forgetPasswordArea = document.querySelector('.content_account .forgetPassword');
-    let registerBtn = document.querySelector('.content_account .accountLogin .dataArea .changeArea .registerBtn');
-    let forgetPasswordBtn = document.querySelector('.content_account .accountLogin .dataArea .changeArea .forgetPasswordBtn');
+    let dataArea = document.querySelector('.content_account .dataArea');
+
+    let loginBtn = document.querySelector('.content_account .dataArea .changeArea .loginBtn');
+    let registerBtn = document.querySelector('.content_account .dataArea .changeArea .registerBtn');
+    let forgetPasswordBtn = document.querySelector('.content_account .dataArea .changeArea .forgetPasswordBtn');
 
     // 『主要內容區-會員登入/註冊/忘記密碼』使用者名稱、密碼設定必填。
     usernameInput.setAttribute('required', true);
     passwordInput.setAttribute('required', true);
+
     // 『主要內容區-會員登入/註冊/忘記密碼』註冊區、忘記密碼區，先隱藏，只顯示登入區。
     registerArea.classList.add('hide');
     forgetPasswordArea.classList.add('hide');
 
-    loginForm.addEventListener('keyup', () => {
+    dataArea.addEventListener('keyup', () => {
         // 『主要內容區-會員登入/註冊/忘記密碼』限制使用者名稱、密碼只能打數字+英文，且開頭只能是英文。
         usernameInput.value = usernameInput.value.replace(/^[0-9_]{1}|[\W]|[_]/g, '');
         passwordInput.value = passwordInput.value.replace(/^[0-9_]{1}|[\W]|[_]/g, '');
     });
 
-    loginForm.addEventListener('paste', function (e) {
+    dataArea.addEventListener('paste', function (e) {
         // 『主要內容區-會員登入/註冊/忘記密碼』限制使用者名稱、密碼不能用貼上的。
         e.preventDefault();
     });
 
     passwordEye.addEventListener('click', () => {
-        // 『主要內容區-會員登入/註冊/忘記密碼』的密碼是否可見，共做兩件事：icon換圖、input修改type。
+        // 『主要內容區-會員登入/註冊/忘記密碼』共做兩件事：icon換圖、input切換type。
         passwordEye.classList.toggle('fa-eye');
         passwordEye.classList.toggle('fa-eye-slash');
         passwordInput.type = passwordEye.classList.contains('fa-eye') ? 'text' : 'password';
     });
 
+    loginBtn.addEventListener('click', () => {
+        // 『主要內容區-會員登入/註冊/忘記密碼』切換為登入，更改分頁標題註記
+        loginArea.classList.remove('hide');
+        registerArea.classList.add('hide');
+        forgetPasswordArea.classList.add('hide');
+        titleEn.innerHTML = 'FORGET PASSWORD';
+        titleCh.innerHTML = '忘記密碼';
+    });
+
     registerBtn.addEventListener('click', () => {
-        // 『會員登入』的切換註冊按鈕
-        dataArea.classList.add('hide');
+        // 『主要內容區-會員登入/註冊/忘記密碼』切換為註冊，更改分頁標題註記
         registerArea.classList.remove('hide');
+        loginArea.classList.add('hide');
+        forgetPasswordArea.classList.add('hide');
+        titleEn.innerHTML = 'ACCOUNT REGISTER';
+        titleCh.innerHTML = '會員註冊';
     });
 
     forgetPasswordBtn.addEventListener('click', () => {
-        // 『會員登入』的切換忘記密碼按鈕
-        dataArea.classList.add('hide');
+        // 『主要內容區-會員登入/註冊/忘記密碼』切換為忘記密碼，更改分頁標題註記
         forgetPasswordArea.classList.remove('hide');
+        loginArea.classList.add('hide');
+        registerArea.classList.add('hide');
+        titleEn.innerHTML = 'FORGET PASSWORD';
+        titleCh.innerHTML = '忘記密碼';
     });
 
 
