@@ -169,27 +169,26 @@ body {
 }
 
 .content_qnaNav li a {
-    color: #b48f5e;
-    background: #fffaf2;
-    padding: 5px 10px;
-    border: 1px solid #b48f5e;
-    border-radius: 15px;
+    color: #fffaf2;
+    background: #9ba4a4;
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+    padding: 0 15px;
+    border-radius: 5px;
     font-weight: 600;
     font-size: 18px;
 }
 
 .content_qnaNav li a.focus {
     color: #fffaf2;
-    background: #b48f5e;
-    border: 1px solid #fffaf2;
-    box-shadow: 0 0 3px 2px #b48f5e;
+    background: #242424;
     pointer-events:none;
 }
 
 .content_qnaNav li a:hover {
     color: #fffaf2;
     background: #b48f5e;
-    border: 1px solid #fffaf2;
     box-shadow: 0 0 3px 2px #b48f5e;
 }
 

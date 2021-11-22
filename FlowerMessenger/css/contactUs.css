@@ -265,9 +265,9 @@ body {
     border-radius: 15px;
     padding: 5px 10px;
     color: #fffaf2;
-    background: #b48f5e;
+    background: #242424;
     border: 1px solid #fffaf2;
-    box-shadow: 0 0 2px 3px #b48f5e;
+    box-shadow: 0 0 2px 3px #242424;
 }
 
 .content_info .infoStore span p:nth-child(2n-1) i {
@@ -436,7 +436,7 @@ body {
     margin: 15px auto 0;
     padding: 10px 15px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     color: #fafafa;
     background: #d7c6af;
     font-weight: 600;

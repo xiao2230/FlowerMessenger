@@ -228,7 +228,7 @@
         }
 
         .content_account .dataArea .socialLogin a:hover {
-            background: #bb7008;
+            background: #b48f5e;
         }
 
         .content_account .dataArea .socialLogin a i {
@@ -342,7 +342,6 @@
                             <label for="arPassword"><i class="fas fa-key"></i></label>
                             <label for="arPassword"><i class="fas fa-eye-slash"></i></label>
                             <!-- 切換後失去作用!!因為同樣名稱有兩個，.querySelector只取第一個 -->
-                            <!-- 登入、註冊 連續按會有錯誤 -->
                         </div>
                         <div class="aFormSubmit">
                             <input type="submit" id="arRegisterBtn" name="arRegisterBtn" value="註冊">
@@ -465,8 +464,8 @@
         loginArea.classList.remove('hide');
         registerArea.classList.add('hide');
         forgetPasswordArea.classList.add('hide');
-        titleEn.innerHTML = 'FORGET PASSWORD';
-        titleCh.innerHTML = '忘記密碼';
+        titleEn.innerHTML = 'ACCOUNT LOGIN';
+        titleCh.innerHTML = '會員登入';
     });
 
     registerBtn.addEventListener('click', () => {
