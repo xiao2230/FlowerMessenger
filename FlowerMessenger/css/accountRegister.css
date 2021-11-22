@@ -97,7 +97,7 @@ body {
 /* 頂部內容區-背景圖&分頁標題註記 */
 
 .header_bannerTitle {
-    background: url(../images/obCustomization/banner_obCustomization.jpg) no-repeat;
+    background: url(../images/accountLogin/banner_accountLogin.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -131,106 +131,6 @@ body {
 
 .header_bannerTitle .tt1 span.tt1-2 span {
     padding: 0 15px;
-}
-
-/* 主要內容區-俳句 */
-
-.content_preface {
-    max-width: 1000px;
-    margin: 50px auto;
-    writing-mode: vertical-rl;
-    position: relative;
-}
-
-.content_preface p {
-    line-height: 70px;
-    letter-spacing: 3px;
-    position: relative;
-    bottom: -20px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out, bottom .8s ease-in-out;
-}
-
-.content_preface p.locate {
-    bottom: 0;
-    opacity: 1;
-}
-
-.content_preface .prefaceBg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 250px;
-    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 10%, 25% 100%, 100% 100%, 100% 0%);
-    background: linear-gradient(240deg, #feef87, #93e2fe, #fe7e9f);
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.content_preface .prefaceBg.appear {
-    opacity: .3;
-}
-
-/* 主要內容區-訂購須知 */
-
-.content_policy {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 5vw;
-}
-
-.content_policy p {
-    text-align: center;
-    line-height: 35px;
-}
-
-.content_policy p:not(:first-child) {
-    position: relative;
-    top: 20px;
-    opacity: 0;
-    transition: top .8s ease-in-out, opacity .8s ease-in-out;
-}
-
-.content_policy p:not(:first-child).locate {
-    top: 0;
-    opacity: 1;
-}
-
-.content_policy p:first-child {
-    margin-bottom: 30px;
-}
-
-.content_policy p img {
-    width: 50%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.content_policy p img.appear {
-    opacity: 1;
-}
-
-/* 主要內容區-參考作品集 */
-
-.content_portfolio {
-    max-width: 1000px;
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 5vw;
-}
-
-.content_portfolio img {
-    width: calc(100%/3);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.content_portfolio img.appear {
-    opacity: 1;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -422,23 +322,6 @@ body {
     }
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
-    }
-    /* 主要內容區-俳句 */
-    .content_preface p {
-        line-height: 60px;
-        font-size: 16px;
-    }
-    /* 主要內容區-訂購須知 */
-    .content_policy p {
-        line-height: 30px;
-        font-size: 15px;
-    }
-    .content_policy p img {
-        width: 70%;
-    }
-    /* 主要內容區-參考作品集 */
-    .content_portfolio img {
-        width: 50%;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {

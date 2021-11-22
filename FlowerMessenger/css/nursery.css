@@ -153,7 +153,7 @@ body {
     opacity: 1;
 }
 
-/* 主要內容區-前言 */
+/* 主要內容區-俳句 */
 
 .content_preface {
     padding-top: 40px;
@@ -407,7 +407,7 @@ body {
     *{
         font-size: 15px;
     }
-    /* 主要內容區-前言 */
+    /* 主要內容區-俳句 */
     .content_preface {
         padding-top: 30px;
     }
