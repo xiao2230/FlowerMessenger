@@ -9,8 +9,8 @@
     <!-- Font Awesome外部CSS檔 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/ob.css">
-    <link rel="stylesheet" href="css/obSingleSeries.css">
+    <link rel="stylesheet" href="css/oB.css">
+    <link rel="stylesheet" href="css/oBSingleSeries.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                     <li class="navContentTool">
                         <a href="accountLogin.html"><i class="fas fa-user"></i></a>
                         <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                        <a href="faqBouquet.html"><i class="fas fa-question-circle"></i></a>
+                        <a href="fAQBouquet.html"><i class="fas fa-question-circle"></i></a>
                     </li>
                     <li><a href="#">回頂部</a></li>
                 </ul>
@@ -51,12 +51,12 @@
     <!-- 主要內容區 -->
     <section class="content">
         <!-- 主要內容區-訂購區 -->
-        <div class="content_orderArea">
-            <div class="orderAreaPic">
+        <div class="content_oBArea">
+            <div class="oBAreaPic">
                 <img v-for="pic in bouquetPic" :src="pic.image" :alt="pic.name" :key="pic.id" :id="pic.id"
                     @click="changePic(pic)" :class="pic.mask">
             </div>
-            <div class="orderAreaText">
+            <div class="oBAreaText">
                 <h3>
                     <span>{{bouquetText.chName}}</span>
                     <span>{{bouquetText.enName}}</span>
@@ -67,16 +67,16 @@
                 </div>
                 <p>{{bouquetText.feature}}</p>
                 <hr>
-                <form action="" id="orderForm" method="">
-                    <div class="orderFormOption">
-                        <p>1. 請選擇週數 (長期方案請詳閱 <a href="faqSubscription.html" target="_blank">說明</a> )</p>
+                <form action="" id="oBForm" method="">
+                    <div class="oBFormOption">
+                        <p>1. 請選擇週數 (長期方案請詳閱 <a href="fAQSubscription.html" target="_blank">說明</a> )</p>
                         <span v-for="week in bouquetText.weeks">
                             <input type="radio" :id="week.id" :name="week.name" :value="week.val"
                                 :checked="week.checked" @click="choosePlan(week)">
                             <label :for="week.id">{{ week.val }}</label>
                         </span>
                     </div>
-                    <div class="orderFormOption">
+                    <div class="oBFormOption">
                         <label :for="bouquetText.num.id">
                             <p>2. 數量 (每週配送數量)</p>
                         </label>
@@ -85,7 +85,7 @@
                             :name="bouquetText.num.name" @keyup="keyRestrict()">
                         <span class="plusBtn" @click="plus()"><i class="fas fa-plus"></i></span>
                     </div>
-                    <div class="orderFormOption">
+                    <div class="oBFormOption">
                         <p>3. 開始配送週</p>
                         <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name" readonly>
                         <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
@@ -93,7 +93,7 @@
                             <!-- 日曆暫緩 -->
                         </div>
                     </div>
-                    <div class="orderFormOption">
+                    <div class="oBFormOption">
                         <p>4. 配送頻率</p>
                         <span v-for="rate in bouquetText.frequency">
                             <input type="radio" :id="rate.id" :name="rate.name" :value="rate.val"
@@ -101,7 +101,7 @@
                             <label :for="rate.id">{{ rate.val }}</label>
                         </span>
                     </div>
-                    <div class="orderFormSubmit">
+                    <div class="oBFormSubmit">
                         <input type="submit" :id="bouquetText.submitBtn.id" :name="bouquetText.submitBtn.name"
                             :value="bouquetText.submitBtn.val">
                     </div>
@@ -130,9 +130,9 @@
                     </ul>
                     <ul>
                         <li>常見問題</li>
-                        <li><a href="faqBouquet.html">週花QnA</a></li>
-                        <li><a href="faqDelivery.html">配送週花</a></li>
-                        <li><a href="faqSubscription.html">長期訂購</a></li>
+                        <li><a href="fAQBouquet.html">週花QnA</a></li>
+                        <li><a href="fAQDelivery.html">配送週花</a></li>
+                        <li><a href="fAQSubscription.html">長期訂購</a></li>
                     </ul>
                     <ul>
                         <li>花草學堂</li>
@@ -157,6 +157,6 @@
     </section>
 </body>
 <script src="https://unpkg.com/vue@next"></script>
-<script src="js/obSingleSeries.js"></script>
+<script src="js/oBSingleSeries.js"></script>
 
 </html>

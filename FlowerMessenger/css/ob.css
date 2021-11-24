@@ -125,7 +125,7 @@ body {
 
 /* 主要內容區-訂購區 */
 
-.content_orderArea {
+.content_oBArea {
     max-width: 1000px;
     margin: 50px auto;
     display: flex;
@@ -135,53 +135,53 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-.content_orderArea.appear {
+.content_oBArea.appear {
     opacity: 1;
 }
 
-.content_orderArea .orderAreaPic {
+.content_oBArea .oBAreaPic {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.content_orderArea .orderAreaPic img:first-child {
+.content_oBArea .oBAreaPic img:first-child {
     width: 100%;
     margin-bottom: 10px;
     object-fit: cover;
     object-position: center center;
 }
 
-.content_orderArea .orderAreaPic img:not(:first-child) {
+.content_oBArea .oBAreaPic img:not(:first-child) {
     width: 31%;
     cursor: pointer;
     object-fit: cover;
     object-position: center center;
 }
 
-.content_orderArea .orderAreaPic img.openMask {
+.content_oBArea .oBAreaPic img.openMask {
     filter: brightness(.5);
 }
 
-.content_orderArea .orderAreaText {
+.content_oBArea .oBAreaText {
     width: 50%;
     padding: 10px 0 10px 20px;
     position: relative;
 }
 
-.content_orderArea .orderAreaText h3 span:first-child {
+.content_oBArea .oBAreaText h3 span:first-child {
     font-size: 25px;
     margin-right: 15px;
 }
 
-.content_orderArea .orderAreaText>div p:first-child {
+.content_oBArea .oBAreaText>div p:first-child {
     font-size: 25px;
     margin-top: 10px;
     font-weight: 600;
 }
 
-.content_orderArea .orderAreaText>div p:last-child {
+.content_oBArea .oBAreaText>div p:last-child {
     font-size: 16px;
     line-height: 23px;
     letter-spacing: .5px;
@@ -189,34 +189,34 @@ body {
     margin-top: 10px;
 }
 
-.content_orderArea .orderAreaText>p {
+.content_oBArea .oBAreaText>p {
     margin-top: 10px;
 }
 
-.content_orderArea .orderAreaText hr {
+.content_oBArea .oBAreaText hr {
     margin-top: 10px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption {
+.content_oBArea .oBAreaText form .oBFormOption {
     margin-top: 10px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption:nth-child(4) {
+.content_oBArea .oBAreaText form .oBFormOption:nth-child(4) {
     margin-bottom: 40px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption p a {
+.content_oBArea .oBAreaText form .oBFormOption p a {
     font-weight: 600;
     color: #ad8316;
     position: relative;
     transition: color .3s ease-in-out;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption p a:hover {
+.content_oBArea .oBAreaText form .oBFormOption p a:hover {
     color: #7e5f10;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption p a::after {
+.content_oBArea .oBAreaText form .oBFormOption p a::after {
     content: '';
     width: 0;
     height: 1px;
@@ -227,15 +227,15 @@ body {
     transition: width .3s ease-in-out;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption p a:hover::after {
+.content_oBArea .oBAreaText form .oBFormOption p a:hover::after {
     width: 100%;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption span input {
+.content_oBArea .oBAreaText form .oBFormOption span input {
     display: none;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption span label {
+.content_oBArea .oBAreaText form .oBFormOption span label {
     display: inline-flex;
     align-items: center;
     padding: 0 12px;
@@ -250,22 +250,22 @@ body {
     transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption span+span label {
+.content_oBArea .oBAreaText form .oBFormOption span+span label {
     margin: 5px 0 0 15px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption span input[type="radio"]:checked+label {
+.content_oBArea .oBAreaText form .oBFormOption span input[type="radio"]:checked+label {
     color: #fffaf2;
     background: #242424;
     cursor: default;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption span input[type="radio"]:hover:not(:checked)+label {
+.content_oBArea .oBAreaText form .oBFormOption span input[type="radio"]:hover:not(:checked)+label {
     background: #b48f5e;
     box-shadow: 0 0 5px 1px #b48f5e;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption input[type="number"] {
+.content_oBArea .oBAreaText form .oBFormOption input[type="number"] {
     margin-top: 5px;
     height: 30px;
     width: 60px;
@@ -280,12 +280,12 @@ body {
     font-weight: 600;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption input[type="number"]:focus {
+.content_oBArea .oBAreaText form .oBFormOption input[type="number"]:focus {
     border: 2px solid #b48f5e;
     color: #bb7008;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption .minusBtn {
+.content_oBArea .oBAreaText form .oBFormOption .minusBtn {
     display: inline-flex;
     align-items: center;
     padding: 0 5px;
@@ -298,7 +298,7 @@ body {
     top: -2px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption .plusBtn {
+.content_oBArea .oBAreaText form .oBFormOption .plusBtn {
     display: inline-flex;
     align-items: center;
     padding: 0 5px;
@@ -311,14 +311,14 @@ body {
     top: -2px;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption .minusBtn:hover,
-.content_orderArea .orderAreaText form .orderFormOption .plusBtn:hover{
+.content_oBArea .oBAreaText form .oBFormOption .minusBtn:hover,
+.content_oBArea .oBAreaText form .oBFormOption .plusBtn:hover{
     background: #b48f5e;
     box-shadow: 0 0 5px 1px #b48f5e;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption .minusBtn i,
-.content_orderArea .orderAreaText form .orderFormOption .plusBtn i {
+.content_oBArea .oBAreaText form .oBFormOption .minusBtn i,
+.content_oBArea .oBAreaText form .oBFormOption .plusBtn i {
     font-size: 10px;
     font-weight: 600;
     color: #fffaf2;
@@ -333,12 +333,12 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption label.calBtn {
+.content_oBArea .oBAreaText form .oBFormOption label.calBtn {
     position: relative;
     cursor: pointer;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption label.calBtn i {
+.content_oBArea .oBAreaText form .oBFormOption label.calBtn i {
     font-size: 22px;
     font-weight: normal;
     color: #9ba4a4;
@@ -347,7 +347,7 @@ input[type=number] {
     top: 0;
 }
 
-.content_orderArea .orderAreaText form .orderFormOption input[type="text"] {
+.content_oBArea .oBAreaText form .oBFormOption input[type="text"] {
     height: 30px;
     border: 2px solid #9ba4a4;
     border-radius: 5px;
@@ -357,7 +357,7 @@ input[type=number] {
     margin-top: 5px;
 }
 
-.content_orderArea .orderAreaText form .orderFormSubmit input[type="submit"] {
+.content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"] {
     height: 35px;
     padding: 0 12px;
     border: none;
@@ -374,7 +374,7 @@ input[type=number] {
     font-size: 18px;
 }
 
-.content_orderArea .orderAreaText form .orderFormSubmit input[type="submit"]:hover {
+.content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"]:hover {
     background: #bb7008;
 }
 
@@ -591,87 +591,87 @@ input[type=number] {
         font-size: 15px;
     }
 
-    .content_orderArea {
+    .content_oBArea {
         padding: 0;
     }
 
-    .content_orderArea .orderAreaPic {
+    .content_oBArea .oBAreaPic {
         width: 90%;
         margin: 0 auto;
     }
 
-    .content_orderArea .orderAreaText {
+    .content_oBArea .oBAreaText {
         width: 90%;
         padding: 0;
         margin: 20px auto 0;
     }
 
-    .content_orderArea .orderAreaText h3 span:first-child {
+    .content_oBArea .oBAreaText h3 span:first-child {
         font-size: 22px;
         margin-right: 5px;
     }
 
-    .content_orderArea .orderAreaText>div p:first-child {
+    .content_oBArea .oBAreaText>div p:first-child {
         font-size: 22px;
         margin-top: 5px;
         font-weight: 600;
     }
 
-    .content_orderArea .orderAreaText>div p:last-child {
+    .content_oBArea .oBAreaText>div p:last-child {
         font-size: 14px;
         line-height: 20px;
         letter-spacing: .2px;
         margin-top: 5px;
     }
 
-    .content_orderArea .orderAreaText>p {
+    .content_oBArea .oBAreaText>p {
         margin-top: 5px;
     }
 
-    .content_orderArea .orderAreaText hr {
+    .content_oBArea .oBAreaText hr {
         margin-top: 5px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption {
+    .content_oBArea .oBAreaText form .oBFormOption {
         margin-top: 5px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption:nth-child(4) {
+    .content_oBArea .oBAreaText form .oBFormOption:nth-child(4) {
         margin-bottom: 65px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption span label {
+    .content_oBArea .oBAreaText form .oBFormOption span label {
         padding: 0 10px;
         height: 27px;
         font-size: 14px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption span+span label {
+    .content_oBArea .oBAreaText form .oBFormOption span+span label {
         margin: 3px 0 0 10px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption input[type="number"] {
+    .content_oBArea .oBAreaText form .oBFormOption input[type="number"] {
         margin-top: 3px;
         height: 27px;
         width: 50px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption .minusBtn, .content_orderArea .orderAreaText form .orderFormOption .plusBtn {
+    .content_oBArea .oBAreaText form .oBFormOption .minusBtn, .content_oBArea .oBAreaText form .oBFormOption .plusBtn {
         height: 27px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption label.calBtn i {
+    .content_oBArea .oBAreaText form .oBFormOption label.calBtn i {
         font-size: 19px;
         top: 50%;
         transform: translateY(-50%);
     }
 
-    .content_orderArea .orderAreaText form .orderFormOption input[type="text"] {
+    .content_oBArea .oBAreaText form .oBFormOption input[type="text"] {
         height: 27px;
         margin-top: 3px;
     }
 
-    .content_orderArea .orderAreaText form .orderFormSubmit input[type="submit"] {
+    .content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"] {
         height: 30px;
         padding: 0 10px;
         font-size: 16px;

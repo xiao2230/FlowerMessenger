@@ -1,6 +1,6 @@
 let headerNav = document.querySelector('.header_nav');
-let cuBtnSend = document.getElementById('cuBtnSend');
-let cuConfirm = document.getElementById('cuConfirm');
+let cUBtnSend = document.getElementById('cUBtnSend');
+let cUConfirm = document.getElementById('cUConfirm');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
@@ -23,7 +23,7 @@ document.addEventListener('scroll', () => {
 });
 
 // 『主要內容區 - 提問表格』控制表單送出按鈕是否啟用
-cuBtnSend.setAttribute('disabled',true);
-cuConfirm.addEventListener('click', () => {
-	cuBtnSend.toggleAttribute('disabled');
+cUBtnSend.setAttribute('disabled',true);
+cUConfirm.addEventListener('click', () => {
+	cUBtnSend.toggleAttribute('disabled');
 });

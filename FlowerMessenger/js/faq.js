@@ -1,12 +1,12 @@
 let headerNav = document.querySelector('.header_nav');
-let contentQna = document.querySelector('.content_qna');
+let contentQNA = document.querySelector('.content_qNA');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
     // 『主要內容區-常見問題』的內容漸入
-    contentQna.classList.add('locate');
+    contentQNA.classList.add('locate');
 });
 
 document.addEventListener('scroll', () => {

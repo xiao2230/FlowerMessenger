@@ -97,7 +97,7 @@ body {
 /* 頂部內容區-背景圖&分頁標題註記 */
 
 .header_bannerTitle {
-    background: url(../images/faq/banner_faq.jpg) no-repeat;
+    background: url(../images/fAQ/banner_fAQ.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -135,7 +135,7 @@ body {
 
 /* 主要內容區-常見問題 */
 
-.content_qna {
+.content_qNA {
     max-width: 1000px;
     margin: 50px auto;
     display: flex;
@@ -149,26 +149,26 @@ body {
     transition: top 1.5s ease-in-out, opacity 2s ease-in-out;
 }
 
-.content_qna.locate {
+.content_qNA.locate {
     top: 0;
     opacity: 1;
 }
 
-.content_qna span {
+.content_qNA span {
     background: #d3bc82;
 }
 
 /* 主要內容區-常見問題導覽列 */
 
-.content_qnaNav {
+.content_qNANav {
     width: 20%;
 }
 
-.content_qnaNav li {
+.content_qNANav li {
     margin-bottom: 30px;
 }
 
-.content_qnaNav li a {
+.content_qNANav li a {
     color: #fffaf2;
     background: #9ba4a4;
     display: inline-flex;
@@ -180,13 +180,13 @@ body {
     font-size: 18px;
 }
 
-.content_qnaNav li a.focus {
+.content_qNANav li a.focus {
     color: #fffaf2;
     background: #242424;
     pointer-events:none;
 }
 
-.content_qnaNav li a:hover {
+.content_qNANav li a:hover {
     color: #fffaf2;
     background: #b48f5e;
     box-shadow: 0 0 3px 2px #b48f5e;
@@ -194,44 +194,44 @@ body {
 
 /* 主要內容區-常見問題內文區 */
 
-.content_qnaText {
+.content_qNAText {
     width: 80%;
 }
 
-.content_qnaText h3 {
+.content_qNAText h3 {
     font-size: 25px;
 }
 
-.content_qnaText hr {
+.content_qNAText hr {
     margin: 10px 0;
 }
 
-.content_qnaText h4 {
+.content_qNAText h4 {
     font-size: 22px;
     margin: 50px 0 10px 0;
 }
 
-.content_qnaText h5 {
+.content_qNAText h5 {
     font-size: 19px;
     margin: 15px 0 5px 0;
 }
 
-.content_qnaText p {
+.content_qNAText p {
     line-height: 28px;
 }
 
-.content_qnaText p a {
+.content_qNAText p a {
     font-weight: 600;
     color: #ad8316;
     position: relative;
     transition: color .3s ease-in-out;
 }
 
-.content_qnaText p a:hover {
+.content_qNAText p a:hover {
     color: #7e5f10;
 }
 
-.content_qnaText p a::after {
+.content_qNAText p a::after {
     content: '';
     width: 0;
     height: 1px;
@@ -242,7 +242,7 @@ body {
     transition: width .3s ease-in-out;
 }
 
-.content_qnaText p a:hover::after {
+.content_qNAText p a:hover::after {
     width: 100%;
 }
 
@@ -437,13 +437,13 @@ body {
         padding: 0 10px;
     }
     /* 主要內容區-常見問題導覽列 */
-    .content_qnaNav {
+    .content_qNANav {
         width: 100%;
     }
-    .content_qnaNav ul {
+    .content_qNANav ul {
         padding-bottom: 20px;
     }
-    .content_qnaNav li {
+    .content_qNANav li {
         margin-bottom: 20px;
         text-align: center;
     }
@@ -451,24 +451,24 @@ body {
     * {
         font-size: 15px;
     }
-    .content_qnaText {
+    .content_qNAText {
         width: 100%;
     }
-    .content_qnaText h3 {
+    .content_qNAText h3 {
         font-size: 22px;
     }
-    .content_qnaText hr {
+    .content_qNAText hr {
         margin: 5px 0;
     }
-    .content_qnaText h4 {
+    .content_qNAText h4 {
         font-size: 19px;
         margin: 30px 0 5px 0;
     }
-    .content_qnaText h5 {
+    .content_qNAText h5 {
         font-size: 17px;
         margin: 10px 0 5px 0;
     }
-    .content_qnaText p {
+    .content_qNAText p {
         line-height: 22px;
     }
     /* 底部內容區-店家資訊&店鋪圖片 */

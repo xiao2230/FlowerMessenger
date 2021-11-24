@@ -1,5 +1,5 @@
 let headerNav = document.querySelector('.header_nav');
-let contentOrderArea = document.querySelector('.content_orderArea');
+let contentOrderArea = document.querySelector('.content_oBArea');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
@@ -29,25 +29,25 @@ Vue.createApp({
 				{
 					id: 'single01',
 					name: '單品系列01',
-					image: 'images/obSingleSeries/single01.jpg',
+					image: 'images/oBSingleSeries/single01.jpg',
 					mask: 'noMask'
 				},
 				{
 					id: 'single02',
 					name: '單品系列01',
-					image: 'images/obSingleSeries/single01.jpg',
+					image: 'images/oBSingleSeries/single01.jpg',
 					mask: 'openMask'
 				},
 				{
 					id: 'single03',
 					name: '單品系列02',
-					image: 'images/obSingleSeries/single02.jpg',
+					image: 'images/oBSingleSeries/single02.jpg',
 					mask: 'noMask'
 				},
 				{
 					id: 'single04',
 					name: '單品系列03',
-					image: 'images/obSingleSeries/single03.jpg',
+					image: 'images/oBSingleSeries/single03.jpg',
 					mask: 'noMask'
 				}
 			],
@@ -61,55 +61,55 @@ Vue.createApp({
 				weeks: [
 					{
 						val: 1,
-						id: 'obweek01',
-						name: 'obweek',
+						id: 'oBWeek01',
+						name: 'oBWeek',
 						checked: true
 					},
 					{
 						val: 4,
-						id: 'obweek04',
-						name: 'obweek',
+						id: 'oBWeek04',
+						name: 'oBWeek',
 						checked: false
 					},
 					{
 						val: 8,
-						id: 'obweek08',
-						name: 'obweek',
+						id: 'oBWeek08',
+						name: 'oBWeek',
 						checked: false
 					},
 					{
 						val: '長期方案',
-						id: 'obweekstanding',
-						name: 'obweek',
+						id: 'oBWeekstanding',
+						name: 'oBWeek',
 						checked: false
 					}
 				],
 				num: {
 					val: '1',
-					id: 'obnum',
-					name: 'obnum'
+					id: 'oBNum',
+					name: 'oBNum'
 				},
 				calendar: {
-					id: 'obCal',
-					name: 'obCal'
+					id: 'oBCal',
+					name: 'oBCal'
 				},
 				frequency: [
 					{
 						val: '每週配送',
-						id: 'obfrequency01',
-						name: 'obfrequency',
+						id: 'oBFrequency01',
+						name: 'oBFrequency',
 						checked: true
 					},
 					{
 						val: '隔週配送',
-						id: 'obfrequency02',
-						name: 'obfrequency',
+						id: 'oBFrequency02',
+						name: 'oBFrequency',
 						checked: false
 					}
 				],
 				submitBtn: {
-					id: 'obBtnSend',
-					name: 'obBtnSend',
+					id: 'oBBtnSend',
+					name: 'oBBtnSend',
 					val: '加入購物車'
 				}
 			}
@@ -174,10 +174,10 @@ Vue.createApp({
 			return tString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 		}
 	}
-}).mount('.content_orderArea');
+}).mount('.content_oBArea');
 
 // 花束訂購(數量設定)：使負數、小數點無法鍵盤輸入。
-document.getElementById('obnum').addEventListener('keypress', function(event) {
+document.getElementById('oBNum').addEventListener('keypress', function(event) {
 	if (event.keyCode == 45 || event.keyCode == 46 || event.keyCode == 13) {
 		event.preventDefault();
 	}

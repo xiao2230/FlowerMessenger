@@ -9,7 +9,7 @@
     <!-- Font Awesome外部CSS檔 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/accountRegister.css">
+    <link rel="stylesheet" href="css/accountLRF.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <li class="navContentTool">
                         <a href="accountLogin.html"><i class="fas fa-user"></i></a>
                         <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                        <a href="faqBouquet.html"><i class="fas fa-question-circle"></i></a>
+                        <a href="fAQBouquet.html"><i class="fas fa-question-circle"></i></a>
                     </li>
                     <li><a href="#">回頂部</a></li>
                 </ul>
@@ -39,17 +39,60 @@
         <div class="header_bannerTitle">
             <h2 class="tt1">
                 <span class="tt1-1">
-                    <span>ACCOUNT REGISTER</span>
+                    <span>ACCOUNT - REGISTER</span>
                 </span>
                 <span class="tt1-2">
-                    <span>會員註冊</span>
+                    <span>會員專區 - 註冊</span>
                 </span>
             </h2>
         </div>
     </section>
     <!-- 主要內容區 -->
     <section class="content">
-        
+        <!-- 主要內容區-會員登入前內容 -->
+        <div class="content_accountLRF">
+            <div class="accountRegisterField">
+                <div class="dataArea">
+                    <a href="index.html"><img src="images/common/horizontalLogo.png" alt="Logo圖"></a>
+                    <form action="" id="arForm" method="">
+                        <div class="aFormOption aUsername">
+                            <input type="text" id="alUsername" name="alUsername" placeholder="請輸入使用者名稱">
+                            <label for="alUsername"><i class="fas fa-user"></i></label>
+                        </div>
+                        <div class="aFormOption aPassword">
+                            <input type="password" id="alPassword" name="alPassword" placeholder="請輸入密碼">
+                            <label for="alPassword"><i class="fas fa-key"></i></label>
+                            <label for="alPassword"><i class="fas fa-eye-slash"></i></label>
+                        </div>
+                        <div class="aFormRemind">
+                            <h6>※ 輸入說明</h6>
+                            <p>1、開頭為英文字母(大小寫不同)</p>
+                            <p>2、限制長度『6至16字元』</p>
+                            <p>3、只可輸入『大小寫英文字母/數字』</p>
+                            <p>4、無法輸入『特殊符號或空格』</p>
+                        </div>
+                        <div class="aFormSubmit">
+                            <input type="submit" id="alLoginBtn" name="alLoginBtn" value="登入">
+                        </div>
+                    </form>
+                    <div class="changeOption">
+                        <a href="accountRegister.html" class="registerBtn">註冊</a>
+                        <a href="forgetPassword.html" class="forgetPasswordBtn">忘記密碼</a>
+                    </div>
+                    <div class="seperate">或使用其他帳戶登入</div>
+                    <div class="socialLogin">
+                        <a href="#" class="slFb"><i class="fab fa-facebook-f"></i>Facebook 快速登入</a>
+                        <a href="#" class="slGoogle"><i class="fab fa-google"></i>Google 快速登入</a>
+                        <a href="#" class="slApple"><i class="fab fa-apple"></i>Apple 快速登入</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accountLoginPreface">
+                <p>時間是可以操弄的，</p>
+                <p>時光在我們看一朵花時放慢了腳步，</p>
+                <p>也許這樣做，可以讓我們慢些老去。</p>
+            </div>
+        </div>
     </section>
     <!-- 底部內容區 -->
     <section class="footer">
@@ -72,9 +115,9 @@
                     </ul>
                     <ul>
                         <li>常見問題</li>
-                        <li><a href="faqBouquet.html">週花QnA</a></li>
-                        <li><a href="faqDelivery.html">配送週花</a></li>
-                        <li><a href="faqSubscription.html">長期訂購</a></li>
+                        <li><a href="fAQBouquet.html">週花QnA</a></li>
+                        <li><a href="fAQDelivery.html">配送週花</a></li>
+                        <li><a href="fAQSubscription.html">長期訂購</a></li>
                     </ul>
                     <ul>
                         <li>花草學堂</li>
@@ -98,6 +141,6 @@
         </div>
     </section>
 </body>
-<script src="js/accountRegister.js"></script>
+<script src="js/accountLRF.js"></script>
 
 </html>
