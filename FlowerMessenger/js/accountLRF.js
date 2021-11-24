@@ -4,9 +4,6 @@ let passwordInput = document.querySelector('.content_accountLRF  .dataArea form 
 let passwordEye = document.querySelector('.content_accountLRF  .dataArea form .aPassword label+label i.fa-eye-slash');
 let remind = document.querySelector('.content_accountLRF  .dataArea form .aFormRemind');
 let form = document.querySelector('.content_accountLRF  .dataArea form');
-let registerBtn = document.querySelector('.content_accountLRF  .dataArea .changeOption .registerBtn');
-let forgetPasswordBtn = document.querySelector('.content_accountLRF  .dataArea .changeOption .forgetPasswordBtn'
-);
 let accountLoginField = document.querySelector('.content_accountLRF > div:first-child');
 let accountLoginPreface = document.querySelectorAll('.content_accountLRF .accountLoginPreface p');
 

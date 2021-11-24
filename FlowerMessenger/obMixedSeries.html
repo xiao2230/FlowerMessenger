@@ -68,7 +68,7 @@
                 <p>{{bouquetText.feature}}</p>
                 <hr>
                 <form action="" id="oBForm" method="">
-                    <input type="hidden" id="productname" name="productname" :value="bouquetText.chName">
+                    <input type="hidden" id="oBFormProductName" name="oBFormProductName" :value="bouquetText.chName">
                     <div class="oBFormOption">
                         <p>1. 請選擇週數 (長期方案請詳閱 <a href="fAQSubscription.html" target="_blank">說明</a>) </p>
                         <span v-for="week in bouquetText.weeks">
