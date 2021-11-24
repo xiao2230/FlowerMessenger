@@ -5,21 +5,21 @@ let contentOrderArea = document.querySelector('.content_oBArea');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 『主要內容區-訂購區』的內容漸入
-    contentOrderArea.classList.add('appear');
+	// 『主要內容區-訂購區』的內容漸入
+	contentOrderArea.classList.add('appear');
 });
 
 document.addEventListener('scroll', () => {
-    let scrollTop = document.documentElement.scrollTop;
+	let scrollTop = document.documentElement.scrollTop;
 
-    if (scrollTop > content.offsetTop) {
-        // 『頂部內容區-導覽列』的新增BackToTop
-        headerNav.classList.add('navPlusTop');
-    } else {
-        // 『頂部內容區-導覽列』的移除BackToTop
-        headerNav.classList.remove('navPlusTop');
-    }
-})
+	if (scrollTop > content.offsetTop) {
+		// 『頂部內容區-導覽列』的新增BackToTop
+		headerNav.classList.add('navPlusTop');
+	} else {
+		// 『頂部內容區-導覽列』的移除BackToTop
+		headerNav.classList.remove('navPlusTop');
+	}
+});
 
 Vue.createApp({
 	data() {
@@ -145,7 +145,8 @@ Vue.createApp({
 		},
 		// 花束訂購(數量設定)：keyup事件，鍵盤輸入數字，增加max/min限制。
 		keyRestrict() {
-			this.bouquetText.num.val = this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val <= 0 ? '' : this.bouquetText.num.val;
+			this.bouquetText.num.val =
+				this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val <= 0 ? '' : this.bouquetText.num.val;
 		},
 		// 花束訂購(數量設定)：額外添增的減少數量按鈕，並設定無法低於1的限制。
 		minus() {
