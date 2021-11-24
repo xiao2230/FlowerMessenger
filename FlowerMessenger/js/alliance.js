@@ -5,8 +5,6 @@ let contentAlliance = document.querySelector('.content_alliance');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-合作須知』的內容漸入
 	contentAlliance.classList.add('locate');
 });

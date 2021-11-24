@@ -5,8 +5,6 @@ let contentPrivacyPolicy = document.querySelector('.content_privacyPolicy');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-隱私政策』的內容漸入
 	contentPrivacyPolicy.classList.add('locate');
 });

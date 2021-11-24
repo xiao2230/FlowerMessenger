@@ -11,8 +11,6 @@ let bouquetPicMix = document.querySelector('.content_Bouquet .bouquetType:nth-ch
 let bouquetPicSingle = document.querySelector('.content_Bouquet .bouquetType:nth-child(3)');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-俳句』的內文漸入，背景顯現
 	for (i = 0, t = 0; i < contentPreface.length; i++, t += 400) {
 		setTimeout(`contentPreface[${i}].classList.add('locate')`, t);

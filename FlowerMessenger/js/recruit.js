@@ -5,8 +5,6 @@ let contentRecruit = document.querySelector('.content_recruit');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-招募內文』的內容漸入
     contentRecruit.classList.add('locate');
 });

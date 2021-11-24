@@ -6,8 +6,6 @@ let cuConfirm = document.getElementById('cuConfirm');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-    let scrollTop = document.documentElement.scrollTop;
-
     // 『主要內容區』的內容漸入定位
 		content.classList.add('locate');
 });

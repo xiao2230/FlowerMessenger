@@ -8,8 +8,6 @@ let contentConclusion = document.querySelector('.content_conclusion');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區』的內容漸入
 	contentPreface.classList.add('locate');
 	contentIllustration.classList.add('locate');

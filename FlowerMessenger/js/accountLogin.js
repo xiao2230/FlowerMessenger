@@ -1,17 +1,14 @@
 let headerNav = document.querySelector('.header_nav');
 let usernameInput = document.querySelector('.content_accountLogin .accountLoginField .dataArea form .aUsername input');
 let passwordInput = document.querySelector('.content_accountLogin .accountLoginField .dataArea form .aPassword input');
-let passwordEye = document.querySelector(
-	'.content_accountLogin .accountLoginField .dataArea form .aPassword label+label i.fa-eye-slash'
-);
+let passwordEye = document.querySelector('.content_accountLogin .accountLoginField .dataArea form .aPassword label+label i.fa-eye-slash');
 let remind = document.querySelector('.content_accountLogin .accountLoginField .dataArea form .aFormRemind');
 let form = document.querySelector('.content_accountLogin .accountLoginField .dataArea form');
-let registerBtn = document.querySelector(
-	'.content_accountLogin .accountLoginField .dataArea .changeOption .registerBtn'
+let registerBtn = document.querySelector('.content_accountLogin .accountLoginField .dataArea .changeOption .registerBtn');
+let forgetPasswordBtn = document.querySelector('.content_accountLogin .accountLoginField .dataArea .changeOption .forgetPasswordBtn'
 );
-let forgetPasswordBtn = document.querySelector(
-	'.content_accountLogin .accountLoginField .dataArea .changeOption .forgetPasswordBtn'
-);
+let accountLoginField = document.querySelector('.content_accountLogin .accountLoginField');
+let accountLoginPreface = document.querySelectorAll('.content_accountLogin .accountLoginPreface p');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
@@ -76,4 +73,14 @@ passwordInput.addEventListener('focus', () => {
 passwordInput.addEventListener('focusout', () => {
 	// 『主要內容區-會員登入』移除輸入提示訊息。
 	remind.classList.remove('appear02');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 『主要內容區-會員登入』的登入表格顯現
+    accountLoginField.classList.add('appear');
+
+	// 『主要內容區-會員登入』的俳句滑入動態
+	for (i = 0, t = 0; i < accountLoginPreface.length; i++, t += Math.random() * 500) {
+		setTimeout(`accountLoginPreface[${i}].classList.add('locate')`, t);
+	}
 });

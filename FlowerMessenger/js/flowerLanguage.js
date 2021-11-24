@@ -8,8 +8,6 @@ let content = document.querySelector('.content');
 let bannerTitle = document.querySelector('.header_bannerTitle .tt1');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-俳句』的內文漸入，背景漸入
 	for (i = 0, t = 0; i < contentPreface.length; i++, t += 400) {
 		setTimeout(`contentPreface[${i}].classList.add('locate')`, t);

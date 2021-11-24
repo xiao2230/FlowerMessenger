@@ -5,8 +5,6 @@ let contentQna = document.querySelector('.content_qna');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-    let scrollTop = document.documentElement.scrollTop;
-
     // 『主要內容區-常見問題』的內容漸入
     contentQna.classList.add('locate');
 });

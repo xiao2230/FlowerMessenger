@@ -150,6 +150,12 @@ body {
     width: 50%;
     display: flex;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content_accountLogin .accountLoginField.appear {
+    opacity: 1;
 }
 
 
@@ -170,14 +176,7 @@ body {
     width: 100%;
 }
 
-.content_accountLogin .accountLoginField .dataArea p {
-    font-weight: 600;
-    font-size: 20px;
-    color: #fafafa;
-}
-
 .content_accountLogin .accountLoginField .dataArea form {
-    margin-top: 20px;
     position: relative;
 }
 
@@ -241,6 +240,7 @@ body {
     border: 1px solid #242424;
     background: rgb(255, 228, 228);
     opacity: 0;
+    z-index: 1;
 }
 
 .content_accountLogin .accountLoginField .dataArea form .aFormRemind.appear01 {
@@ -421,6 +421,15 @@ body {
     line-height: 30px;
     text-shadow: 0px 0px 10px #fffaf2;
     font-weight: 600;
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    transition: top 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.content_accountLogin .accountLoginPreface p.locate {
+    top: 0;
+    opacity: 1;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -634,7 +643,7 @@ body {
 
     /* 主要內容區-會員登入 */
 
-    *{
+    * {
         font-size: 15px;
     }
 
@@ -650,14 +659,6 @@ body {
     .content_accountLogin .accountLoginField .dataArea {
         width: 280px;
         padding: 10px 15px;
-    }
-
-    .content_accountLogin .accountLoginField .dataArea p {
-        font-size: 18px;
-    }
-
-    .content_accountLogin .accountLoginField .dataArea form {
-        margin-top: 15px;
     }
 
     .content_accountLogin .accountLoginField .dataArea form .aFormOption {
@@ -754,6 +755,7 @@ body {
     .content_accountLogin .accountLoginPreface p {
         font-size: 16px;
         line-height: 28px;
+        opacity: 0;
     }
 
     /* 底部內容區-店家資訊&店鋪圖片 */

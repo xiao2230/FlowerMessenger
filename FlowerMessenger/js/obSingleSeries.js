@@ -5,8 +5,6 @@ let contentOrderArea = document.querySelector('.content_orderArea');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-    let scrollTop = document.documentElement.scrollTop;
-
     // 『主要內容區-訂購區』的內容漸入
     contentOrderArea.classList.add('appear');
 });
@@ -81,7 +79,7 @@ Vue.createApp({
 					},
 					{
 						val: '長期方案',
-						id: 'obweekLong',
+						id: 'obweekstanding',
 						name: 'obweek',
 						checked: false
 					}

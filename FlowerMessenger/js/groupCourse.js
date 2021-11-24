@@ -5,8 +5,6 @@ let contentGroupCourse = document.querySelector('.content_groupCourse');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-課程須知』的內容漸入
 	contentGroupCourse.classList.add('locate');
 });

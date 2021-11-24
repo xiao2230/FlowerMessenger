@@ -5,8 +5,6 @@ let contentPublicHoliday = document.querySelector('.content_publicHoliday');
 let content = document.querySelector('.content');
 
 document.addEventListener('DOMContentLoaded', () => {
-	let scrollTop = document.documentElement.scrollTop;
-
 	// 『主要內容區-公休資訊』的內容漸入
 	contentPublicHoliday.classList.add('locate');
 });
