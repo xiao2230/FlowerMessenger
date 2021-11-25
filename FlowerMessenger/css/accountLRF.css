@@ -146,7 +146,7 @@ body {
     padding: 50px 0;
 }
 
-.content_accountLRF > div:first-child {
+.content_accountLRF>div:first-child {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -154,38 +154,38 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-.content_accountLRF > div:first-child.appear {
+.content_accountLRF>div:first-child.appear {
     opacity: 1;
 }
 
 
-.content_accountLRF  .dataArea {
+.content_accountLRF .dataArea {
     width: 330px;
     box-shadow: 0 0 20px 15px rgb(19 19 19 / 20%);
     padding: 15px 30px;
     background: rgb(19 19 19 / 70%);
 }
 
-.content_accountLRF  .dataArea>a {
+.content_accountLRF .dataArea>a {
     display: block;
     width: 70%;
     margin: 10px auto;
 }
 
-.content_accountLRF  .dataArea>a img {
+.content_accountLRF .dataArea>a img {
     width: 100%;
 }
 
-.content_accountLRF  .dataArea form {
+.content_accountLRF .dataArea form {
     position: relative;
 }
 
-.content_accountLRF  .dataArea form .aFormOption {
+.content_accountLRF .dataArea form .aFormOption {
     position: relative;
     margin-bottom: 15px;
 }
 
-.content_accountLRF  .dataArea form .aFormOption input {
+.content_accountLRF .dataArea form .aFormOption input {
     height: 35px;
     width: 100%;
     font-weight: 600;
@@ -195,13 +195,13 @@ body {
     padding: 0 30px;
 }
 
-.content_accountLRF  .dataArea form .aFormOption input:focus {
+.content_accountLRF .dataArea form .aFormOption input:focus {
     border: 2px solid #b48f5e;
     color: #bb7008;
     box-shadow: 0 0 5px 1px #b48f5e;
 }
 
-.content_accountLRF  .dataArea form .aFormOption input+label {
+.content_accountLRF .dataArea form .aFormOption input+label {
     width: 30px;
     text-align: center;
     position: absolute;
@@ -211,7 +211,7 @@ body {
     cursor: text;
 }
 
-.content_accountLRF  .dataArea form .aFormOption.aPassword label+label {
+.content_accountLRF .dataArea form .aFormOption.aPassword label+label {
     width: 30px;
     text-align: center;
     position: absolute;
@@ -221,16 +221,16 @@ body {
     cursor: pointer;
 }
 
-.content_accountLRF  .dataArea form .aFormOption label i {
+.content_accountLRF .dataArea form .aFormOption label i {
     font-size: 16px;
     color: #757575;
 }
 
-.content_accountLRF  .dataArea form .aFormOption input:focus~label i {
+.content_accountLRF .dataArea form .aFormOption input:focus~label i {
     color: #b48f5e;
 }
 
-.content_accountLRF  .dataArea form .aFormRemind {
+.content_accountLRF .dataArea form .aFormRemind {
     background: #fffaf2;
     padding: 15px;
     width: 100%;
@@ -243,16 +243,16 @@ body {
     z-index: 1;
 }
 
-.content_accountLRF  .dataArea form .aFormRemind.appear01 {
+.content_accountLRF .dataArea form .aFormRemind.appear01 {
     opacity: 1;
 }
 
-.content_accountLRF  .dataArea form .aFormRemind.appear02 {
+.content_accountLRF .dataArea form .aFormRemind.appear02 {
     top: 3px;
     opacity: 1;
 }
 
-.content_accountLRF  .dataArea form .aFormRemind::after {
+.content_accountLRF .dataArea form .aFormRemind::after {
     content: '';
     clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
     width: 12px;
@@ -265,16 +265,16 @@ body {
     background: rgb(255, 228, 228);
 }
 
-.content_accountLRF  .dataArea form .aFormRemind h6 {
+.content_accountLRF .dataArea form .aFormRemind h6 {
     color: rgb(224, 0, 0);
 }
 
-.content_accountLRF  .dataArea form .aFormRemind p {
+.content_accountLRF .dataArea form .aFormRemind p {
     color: rgb(224, 0, 0);
     font-size: 14px;
 }
 
-.content_accountLRF  .dataArea form .aFormSubmit input {
+.content_accountLRF .dataArea form .aFormSubmit input {
     height: 35px;
     width: 100%;
     font-weight: 600;
@@ -287,17 +287,17 @@ body {
     transition: background .3s ease-in-out;
 }
 
-.content_accountLRF  .dataArea form .aFormSubmit input:hover {
+.content_accountLRF .dataArea form .aFormSubmit input:hover {
     background: #bb7008;
 }
 
-.content_accountLRF  .dataArea .changeOption {
+.content_accountLRF .dataArea .changeOption {
     margin: 8px 0 30px 0;
     width: 100%;
     position: relative;
 }
 
-.content_accountLRF  .dataArea .changeOption a {
+.content_accountLRF .dataArea .changeOption a {
     font-size: 15px;
     color: #fafafa;
     font-weight: 600;
@@ -306,12 +306,12 @@ body {
     position: relative;
 }
 
-.content_accountLRF  .dataArea .changeOption a:last-child {
+.content_accountLRF .dataArea .changeOption a:last-child {
     position: absolute;
     right: 0;
 }
 
-.content_accountLRF  .dataArea .changeOption a::after {
+.content_accountLRF .dataArea .changeOption a::after {
     content: '';
     width: 0;
     height: 1px;
@@ -322,11 +322,11 @@ body {
     transition: width .3s ease-in-out;
 }
 
-.content_accountLRF  .dataArea .changeOption a:hover::after {
+.content_accountLRF .dataArea .changeOption a:hover::after {
     width: 100%;
 }
 
-.content_accountLRF  .dataArea .seperate {
+.content_accountLRF .dataArea .seperate {
     width: 100%;
     color: #fafafa;
     text-align: center;
@@ -334,7 +334,7 @@ body {
     position: relative;
 }
 
-.content_accountLRF  .dataArea .seperate::before {
+.content_accountLRF .dataArea .seperate::before {
     content: '';
     width: 20%;
     height: 1px;
@@ -345,7 +345,7 @@ body {
     transform: translateY(-50%);
 }
 
-.content_accountLRF  .dataArea .seperate::after {
+.content_accountLRF .dataArea .seperate::after {
     content: '';
     width: 20%;
     height: 1px;
@@ -356,11 +356,11 @@ body {
     transform: translateY(-50%);
 }
 
-.content_accountLRF  .dataArea .socialLogin {
+.content_accountLRF .dataArea .socialLogin {
     margin: 30px 0;
 }
 
-.content_accountLRF  .dataArea .socialLogin a {
+.content_accountLRF .dataArea .socialLogin a {
     width: 100%;
     height: 35px;
     display: flex;
@@ -373,27 +373,27 @@ body {
     transition: background .3s ease-in-out;
 }
 
-.content_accountLRF  .dataArea .socialLogin a:not(:last-child) {
+.content_accountLRF .dataArea .socialLogin a:not(:last-child) {
     margin-bottom: 15px;
 }
 
-.content_accountLRF  .dataArea .socialLogin a.slFb {
+.content_accountLRF .dataArea .socialLogin a.slFb {
     background: #3a60d0;
 }
 
-.content_accountLRF  .dataArea .socialLogin a.slGoogle {
+.content_accountLRF .dataArea .socialLogin a.slGoogle {
     background: #4285f4;
 }
 
-.content_accountLRF  .dataArea .socialLogin a.slApple {
+.content_accountLRF .dataArea .socialLogin a.slApple {
     background: #000;
 }
 
-.content_accountLRF  .dataArea .socialLogin a:hover {
+.content_accountLRF .dataArea .socialLogin a:hover {
     background: #b48f5e;
 }
 
-.content_accountLRF  .dataArea .socialLogin a i {
+.content_accountLRF .dataArea .socialLogin a i {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -403,7 +403,7 @@ body {
     font-size: 16px;
 }
 
-.content_accountLRF  .dataArea .socialLogin a.slGoogle i {
+.content_accountLRF .dataArea .socialLogin a.slGoogle i {
     font-size: 15px;
 }
 
@@ -474,7 +474,7 @@ body {
     display: flex;
     justify-content: space-between;
     height: 35%;
-    padding-right: 20%;
+    padding-right: 10%;
 }
 
 .detailText02 ul li:first-child {
@@ -651,99 +651,98 @@ body {
         flex-direction: column-reverse;
     }
 
-    .content_accountLRF > div {
+    .content_accountLRF>div:first-child {
         width: 100%;
     }
 
-
-    .content_accountLRF  .dataArea {
+    .content_accountLRF .dataArea {
         width: 280px;
         padding: 10px 15px;
     }
 
-    .content_accountLRF  .dataArea form .aFormOption {
+    .content_accountLRF .dataArea form .aFormOption {
         margin-bottom: 12px;
     }
 
-    .content_accountLRF  .dataArea form .aFormOption input {
+    .content_accountLRF .dataArea form .aFormOption input {
         height: 30px;
         padding: 0 25px;
     }
 
-    .content_accountLRF  .dataArea form .aFormOption input+label {
+    .content_accountLRF .dataArea form .aFormOption input+label {
         width: 25px;
     }
 
-    .content_accountLRF  .dataArea form .aFormOption.aPassword label+label {
+    .content_accountLRF .dataArea form .aFormOption.aPassword label+label {
         width: 25px;
     }
 
-    .content_accountLRF  .dataArea form .aFormOption label i {
+    .content_accountLRF .dataArea form .aFormOption label i {
         font-size: 15px;
     }
 
-    .content_accountLRF  .dataArea form .aFormRemind {
-        top: -156px;
+    .content_accountLRF .dataArea form .aFormRemind {
+        top: -148px;
         left: 0;
     }
 
-    .content_accountLRF  .dataArea form .aFormRemind.appear02 {
-        top: -115px;
+    .content_accountLRF .dataArea form .aFormRemind.appear02 {
+        top: -105px;
     }
 
-    .content_accountLRF  .dataArea form .aFormRemind::after {
+    .content_accountLRF .dataArea form .aFormRemind::after {
         clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
         left: 50%;
-        top: 143px;
+        top: 133px;
         transform: translateX(-50%);
     }
 
-    .content_accountLRF  .dataArea form .aFormRemind h6 {
+    .content_accountLRF .dataArea form .aFormRemind h6 {
         font-size: 15px;
     }
 
-    .content_accountLRF  .dataArea form .aFormRemind p {
+    .content_accountLRF .dataArea form .aFormRemind p {
         font-size: 13px;
     }
 
-    .content_accountLRF  .dataArea form .aFormSubmit input {
+    .content_accountLRF .dataArea form .aFormSubmit input {
         height: 30px;
     }
 
-    .content_accountLRF  .dataArea .changeOption {
+    .content_accountLRF .dataArea .changeOption {
         margin: 5px 0 15px 0;
     }
 
-    .content_accountLRF  .dataArea .changeOption a {
+    .content_accountLRF .dataArea .changeOption a {
         font-size: 14px;
     }
 
-    .content_accountLRF  .dataArea .seperate {
+    .content_accountLRF .dataArea .seperate {
         font-size: 13px;
     }
 
-    .content_accountLRF  .dataArea .seperate::before,
-    .content_accountLRF  .dataArea .seperate::after {
+    .content_accountLRF .dataArea .seperate::before,
+    .content_accountLRF .dataArea .seperate::after {
         width: 23%;
     }
 
-    .content_accountLRF  .dataArea .socialLogin {
+    .content_accountLRF .dataArea .socialLogin {
         margin: 15px 0 30px 0;
     }
 
-    .content_accountLRF  .dataArea .socialLogin a {
+    .content_accountLRF .dataArea .socialLogin a {
         height: 30px;
     }
 
-    .content_accountLRF  .dataArea .socialLogin a:not(:last-child) {
+    .content_accountLRF .dataArea .socialLogin a:not(:last-child) {
         margin-bottom: 12px;
     }
 
-    .content_accountLRF  .dataArea .socialLogin a i {
+    .content_accountLRF .dataArea .socialLogin a i {
         font-size: 15px;
     }
 
-    .content_accountLRF  .dataArea .socialLogin a.slGoogle i {
+    .content_accountLRF .dataArea .socialLogin a.slGoogle i {
         font-size: 14px;
     }
 
@@ -765,7 +764,7 @@ body {
     }
 
     .detailText {
-        width: 70%;
+        width: 85%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;

@@ -232,7 +232,7 @@ body {
     display: flex;
     justify-content: space-between;
     height: 35%;
-    padding-right: 20%;
+    padding-right: 10%;
 }
 
 .detailText02 ul li:first-child {
@@ -399,7 +399,7 @@ body {
         flex-direction: column-reverse;
     }
     .detailText {
-        width: 70%;
+        width: 85%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
