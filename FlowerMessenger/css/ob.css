@@ -201,7 +201,7 @@ body {
     margin-top: 10px;
 }
 
-.content_oBArea .oBAreaText form .oBFormOption:nth-child(4) {
+.content_oBArea .oBAreaText form .oBFormOption:nth-child(5) {
     margin-bottom: 40px;
 }
 
@@ -636,7 +636,7 @@ input[type=number] {
         margin-top: 5px;
     }
 
-    .content_oBArea .oBAreaText form .oBFormOption:nth-child(4) {
+    .content_oBArea .oBAreaText form .oBFormOption:nth-child(5) {
         margin-bottom: 65px;
     }
 

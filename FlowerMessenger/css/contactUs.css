@@ -174,13 +174,13 @@ body {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(19 19 19 /50%);
+    background: #888;
     transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .content_info .infoSoftware a i {
     font-size: 30px;
-    color: #888;
+    color: #fffaf2;
     transition: color .3s ease-in-out;
 }
 
@@ -188,49 +188,29 @@ body {
     font-size: 25px;
 }
 
-.content_info .infoSoftware a:first-child:hover i {
-    color: #fafafa;
-}
-
 .content_info .infoSoftware a:first-child:hover {
     background: #4cc764;
-    box-shadow: 0 0 10px 2px #4cc764;
-}
-
-.content_info .infoSoftware a:nth-child(2):hover i {
-    color: #fafafa;
+    box-shadow: 0 0 3px 2px #4cc764;
 }
 
 .content_info .infoSoftware a:nth-child(2):hover {
     background: #dc3175;
-    box-shadow: 0 0 10px 2px #dc3175;
-}
-
-.content_info .infoSoftware a:nth-child(3):hover i {
-    color: #fafafa;
+    box-shadow: 0 0 3px 2px #dc3175;
 }
 
 .content_info .infoSoftware a:nth-child(3):hover {
     background: #ff0000;
-    box-shadow: 0 0 10px 2px #ff0000;
-}
-
-.content_info .infoSoftware a:nth-child(4):hover i {
-    color: #fafafa;
+    box-shadow: 0 0 3px 2px #ff0000;
 }
 
 .content_info .infoSoftware a:nth-child(4):hover {
     background: #17a2f2;
-    box-shadow: 0 0 10px 2px #17a2f2;
-}
-
-.content_info .infoSoftware a:nth-child(5):hover i {
-    color: #fafafa;
+    box-shadow: 0 0 3px 2px #17a2f2;
 }
 
 .content_info .infoSoftware a:nth-child(5):hover {
     background: #3a60d0;
-    box-shadow: 0 0 10px 2px #3a60d0;
+    box-shadow: 0 0 3px 2px #3a60d0;
 }
 
 .content_info .infoStore {
