@@ -123,7 +123,7 @@ body {
     padding: 0 15px;
 }
 
-/* 主要內容區-會員登入前內容 */
+/* 主要內容區-帳戶登入前內容 */
 
 .content_accountLRF>div:first-child {
     width: 50%;
@@ -692,7 +692,7 @@ body {
         padding: 0 10px;
     }
 
-    /* 主要內容區-會員登入前內容 */
+    /* 主要內容區-帳戶登入前內容 */
 
     * {
         font-size: 15px;
