@@ -11,11 +11,29 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/accountCenter.css">
     <style>
-        .content_accountCenter{
+        /* 主要內容區-帳戶中心導覽與內容 */
+
+        .content_accountCenter {
             max-width: 1000px;
             margin: 50px auto;
             background: rgb(218, 218, 218);
+            display: flex;
+            flex-wrap: wrap;
         }
+
+        .content_accountCenter >div:first-child{
+            width: 30%;
+        }
+
+        .content_accountCenter >div:not(:nth-child(1)){
+            width: 70%;
+        }
+
+        .content_accountCenter >div.hidden{
+            display: none;
+        }
+
+
     </style>
 </head>
 
@@ -57,19 +75,20 @@
     </section>
     <!-- 主要內容區 -->
     <section class="content">
+        <!-- 主要內容區-帳戶中心導覽與內容 -->
         <div class="content_accountCenter">
-            <div class="Nav">
+            <div class="nav">
                 <ul>
                     <li>訂單查詢</li>
                     <li>修改資訊</li>
                     <li>帳戶登出</li>
                 </ul>
             </div>
-            <div class="origin">
+            <div class="origin hidden">
                 <p>Xiao 您好</p>
                 <p>在您的帳戶資訊主頁中，您可以<span>查看最近的訂單</span>和<span>編輯您的詳細資訊/更改密碼</span>。</p>
             </div>
-            <div class="orderInquiry"></div>
+            <div class="orderInquiry hidden"></div>
             <div class="editInformation"></div>
         </div>
     </section>

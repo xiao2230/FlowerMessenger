@@ -2,7 +2,7 @@ let headerNav = document.querySelector('.header_nav');
 let usernameInput = document.querySelector('.content_accountLRF .dataArea form .aUsername input');
 let passwordInput = document.querySelector('.content_accountLRF .dataArea form .aPassword input');
 let confirmPasswordInput = document.querySelector('.content_accountLRF .dataArea form .aConfirmPassword input');
-let realNameInput = document.querySelector('.content_accountLRF .dataArea form .aRealName input');
+let emailInput = document.querySelector('.content_accountLRF .dataArea form .aEmail input');
 let telInput = document.querySelector('.content_accountLRF .dataArea form .aTel input');
 let verifyInput = document.querySelector('.content_accountLRF .dataArea form .aVerify input');
 let submitInput = document.querySelector('.content_accountLRF .dataArea form .aFormSubmit input');
@@ -11,13 +11,13 @@ let confirmPasswordEye = document.querySelector(
 	'.content_accountLRF .dataArea form .aConfirmPassword label+label i.fa-eye-slash'
 );
 let checkedIcon01 = document.querySelector('.content_accountLRF .dataArea form .aConfirmPassword>i');
-let checkedIcon02 = document.querySelector('.content_accountLRF .dataArea form .aTel>i');
 let verifyBtn = document.querySelector('.content_accountLRF .dataArea form .aFormOption.aVerify button');
 let remind = document.querySelector('.content_accountLRF .dataArea form .aFormRemind');
 let tipMsg01 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg01');
 let tipMsg02 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg02');
 let tipMsg03 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg03');
 let tipMsg04 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg04');
+let tipMsg05 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg05');
 let form = document.querySelector('.content_accountLRF .dataArea form');
 let accountLoginField = document.querySelector('.content_accountLRF > div:first-child');
 let accountPreface = document.querySelectorAll('.content_accountLRF .accountPreface p');
@@ -41,7 +41,7 @@ document.addEventListener('scroll', () => {
 usernameInput.setAttribute('required', true);
 passwordInput.setAttribute('required', true);
 confirmPasswordInput.setAttribute('required', true);
-realNameInput.setAttribute('required', true);
+emailInput.setAttribute('required', true);
 telInput.setAttribute('required', true);
 verifyInput.setAttribute('required', true);
 
@@ -144,6 +144,20 @@ confirmPasswordInput.addEventListener('focusout', () => {
 	}
 });
 
+emailInput.addEventListener('focus', () => {
+	// 『主要內容區-帳戶登入前內容』Email輸入中去掉錯誤提示。
+	tipMsg04.innerHTML = '';
+	tipMsg04.classList.remove('red');
+});
+
+emailInput.addEventListener('focusout', () => {
+	// 『主要內容區-帳戶登入前內容』Email輸入完畢，驗證是否符合Email規則，若不符合，跳出提示訊息。
+	if (!/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailInput.value)) {
+		tipMsg04.innerHTML = '請輸入正確的電子郵件';
+		tipMsg04.classList.add('red');
+	}
+});
+
 telInput.addEventListener('input', () => {
 	// 『主要內容區-帳戶登入前內容』手機號碼限制只能打數字。
     telInput.value = telInput.value.replace(/[^\d]/g, '');
@@ -151,24 +165,22 @@ telInput.addEventListener('input', () => {
 
 telInput.addEventListener('focus', () => {
 	// 『主要內容區-帳戶登入前內容』手機號碼輸入中的提示。
-	tipMsg04.innerHTML = '手機號碼參考格式：09xxxxxxxx';
-	tipMsg04.classList.add('yellow');
-	tipMsg04.classList.remove('red');
-	checkedIcon02.classList.remove('appear');
+	tipMsg05.innerHTML = '手機號碼參考格式：09xxxxxxxx';
+	tipMsg05.classList.add('yellow');
+	tipMsg05.classList.remove('red');
 });
 
 telInput.addEventListener('focusout', () => {
 	// 『主要內容區-帳戶登入前內容』手機號碼輸入完畢，驗證是否符合台灣的手機號碼規則，並給出回應；若符合，接收驗證碼按鈕則啟用，反之。
 	if (!/^0[9]\d{8}$/.test(telInput.value)) {
-		tipMsg04.innerHTML = '請輸入正確的手機號碼';
-		tipMsg04.classList.add('red');
-		tipMsg04.classList.remove('yellow');
+		tipMsg05.innerHTML = '請輸入正確的手機號碼';
+		tipMsg05.classList.add('red');
+		tipMsg05.classList.remove('yellow');
 		verifyBtn.classList.remove('telOk');
 		verifyBtn.setAttribute('disabled', true);
 	} else {
-		checkedIcon02.classList.add('appear');
-		tipMsg04.innerHTML = '';
-		tipMsg04.classList.remove('yellow');
+		tipMsg05.innerHTML = '';
+		tipMsg05.classList.remove('yellow');
 		verifyBtn.classList.add('telOk');
 		verifyBtn.removeAttribute('disabled');
 	}
@@ -185,6 +197,11 @@ submitInput.addEventListener('click', () => {
 		passwordInput.value = '';
 		confirmPasswordInput.value = '';
 		checkedIcon01.classList.remove('appear');
+	}
+
+	// 『主要內容區-帳戶登入前內容』送出表單前，再次確認Email格式是否正確。
+	if (!/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailInput.value)) {
+		emailInput.value='';
 	}
 
 	// 『主要內容區-帳戶登入前內容』送出表單前，再次確認手機格式是否正確。

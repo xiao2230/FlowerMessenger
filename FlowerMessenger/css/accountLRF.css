@@ -262,25 +262,15 @@ body {
     display: none;
 }
 
-.content_accountLRF .dataArea form .aFormOption.aTel>i {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #6eba44;
-    display: none;
-}
-
-.content_accountLRF .dataArea form .aFormOption.aConfirmPassword>i.appear,
-.content_accountLRF .dataArea form .aFormOption.aTel>i.appear {
+.content_accountLRF .dataArea form .aFormOption.aConfirmPassword>i.appear {
     display: block;
 }
 
 .content_accountLRF .dataArea form .aFormTipMsg01,
 .content_accountLRF .dataArea form .aFormTipMsg02,
 .content_accountLRF .dataArea form .aFormTipMsg03,
-.content_accountLRF .dataArea form .aFormTipMsg04 {
+.content_accountLRF .dataArea form .aFormTipMsg04,
+.content_accountLRF .dataArea form .aFormTipMsg05 {
     font-size: 14px;
     position: absolute;
     top: 33px;
@@ -289,14 +279,16 @@ body {
 .content_accountLRF .dataArea form .aFormTipMsg01.yellow,
 .content_accountLRF .dataArea form .aFormTipMsg02.yellow,
 .content_accountLRF .dataArea form .aFormTipMsg03.yellow,
-.content_accountLRF .dataArea form .aFormTipMsg04.yellow {
+.content_accountLRF .dataArea form .aFormTipMsg04.yellow, 
+.content_accountLRF .dataArea form .aFormTipMsg05.yellow {
     color: #e9c46a;
 }
 
 .content_accountLRF .dataArea form .aFormTipMsg01.red,
 .content_accountLRF .dataArea form .aFormTipMsg02.red,
 .content_accountLRF .dataArea form .aFormTipMsg03.red,
-.content_accountLRF .dataArea form .aFormTipMsg04.red {
+.content_accountLRF .dataArea form .aFormTipMsg04.red,
+.content_accountLRF .dataArea form .aFormTipMsg05.red {
     color: #ee876d;
 }
 
@@ -756,15 +748,15 @@ body {
         font-size: 13px;
     }
 
-    .content_accountLRF .dataArea form .aFormOption.aConfirmPassword>i,
-    .content_accountLRF .dataArea form .aFormOption.aTel>i {
+    .content_accountLRF .dataArea form .aFormOption.aConfirmPassword>i {
         font-size: 15px;
     }
 
     .content_accountLRF .dataArea form .aFormTipMsg01,
     .content_accountLRF .dataArea form .aFormTipMsg02,
     .content_accountLRF .dataArea form .aFormTipMsg03,
-    .content_accountLRF .dataArea form .aFormTipMsg04 {
+    .content_accountLRF .dataArea form .aFormTipMsg04,
+    .content_accountLRF .dataArea form .aFormTipMsg05 {
         top: 28px;
     }
 
