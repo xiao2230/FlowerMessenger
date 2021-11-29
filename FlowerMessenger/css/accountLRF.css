@@ -164,6 +164,15 @@ body {
     margin-bottom: 17px;
 }
 
+.content_accountLRF .dataArea form .aFormOption.required::after {
+    content: '*';
+    position: absolute;
+    top: 8px;
+    left: 101%;
+    font-size: 30px;
+    color: red;
+}
+
 .content_accountLRF .dataArea form .aFormOption input {
     height: 35px;
     width: 100%;
@@ -703,9 +712,11 @@ body {
         padding: 10px 15px;
     }
 
-    /* .content_accountLRF .dataArea form .aFormOption {
-        margin-bottom: 12px;
-    } */
+    .content_accountLRF .dataArea form .aFormOption.required::after {
+        top: 7px;
+        left: 100.5%;
+        font-size: 23px;
+    }
 
     .content_accountLRF .dataArea form .aFormOption input {
         height: 30px;
