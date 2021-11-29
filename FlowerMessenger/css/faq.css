@@ -168,12 +168,13 @@ body {
     border-radius: 5px;
     font-weight: 600;
     font-size: 18px;
+    user-select: none;
 }
 
 .content_qNANav li a.focus {
     color: #fffaf2;
     background: #242424;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .content_qNANav li a:hover {
@@ -194,6 +195,9 @@ body {
 
 .content_qNAText hr {
     margin: 10px 0;
+    background: #242424;
+    height: 2px;
+    border: none;
 }
 
 .content_qNAText h4 {
@@ -336,6 +340,7 @@ body {
 }
 
 @media screen and (max-width:767px) {
+
     /* 頂部內容區-導覽列 */
     .header_nav {
         width: 90%;
@@ -345,6 +350,7 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 0 8px #fafafa;
     }
+
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -355,6 +361,7 @@ body {
         height: 30%;
         cursor: pointer;
     }
+
     .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
@@ -363,20 +370,25 @@ body {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
+
     .header_nav .navContent label::before {
         top: 0;
     }
+
     .header_nav .navContent label::after {
         top: 100%;
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
+
     .header_nav .navContent ul {
         width: 95%;
         height: 0;
@@ -393,98 +405,124 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
+
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
+
     .header_nav .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
+
     .header_nav .navContent ul li.navContentTool {
         margin: 5px 0;
     }
+
     .header_nav .navContent ul li.navContentTool a i {
         margin: 0 3px;
     }
+
     /* 頂部內容區-背景圖&分頁標題註記 */
     .header_bannerTitle {
         height: 30vh;
         margin-bottom: 5vh;
     }
+
     .header_bannerTitle .tt1 {
         bottom: -30px;
         right: 0;
     }
+
     .header_bannerTitle .tt1 span {
         line-height: 30px;
     }
+
     .header_bannerTitle .tt1 span.tt1-1 span {
         padding: 5px 10px;
         font-size: 20px;
     }
+
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
+
     /* 主要內容區-常見問題導覽列 */
     .content_qNANav {
         width: 100%;
     }
+
     .content_qNANav ul {
         padding-bottom: 20px;
     }
+
     .content_qNANav li {
         margin-bottom: 20px;
         text-align: center;
     }
+
     /* 主要內容區-常見問題內文區 */
     * {
         font-size: 15px;
     }
+
     .content_qNAText {
         width: 100%;
     }
+
     .content_qNAText h3 {
         font-size: 22px;
     }
+
     .content_qNAText hr {
         margin: 5px 0;
     }
+
     .content_qNAText h4 {
         font-size: 19px;
         margin: 30px 0 5px 0;
     }
+
     .content_qNAText h5 {
         font-size: 17px;
         margin: 10px 0 5px 0;
     }
+
     .content_qNAText p {
         line-height: 22px;
     }
+
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
+
     .detailText {
         width: 85%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
+
     .detailText p {
         text-align: center;
     }
+
     .detailText01 {
         margin-top: 5%;
     }
+
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
+
     .detailText03 {
         margin-top: 5%;
     }
+
     .detailPic {
         width: 70%;
         padding-right: 0;

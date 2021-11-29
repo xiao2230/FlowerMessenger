@@ -158,6 +158,9 @@ body {
 
 .content_groupCourse hr {
     margin: 10px 0;
+    background: #242424;
+    height: 2px;
+    border: none;
 }
 
 .content_groupCourse p {

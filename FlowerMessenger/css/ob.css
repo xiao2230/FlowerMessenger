@@ -195,6 +195,9 @@ body {
 
 .content_oBArea .oBAreaText hr {
     margin-top: 10px;
+    background: #242424;
+    height: 1px;
+    border: none;
 }
 
 .content_oBArea .oBAreaText form .oBFormOption {

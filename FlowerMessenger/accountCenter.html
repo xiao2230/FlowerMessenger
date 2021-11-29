@@ -16,24 +16,75 @@
         .content_accountCenter {
             max-width: 1000px;
             margin: 50px auto;
-            background: rgb(218, 218, 218);
             display: flex;
             flex-wrap: wrap;
         }
 
-        .content_accountCenter >div:first-child{
-            width: 30%;
+        .content_accountCenter .accountCenterMenu {
+            width: 20%;
         }
 
-        .content_accountCenter >div:not(:nth-child(1)){
-            width: 70%;
+        .content_accountCenter .accountCenterMenu ul {
+            text-align: center;
         }
 
-        .content_accountCenter >div.hidden{
+        .content_accountCenter .accountCenterMenu ul li {
+            color: #fffaf2;
+            background: #9ba4a4;
+            display: inline-flex;
+            align-items: center;
+            height: 35px;
+            padding: 0 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .content_accountCenter .accountCenterMenu ul li:hover {
+            color: #fffaf2;
+            background: #b48f5e;
+            box-shadow: 0 0 3px 2px #b48f5e;
+        }
+
+        .content_accountCenter .accountCenterMenu ul li.focus {
+            color: #fffaf2;
+            background: #242424;
+            pointer-events: none;
+        }
+
+        .content_accountCenter>div:not(:nth-child(1)) {
+            width: 80%;
+        }
+
+        .content_accountCenter>div.hidden {
             display: none;
         }
 
+        .content_accountCenter .editArea .editMenu ul {
+            display: flex;
+        }
 
+        .content_accountCenter .editArea .editMenu ul li {
+            color: #9ba4a4;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .content_accountCenter .editArea hr {
+            background: #c6caca;
+            height: 2px;
+            border: none;
+        }
+
+
+        .content_accountCenter .editArea>div:not(:nth-child(1)).hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -77,10 +128,10 @@
     <section class="content">
         <!-- 主要內容區-帳戶中心導覽與內容 -->
         <div class="content_accountCenter">
-            <div class="nav">
+            <div class="accountCenterMenu">
                 <ul>
                     <li>訂單查詢</li>
-                    <li>修改資訊</li>
+                    <li class="focus">修改資訊</li>
                     <li>帳戶登出</li>
                 </ul>
             </div>
@@ -89,7 +140,17 @@
                 <p>在您的帳戶資訊主頁中，您可以<span>查看最近的訂單</span>和<span>編輯您的詳細資訊/更改密碼</span>。</p>
             </div>
             <div class="orderInquiry hidden"></div>
-            <div class="editInformation"></div>
+            <div class="editArea">
+                <div class="editMenu">
+                    <ul>
+                        <li>修改資訊</li>
+                        <li>修改密碼</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="editInformation"></div>
+                <div class="editpassword hidden"></div>
+            </div>
         </div>
     </section>
     <!-- 底部內容區 -->

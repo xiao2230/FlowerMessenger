@@ -158,6 +158,9 @@ body {
 
 .content_recruit hr {
     margin: 10px 0;
+    background: #242424;
+    height: 2px;
+    border: none;
 }
 
 .content_recruit h4 {
