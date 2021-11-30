@@ -291,40 +291,35 @@ body {
 .content_oBArea .oBAreaText form .oBFormOption .minusBtn {
     display: inline-flex;
     align-items: center;
-    padding: 0 5px;
-    height: 30px;
+    justify-content: center;
+    width: 20px;
+    line-height: 30px;
     background: #9ba4a4;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     cursor: pointer;
-    position: relative;
-    top: -2px;
+    font-weight: 600;
+    color: #fffaf2;
 }
 
 .content_oBArea .oBAreaText form .oBFormOption .plusBtn {
     display: inline-flex;
     align-items: center;
-    padding: 0 5px;
-    height: 30px;
+    justify-content: center;
+    width: 20px;
+    line-height: 30px;
     background: #9ba4a4;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
     cursor: pointer;
-    position: relative;
-    top: -2px;
+    font-weight: 600;
+    color: #fffaf2;
 }
 
 .content_oBArea .oBAreaText form .oBFormOption .minusBtn:hover,
 .content_oBArea .oBAreaText form .oBFormOption .plusBtn:hover{
     background: #b48f5e;
     box-shadow: 0 0 5px 1px #b48f5e;
-}
-
-.content_oBArea .oBAreaText form .oBFormOption .minusBtn i,
-.content_oBArea .oBAreaText form .oBFormOption .plusBtn i {
-    font-size: 10px;
-    font-weight: 600;
-    color: #fffaf2;
 }
 
 input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
@@ -371,8 +366,9 @@ input[type=number] {
     background: #b48f5e;
     font-weight: 600;
     position: absolute;
-    right: 0;
+    left: 50%;
     bottom: 10px;
+    transform: translateX(-50%);
     transition: background .3s ease-in-out;
     font-size: 18px;
 }
@@ -660,7 +656,7 @@ input[type=number] {
     }
 
     .content_oBArea .oBAreaText form .oBFormOption .minusBtn, .content_oBArea .oBAreaText form .oBFormOption .plusBtn {
-        height: 27px;
+        line-height: 27px;
     }
 
     .content_oBArea .oBAreaText form .oBFormOption label.calBtn i {
@@ -678,8 +674,6 @@ input[type=number] {
         height: 30px;
         padding: 0 10px;
         font-size: 16px;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     /* 底部內容區-店家資訊&店鋪圖片 */

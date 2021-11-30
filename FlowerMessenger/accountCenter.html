@@ -20,6 +20,17 @@
             flex-wrap: wrap;
         }
 
+        .content_accountCenter>div:not(:nth-child(1)) {
+            width: 80%;
+            min-height: 600px;
+        }
+
+        .content_accountCenter>div.hidden {
+            display: none;
+        }
+
+        /* 主要內容區-帳戶中心導覽與內容(側邊導覽) */
+
         .content_accountCenter .accountCenterMenu {
             width: 20%;
         }
@@ -38,28 +49,25 @@
             border-radius: 5px;
             font-weight: 600;
             font-size: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             cursor: pointer;
             user-select: none;
+            transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
         }
 
         .content_accountCenter .accountCenterMenu ul li:hover {
-            color: #fffaf2;
             background: #b48f5e;
             box-shadow: 0 0 3px 2px #b48f5e;
         }
 
         .content_accountCenter .accountCenterMenu ul li.focus {
-            color: #fffaf2;
             background: #242424;
             pointer-events: none;
         }
 
-        .content_accountCenter>div:not(:nth-child(1)) {
-            width: 80%;
-        }
+        /* 主要內容區-帳戶中心導覽與內容(修改資訊) */
 
-        .content_accountCenter>div.hidden {
+        .content_accountCenter .editArea>div:not(:nth-child(1)).hidden {
             display: none;
         }
 
@@ -71,8 +79,40 @@
             color: #9ba4a4;
             font-weight: 600;
             font-size: 18px;
+            padding: 5px 0;
+            margin: 0 15px;
             cursor: pointer;
             user-select: none;
+            position: relative;
+            transition: color .3s ease-in-out;
+        }
+
+        .content_accountCenter .editArea .editMenu ul li::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: background .3s ease-in-out;
+        }
+
+        .content_accountCenter .editArea .editMenu ul li:hover {
+            color: #bb7008;
+            text-shadow: 0 0 3px #b48f5e;
+        }
+
+        .content_accountCenter .editArea .editMenu ul li:hover::after {
+            background: #bb7008;
+        }
+
+        .content_accountCenter .editArea .editMenu ul li.focus {
+            color: #242424;
+            pointer-events: none;
+        }
+
+        .content_accountCenter .editArea .editMenu ul li.focus::after {
+            background: #242424;
         }
 
         .content_accountCenter .editArea hr {
@@ -81,9 +121,262 @@
             border: none;
         }
 
+        .content_accountCenter .editArea form {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-        .content_accountCenter .editArea>div:not(:nth-child(1)).hidden {
-            display: none;
+        .content_accountCenter .editArea form p {
+            width: 100%;
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .content_accountCenter .editArea form .aFormOption,
+        .content_accountCenter .editArea form .pFormOption {
+            position: relative;
+            margin-bottom: 17px;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .content_accountCenter .editArea form .aFormOption input,
+        .content_accountCenter .editArea form .pFormOption input {
+            height: 35px;
+            width: 80%;
+            font-weight: 600;
+            outline: none;
+            border: 1px solid #9ba4a4;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+
+        .content_accountCenter .editArea form .aFormOption input:focus,
+        .content_accountCenter .editArea form .pFormOption input:focus {
+            border: 2px solid #b48f5e;
+            color: #bb7008;
+            box-shadow: 0 0 5px 1px #b48f5e;
+        }
+
+        .content_accountCenter .editArea form .aFormOption label:first-child,
+        .content_accountCenter .editArea form .pFormOption label:first-child {
+            line-height: 35px;
+            margin-right: 10px;
+        }
+
+        .content_accountCenter .editArea form .aFormOption label:first-child span,
+        .content_accountCenter .editArea form .pFormOption label:first-child span {
+            position: relative;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.required label:first-child span::after,
+        .content_accountCenter .editArea form .pFormOption.required label:first-child span::after {
+            content: '*';
+            padding-left: 2px;
+            position: absolute;
+            left: 100%;
+            font-size: 30px;
+            color: #e76f51;
+        }
+
+        .content_accountCenter .editArea form .aFormOption label:first-child i,
+        .content_accountCenter .editArea form .pFormOption label:first-child i {
+            margin-right: 5px;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aBirthday {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aBirthday label {
+            width: 100%;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aBirthday select {
+            width: 30%;
+            height: 35px;
+            font-weight: 600;
+            outline: none;
+            border: 1px solid #9ba4a4;
+            border-radius: 5px;
+            padding: 0 5px;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aBirthday select:focus {
+            border: 2px solid #b48f5e;
+            color: #bb7008;
+            box-shadow: 0 0 5px 1px #b48f5e;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aVerify button {
+            height: 31px;
+            padding: 0 10px;
+            position: absolute;
+            right: 21%;
+            bottom: 2px;
+            font-weight: 600;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background: #9acdec;
+            color: #fffaf2;
+        }
+
+        .content_accountCenter .editArea .editpassword {
+            margin-top: 15px;
+        }
+
+        .content_accountCenter .editArea form .pFormOption.pPassword {
+            width: 100%;
+        }
+
+        .content_accountCenter .editArea form .pFormOption.pPassword input {
+            width: 40%;
+        }
+
+        .content_accountCenter .editArea form .pFormOption.pPassword input+label {
+            position: absolute;
+            top: 75%;
+            right: 61%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .content_accountCenter .editArea form .pFormOption input+label {
+            position: absolute;
+            top: 75%;
+            right: 21%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .content_accountCenter .editArea form .pFormOption.pConfirmPassword>i {
+            position: absolute;
+            top: 75%;
+            right: 28%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #6eba44;
+        }
+
+        .content_accountCenter .editArea form hr {
+            background: #c6caca;
+            height: 1px;
+            width: 100%;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .content_accountCenter .editArea form .socialLogin {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div {
+            margin-bottom: 17px;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div span:first-child {
+            width: 40%;
+            height: 35px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: #fffaf2;
+            font-weight: 600;
+            position: relative;
+            pointer-events: none;
+        }
+
+        .content_accountCenter .editArea form .socialLogin .slFb span:first-child {
+            background: #3a60d0;
+        }
+
+        .content_accountCenter .editArea form .socialLogin .slGoogle span:first-child {
+            background: #4285f4;
+        }
+
+        .content_accountCenter .editArea form .socialLogin .slApple span:first-child {
+            background: #000;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div span:first-child i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fffaf2;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .content_accountCenter .editArea form .socialLogin .slGoogle span:first-child i {
+            font-size: 15px;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div span:nth-child(2) {
+            color: #e76f51;
+            font-weight: 600;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div a {
+            font-weight: 600;
+            color: #9ba4a4;
+            position: relative;
+            transition: color .3s ease-in-out;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div a:hover {
+            color: #242424;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div a::after {
+            content: '';
+            width: 0;
+            height: 1px;
+            background: #242424;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width .3s ease-in-out;
+        }
+
+        .content_accountCenter .editArea form .socialLogin>div a:hover::after {
+            width: 100%;
+        }
+
+        .content_accountCenter .editArea form .aFormSubmit,
+        .content_accountCenter .editArea form .pFormSubmit {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content_accountCenter .editArea form .aFormSubmit input,
+        .content_accountCenter .editArea form .pFormSubmit input {
+            height: 35px;
+            width: 40%;
+            font-weight: 600;
+            color: #fffaf2;
+            background: #b48f5e;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: background .3s ease-in-out;
+        }
+
+        .content_accountCenter .editArea form .aFormSubmit input:hover,
+        .content_accountCenter .editArea form .pFormSubmit input:hover {
+            background: #bb7008;
         }
     </style>
 </head>
@@ -128,6 +421,7 @@
     <section class="content">
         <!-- 主要內容區-帳戶中心導覽與內容 -->
         <div class="content_accountCenter">
+            <!-- 主要內容區-帳戶中心導覽與內容(側邊導覽) -->
             <div class="accountCenterMenu">
                 <ul>
                     <li>訂單查詢</li>
@@ -135,21 +429,182 @@
                     <li>帳戶登出</li>
                 </ul>
             </div>
+            <!-- 主要內容區-帳戶中心導覽與內容(登入後起始畫面) -->
             <div class="origin hidden">
                 <p>Xiao 您好</p>
                 <p>在您的帳戶資訊主頁中，您可以<span>查看最近的訂單</span>和<span>編輯您的詳細資訊/更改密碼</span>。</p>
             </div>
+            <!-- 主要內容區-帳戶中心導覽與內容(訂單查詢) -->
             <div class="orderInquiry hidden"></div>
+            <!-- 主要內容區-帳戶中心導覽與內容(修改資訊) -->
             <div class="editArea">
                 <div class="editMenu">
                     <ul>
-                        <li>修改資訊</li>
+                        <li class="focus">修改資訊</li>
                         <li>修改密碼</li>
                     </ul>
                 </div>
                 <hr>
-                <div class="editInformation"></div>
-                <div class="editpassword hidden"></div>
+                <div class="editAccountInfo">
+                    <form action="" id="aForm" method="">
+                        <input type="hidden" id="aFormName" name="aFormName" value="修改資訊">
+                        <p>｜基本資料｜</p>
+                        <div class="aFormOption aUsername required">
+                            <label for="aUsername"><i class="fas fa-user"></i><span>使用者名稱</span></label>
+                            <input type="text" id="aUsername" name="aUsername" value="fm666" disabled="true"
+                                required="true">
+                        </div>
+                        <div class="aFormOption aEmail required">
+                            <label for="aEmail"><i class="fas fa-envelope"></i><span>電子郵件</span></label>
+                            <input type="text" id="aEmail" name="aEmail" value="fm666@gmail.com" required="true">
+                        </div>
+                        <div class="aFormOption aRealName">
+                            <label for="aRealName"><i class="fas fa-signature"></i><span>真實姓名</span></label>
+                            <input type="text" id="aRealName" name="aRealName">
+                        </div>
+                        <div class="aFormOption aBirthday">
+                            <label for="aBirthday"><i class="fas fa-birthday-cake"></i><span>生日</span></label>
+                            <select name="bdYear">
+                                <option value="">出生年份</option>
+                                <option value="1991年">1991年</option>
+                                <option value="1992年">1992年</option>
+                                <option value="1993年">1993年</option>
+                                <option value="1994年">1994年</option>
+                                <option value="1995年">1995年</option>
+                                <option value="1996年">1996年</option>
+                                <option value="1997年">1997年</option>
+                                <option value="1998年">1998年</option>
+                                <option value="1999年">1999年</option>
+                                <option value="2000年">2000年</option>
+                                <option value="2001年">2001年</option>
+                                <option value="2002年">2002年</option>
+                                <option value="2003年">2003年</option>
+                                <option value="2004年">2004年</option>
+                                <option value="2005年">2005年</option>
+                                <option value="2006年">2006年</option>
+                                <option value="2007年">2007年</option>
+                                <option value="2008年">2008年</option>
+                                <option value="2009年">2009年</option>
+                                <option value="2010年">2010年</option>
+                                <option value="2011年">2011年</option>
+                                <option value="2012年">2012年</option>
+                                <option value="2013年">2013年</option>
+                                <option value="2014年">2014年</option>
+                                <option value="2015年">2015年</option>
+                                <option value="2016年">2016年</option>
+                                <option value="2017年">2017年</option>
+                                <option value="2018年">2018年</option>
+                                <option value="2019年">2019年</option>
+                                <option value="2020年">2020年</option>
+                                <option value="2021年">2021年</option>
+                            </select>
+                            <select name="bdMonth">
+                                <option value="">出生月份</option>
+                                <option value="1月">1月</option>
+                                <option value="2月">2月</option>
+                                <option value="3月">3月</option>
+                                <option value="4月">4月</option>
+                                <option value="5月">5月</option>
+                                <option value="6月">6月</option>
+                                <option value="7月">7月</option>
+                                <option value="8月">8月</option>
+                                <option value="9月">9月</option>
+                                <option value="10月">10月</option>
+                                <option value="11月">11月</option>
+                                <option value="12月">12月</option>
+                            </select>
+                            <select name="bdDay">
+                                <option value="">出生日期</option>
+                                <option value="1日">1日</option>
+                                <option value="2日">2日</option>
+                                <option value="3日">3日</option>
+                                <option value="4日">4日</option>
+                                <option value="5日">5日</option>
+                                <option value="6日">6日</option>
+                                <option value="7日">7日</option>
+                                <option value="8日">8日</option>
+                                <option value="9日">9日</option>
+                                <option value="10日">10日</option>
+                                <option value="11日">11日</option>
+                                <option value="12日">12日</option>
+                                <option value="13日">13日</option>
+                                <option value="14日">14日</option>
+                                <option value="15日">15日</option>
+                                <option value="16日">16日</option>
+                                <option value="17日">17日</option>
+                                <option value="18日">18日</option>
+                                <option value="19日">19日</option>
+                                <option value="20日">20日</option>
+                                <option value="21日">21日</option>
+                                <option value="22日">22日</option>
+                                <option value="23日">23日</option>
+                                <option value="24日">24日</option>
+                                <option value="25日">25日</option>
+                                <option value="26日">26日</option>
+                                <option value="27日">27日</option>
+                                <option value="28日">28日</option>
+                                <option value="29日">29日</option>
+                                <option value="30日">30日</option>
+                                <option value="31日">31日</option>
+                            </select>
+                        </div>
+                        <div class="aFormOption aTel required">
+                            <label for="aTel"><i class="fas fa-mobile-alt"></i><span>手機號碼</span></label>
+                            <input type="text" id="aTel" name="aTel" value="0800666666" required="true">
+                        </div>
+                        <div class="aFormOption aVerify">
+                            <label for="aVerify"><i class="fas fa-sms"></i><span>簡訊驗證碼</span></label>
+                            <input type="text" id="aVerify" name="aVerify" disabled="true">
+                            <button type="button">接收驗證碼</button>
+                        </div>
+                        <hr>
+                        <p>｜快速登入設定｜</p>
+                        <div class="socialLogin">
+                            <div class="slFb">
+                                <span><i class="fab fa-facebook-f"></i>Facebook</span>
+                                <span>未綁定</span>
+                                <a href="#">連結</a>
+                            </div>
+                            <div class="slGoogle">
+                                <span><i class="fab fa-google"></i>Google</span>
+                                <span>未綁定</span>
+                                <a href="#">連結</a>
+                            </div>
+                            <div class="slApple">
+                                <span><i class="fab fa-apple"></i>Apple</span>
+                                <span>未綁定</span>
+                                <a href="#">連結</a>
+                            </div>
+                        </div>
+                        <div class="aFormSubmit">
+                            <input type="submit" id="aBtnSend" name="aBtnSend" value="儲存修改">
+                        </div>
+                    </form>
+                </div>
+                <div class="editpassword hidden">
+                    <form action="" id="pForm" method="">
+                        <input type="hidden" id="pFormName" name="pFormName" value="修改密碼">
+                        <div class="pFormOption pPassword required">
+                            <label for="pPassword"><i class="fas fa-key"></i><span>目前的密碼</span></label>
+                            <input type="password" id="pPassword" name="pPassword" required="true">
+                            <label for="pPassword"><i class="fas fa-eye-slash"></i></label>
+                        </div>
+                        <div class="pFormOption pNewPassword required">
+                            <label for="pNewPassword"><i class="fas fa-key"></i><span>新密碼</span></label>
+                            <input type="password" id="pNewPassword" name="pNewPassword" required="true">
+                            <label for="pNewPassword"><i class="fas fa-eye-slash"></i></label>
+                        </div>
+                        <div class="pFormOption pConfirmPassword required">
+                            <label for="pConfirmPassword"><i class="fas fa-key"></i><span>確認新密碼</span></label>
+                            <input type="password" id="pConfirmPassword" name="pConfirmPassword" required="true">
+                            <label for="pConfirmPassword"><i class="fas fa-eye-slash"></i></label>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="pFormSubmit">
+                            <input type="submit" id="pBtnSend" name="pBtnSend" value="儲存修改">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -201,5 +656,26 @@
     </section>
 </body>
 <script src="js/accountCenter.js"></script>
+<script>
+    let editAINav = document.querySelector('.content_accountCenter .editArea .editMenu li:first-child');
+    let editPNav = document.querySelector('.content_accountCenter .editArea .editMenu li:last-child');
+    let editAIArea = document.querySelector('.content_accountCenter .editArea .editAccountInfo');
+    let editPArea = document.querySelector('.content_accountCenter .editArea .editpassword');
+
+
+    editAINav.addEventListener('click', () => {
+        editAINav.classList.add('focus');
+        editPNav.classList.remove('focus');
+        editAIArea.classList.remove('hidden');
+        editPArea.classList.add('hidden');
+    })
+
+    editPNav.addEventListener('click', () => {
+        editAINav.classList.remove('focus');
+        editPNav.classList.add('focus');
+        editAIArea.classList.add('hidden');
+        editPArea.classList.remove('hidden');
+    })
+</script>
 
 </html>
