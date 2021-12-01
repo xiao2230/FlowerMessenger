@@ -124,9 +124,36 @@
         .content_accountCenter .editArea form {
             display: flex;
             flex-wrap: wrap;
+            position: relative;
         }
 
-        .content_accountCenter .editArea form p {
+        .content_accountCenter .editArea form .aFormTipMsg01,
+        .content_accountCenter .editArea form .aFormTipMsg02,
+        .content_accountCenter .editArea form .pFormTipMsg01,
+        .content_accountCenter .editArea form .pFormTipMsg02,
+        .content_accountCenter .editArea form .pFormTipMsg03 {
+            font-size: 14px;
+            position: absolute;
+            top: 70px;
+        }
+
+        .content_accountCenter .editArea form .aFormTipMsg01.yellow,
+        .content_accountCenter .editArea form .aFormTipMsg02.yellow,
+        .content_accountCenter .editArea form .pFormTipMsg01.yellow,
+        .content_accountCenter .editArea form .pFormTipMsg02.yellow,
+        .content_accountCenter .editArea form .pFormTipMsg03.yellow {
+            color: #bb7008;
+        }
+
+        .content_accountCenter .editArea form .aFormTipMsg01.red,
+        .content_accountCenter .editArea form .aFormTipMsg02.red,
+        .content_accountCenter .editArea form .pFormTipMsg01.red,
+        .content_accountCenter .editArea form .pFormTipMsg02.red,
+        .content_accountCenter .editArea form .pFormTipMsg03.red {
+            color: #e76f51;
+        }
+
+        .content_accountCenter .editArea form>p {
             width: 100%;
             margin: 15px 0;
             font-weight: 600;
@@ -186,6 +213,42 @@
             margin-right: 5px;
         }
 
+        .content_accountCenter .editArea form .pFormRemind {
+            padding: 15px;
+            width: 300px;
+            position: absolute;
+            top: 35px;
+            border-radius: 5px;
+            background: #e76f51;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .content_accountCenter .editArea form .pFormRemind.appear {
+            opacity: 1;
+        }
+
+        .content_accountCenter .editArea form .pFormRemind::after {
+            content: '';
+            clip-path: polygon(0 0, 100% 0%, 60% 100%, 40% 100%);
+            width: 12px;
+            height: 12px;
+            background: #e76f51;
+            position: absolute;
+            top: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .content_accountCenter .editArea form .pFormRemind h6 {
+            color: #fffaf2;
+        }
+
+        .content_accountCenter .editArea form .pFormRemind p {
+            color: #fffaf2;
+            font-size: 14px;
+        }
+
         .content_accountCenter .editArea form .aFormOption.aBirthday {
             display: flex;
             flex-direction: row;
@@ -213,6 +276,14 @@
             box-shadow: 0 0 5px 1px #b48f5e;
         }
 
+        .content_accountCenter .editArea form .aFormOption input.disabled,
+        .content_accountCenter .editArea form .pFormOption input.disabled,
+        .content_accountCenter .editArea form .pFormOption input.disabled~label {
+            background: #ececec;
+            pointer-events: none;
+            user-select: none;
+        }
+
         .content_accountCenter .editArea form .aFormOption.aVerify button {
             height: 31px;
             padding: 0 10px;
@@ -223,12 +294,19 @@
             outline: none;
             border: none;
             border-radius: 5px;
-            background: #9acdec;
+            background: #457b9d;
+            color: #fffaf2;
+            cursor: pointer;
+        }
+
+        .content_accountCenter .editArea form .aFormOption.aVerify button:hover {
+            background: #31576e;
             color: #fffaf2;
         }
 
-        .content_accountCenter .editArea .editpassword {
-            margin-top: 15px;
+        .content_accountCenter .editArea form .aFormOption.aVerify button.disabled {
+            background: #9acdec;
+            pointer-events: none;
         }
 
         .content_accountCenter .editArea form .pFormOption.pPassword {
@@ -262,6 +340,11 @@
             transform: translateY(-50%);
             font-size: 16px;
             color: #6eba44;
+            display: none;
+        }
+
+        .content_accountCenter .editArea form .pFormOption.pConfirmPassword>i.appear {
+            display: block;
         }
 
         .content_accountCenter .editArea form hr {
@@ -355,7 +438,7 @@
         .content_accountCenter .editArea form .aFormSubmit,
         .content_accountCenter .editArea form .pFormSubmit {
             width: 100%;
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
         }
@@ -440,7 +523,7 @@
             <div class="editArea">
                 <div class="editMenu">
                     <ul>
-                        <li class="focus">修改資訊</li>
+                        <li class="focus">修改資料</li>
                         <li>修改密碼</li>
                     </ul>
                 </div>
@@ -451,16 +534,16 @@
                         <p>｜基本資料｜</p>
                         <div class="aFormOption aUsername required">
                             <label for="aUsername"><i class="fas fa-user"></i><span>使用者名稱</span></label>
-                            <input type="text" id="aUsername" name="aUsername" value="fm666" disabled="true"
-                                required="true">
+                            <input type="text" id="aUsername" name="aUsername" placeholder="請輸入使用者名稱">
                         </div>
                         <div class="aFormOption aEmail required">
                             <label for="aEmail"><i class="fas fa-envelope"></i><span>電子郵件</span></label>
-                            <input type="text" id="aEmail" name="aEmail" value="fm666@gmail.com" required="true">
+                            <input type="text" id="aEmail" name="aEmail" placeholder="請輸入電子郵件">
+                            <div class="aFormTipMsg01"></div>
                         </div>
                         <div class="aFormOption aRealName">
                             <label for="aRealName"><i class="fas fa-signature"></i><span>真實姓名</span></label>
-                            <input type="text" id="aRealName" name="aRealName">
+                            <input type="text" id="aRealName" name="aRealName" placeholder="請輸入真實姓名">
                         </div>
                         <div class="aFormOption aBirthday">
                             <label for="aBirthday"><i class="fas fa-birthday-cake"></i><span>生日</span></label>
@@ -550,11 +633,12 @@
                         </div>
                         <div class="aFormOption aTel required">
                             <label for="aTel"><i class="fas fa-mobile-alt"></i><span>手機號碼</span></label>
-                            <input type="text" id="aTel" name="aTel" value="0800666666" required="true">
+                            <input type="text" id="aTel" name="aTel" placeholder="請輸入手機號碼">
+                            <div class="aFormTipMsg02"></div>
                         </div>
                         <div class="aFormOption aVerify">
                             <label for="aVerify"><i class="fas fa-sms"></i><span>簡訊驗證碼</span></label>
-                            <input type="text" id="aVerify" name="aVerify" disabled="true">
+                            <input type="text" id="aVerify" name="aVerify" placeholder="請輸入簡訊驗證碼">
                             <button type="button">接收驗證碼</button>
                         </div>
                         <hr>
@@ -581,24 +665,35 @@
                         </div>
                     </form>
                 </div>
-                <div class="editpassword hidden">
+                <div class="editpassword">
                     <form action="" id="pForm" method="">
                         <input type="hidden" id="pFormName" name="pFormName" value="修改密碼">
+                        <p>｜密碼設定｜</p>
                         <div class="pFormOption pPassword required">
                             <label for="pPassword"><i class="fas fa-key"></i><span>目前的密碼</span></label>
-                            <input type="password" id="pPassword" name="pPassword" required="true">
+                            <input type="password" id="pPassword" name="pPassword" placeholder="請輸入目前的密碼">
                             <label for="pPassword"><i class="fas fa-eye-slash"></i></label>
+                            <div class="pFormTipMsg01"></div>
                         </div>
                         <div class="pFormOption pNewPassword required">
                             <label for="pNewPassword"><i class="fas fa-key"></i><span>新密碼</span></label>
-                            <input type="password" id="pNewPassword" name="pNewPassword" required="true">
+                            <input type="password" id="pNewPassword" name="pNewPassword" placeholder="請輸入新密碼">
                             <label for="pNewPassword"><i class="fas fa-eye-slash"></i></label>
+                            <div class="pFormTipMsg02"></div>
+                        </div>
+                        <div class="pFormRemind">
+                            <h6>※ 輸入說明</h6>
+                            <p>1、開頭為英文字母(大小寫不同)</p>
+                            <p>2、限制長度『6至16字元』</p>
+                            <p>3、只可輸入『大小寫英文字母/數字』</p>
+                            <p>4、無法輸入『特殊符號或空格』</p>
                         </div>
                         <div class="pFormOption pConfirmPassword required">
                             <label for="pConfirmPassword"><i class="fas fa-key"></i><span>確認新密碼</span></label>
-                            <input type="password" id="pConfirmPassword" name="pConfirmPassword" required="true">
+                            <input type="password" id="pConfirmPassword" name="pConfirmPassword" placeholder="請再次輸入新密碼">
                             <label for="pConfirmPassword"><i class="fas fa-eye-slash"></i></label>
                             <i class="fas fa-check-circle"></i>
+                            <div class="pFormTipMsg03"></div>
                         </div>
                         <div class="pFormSubmit">
                             <input type="submit" id="pBtnSend" name="pBtnSend" value="儲存修改">
@@ -657,25 +752,9 @@
 </body>
 <script src="js/accountCenter.js"></script>
 <script>
-    let editAINav = document.querySelector('.content_accountCenter .editArea .editMenu li:first-child');
-    let editPNav = document.querySelector('.content_accountCenter .editArea .editMenu li:last-child');
-    let editAIArea = document.querySelector('.content_accountCenter .editArea .editAccountInfo');
-    let editPArea = document.querySelector('.content_accountCenter .editArea .editpassword');
+    
 
 
-    editAINav.addEventListener('click', () => {
-        editAINav.classList.add('focus');
-        editPNav.classList.remove('focus');
-        editAIArea.classList.remove('hidden');
-        editPArea.classList.add('hidden');
-    })
-
-    editPNav.addEventListener('click', () => {
-        editAINav.classList.remove('focus');
-        editPNav.classList.add('focus');
-        editAIArea.classList.add('hidden');
-        editPArea.classList.remove('hidden');
-    })
 </script>
 
 </html>

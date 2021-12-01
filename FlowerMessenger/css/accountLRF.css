@@ -288,7 +288,7 @@ body {
 .content_accountLRF .dataArea form .aFormTipMsg01.yellow,
 .content_accountLRF .dataArea form .aFormTipMsg02.yellow,
 .content_accountLRF .dataArea form .aFormTipMsg03.yellow,
-.content_accountLRF .dataArea form .aFormTipMsg04.yellow, 
+.content_accountLRF .dataArea form .aFormTipMsg04.yellow,
 .content_accountLRF .dataArea form .aFormTipMsg05.yellow {
     color: #e9c46a;
 }
@@ -299,6 +299,13 @@ body {
 .content_accountLRF .dataArea form .aFormTipMsg04.red,
 .content_accountLRF .dataArea form .aFormTipMsg05.red {
     color: #ee876d;
+}
+
+.content_accountLRF .dataArea form .aFormOption input.disabled,
+.content_accountLRF .dataArea form .aFormOption input.disabled~label {
+    background: #e2e2e2;
+    pointer-events: none;
+    user-select: none;
 }
 
 .content_accountLRF .dataArea form .aFormOption.aVerify button {
@@ -312,18 +319,19 @@ body {
     outline: none;
     border: none;
     border-radius: 5px;
-    background: #9acdec;
-    color: #fffaf2;
-}
-
-.content_accountLRF .dataArea form .aFormOption.aVerify button.telOk {
     background: #457b9d;
+    color: #fffaf2;
+    cursor: pointer;
 }
 
-.content_accountLRF .dataArea form .aFormOption.aVerify button.telOk:hover {
-    cursor: pointer;
+.content_accountLRF .dataArea form .aFormOption.aVerify button:hover {
     background: #31576e;
     color: #fffaf2;
+}
+
+.content_accountLRF .dataArea form .aFormOption.aVerify button.disabled {
+    background: #9acdec;
+    pointer-events: none;
 }
 
 .content_accountLRF .dataArea form .aFormSubmit input {

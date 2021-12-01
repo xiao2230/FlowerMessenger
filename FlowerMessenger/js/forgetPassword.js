@@ -10,6 +10,19 @@ let accountPreface = document.querySelectorAll('.content_accountLRF .accountPref
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
 
+document.addEventListener('DOMContentLoaded', () => {
+	// 『主要內容區-帳戶登入前內容』的登入表格顯現
+	accountLoginField.classList.add('appear');
+
+	// 『主要內容區-帳戶登入前內容』的俳句滑入動態
+	for (i = 0, t = 0; i < accountPreface.length; i++, t += Math.random() * 500) {
+		setTimeout(`accountPreface[${i}].classList.add('locate')`, t);
+	}
+
+	// 『主要內容區-帳戶登入前內容』電話為必填
+	telInput.setAttribute('required', true);
+});
+
 document.addEventListener('scroll', () => {
 	let scrollTop = document.documentElement.scrollTop;
 
@@ -22,9 +35,6 @@ document.addEventListener('scroll', () => {
 	}
 });
 
-// 『主要內容區-帳戶登入前內容』電話為必填
-telInput.setAttribute('required', true);
-
 form.addEventListener('paste', function(e) {
 	// 『主要內容區-帳戶登入前內容』限制輸入欄不能用貼上的。
 	e.preventDefault();
@@ -32,7 +42,7 @@ form.addEventListener('paste', function(e) {
 
 telInput.addEventListener('input', () => {
 	// 『主要內容區-帳戶登入前內容』手機號碼限制只能打數字。
-    telInput.value = telInput.value.replace(/[^\d]/g, '');
+	telInput.value = telInput.value.replace(/[^\d]/g, '');
 });
 
 telInput.addEventListener('focus', () => {
@@ -60,15 +70,5 @@ submitInput.addEventListener('click', () => {
 	// 『主要內容區-帳戶登入前內容』送出表單前，再次確認手機格式是否正確。
 	if (!/^0[9]\d{8}$/.test(telInput.value)) {
 		telInput.value = '';
-	}
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-	// 『主要內容區-帳戶登入前內容』的登入表格顯現
-	accountLoginField.classList.add('appear');
-
-	// 『主要內容區-帳戶登入前內容』的俳句滑入動態
-	for (i = 0, t = 0; i < accountPreface.length; i++, t += Math.random() * 500) {
-		setTimeout(`accountPreface[${i}].classList.add('locate')`, t);
 	}
 });
