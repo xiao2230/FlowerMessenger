@@ -65,6 +65,12 @@
             pointer-events: none;
         }
 
+        .content_accountCenter .accountCenterMenu ul li i {
+            font-size: 16px;
+            margin-right: 3px;
+            color: #fffaf2;
+        }
+
         /* 主要內容區-帳戶中心導覽與內容(修改資訊) */
 
         .content_accountCenter .editArea>div:not(:nth-child(1)).hidden {
@@ -461,6 +467,16 @@
         .content_accountCenter .editArea form .pFormSubmit input:hover {
             background: #bb7008;
         }
+
+        /* 主要內容區-帳戶中心導覽與內容(帳戶登出) */
+        .content_accountCenter div.logoutArea{
+            background: rgb(197, 186, 186);
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
     </style>
 </head>
 
@@ -507,18 +523,16 @@
             <!-- 主要內容區-帳戶中心導覽與內容(側邊導覽) -->
             <div class="accountCenterMenu">
                 <ul>
-                    <li>訂單查詢</li>
-                    <li class="focus">修改資訊</li>
-                    <li>帳戶登出</li>
+                    <li><i class="fas fa-search"></i>訂單查詢</li>
+                    <li><i class="fas fa-edit"></i>修改資訊</li>
+                    <li><i class="fas fa-sign-out-alt"></i>帳戶登出</li>
                 </ul>
             </div>
-            <!-- 主要內容區-帳戶中心導覽與內容(登入後起始畫面) -->
-            <div class="origin hidden">
-                <p>Xiao 您好</p>
-                <p>在您的帳戶資訊主頁中，您可以<span>查看最近的訂單</span>和<span>編輯您的詳細資訊/更改密碼</span>。</p>
-            </div>
             <!-- 主要內容區-帳戶中心導覽與內容(訂單查詢) -->
-            <div class="orderInquiry hidden"></div>
+            <div class="orderInquiryArea">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla est eaque laudantium quidem neque earum
+                sit eius alias ducimus unde excepturi optio, atque harum ipsa nobis provident quibusdam saepe veniam.
+            </div>
             <!-- 主要內容區-帳戶中心導覽與內容(修改資訊) -->
             <div class="editArea">
                 <div class="editMenu">
@@ -701,6 +715,14 @@
                     </form>
                 </div>
             </div>
+            <!-- 主要內容區-帳戶中心導覽與內容(帳戶登出) -->
+            <div class="logoutArea">
+                <div class="logoutConfirm">
+                    <p>請問您確定要登出嗎</p>
+                    <button>確認並登出</button>
+                    <i class="fas fa-times-circle"></i>
+                </div>
+            </div>
         </div>
     </section>
     <!-- 底部內容區 -->
@@ -753,6 +775,8 @@
 <script src="js/accountCenter.js"></script>
 <script>
     
+
+
 
 
 </script>

@@ -14,6 +14,35 @@ document.addEventListener('scroll', () => {
 	}
 });
 
+// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』參數宣告
+let orderInquiryBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:first-child');
+let editAreaBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:nth-child(2)');
+let logoutBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:last-child');
+let orderInquiryArea = document.querySelector('.content_accountCenter .orderInquiryArea');
+let editArea = document.querySelector('.content_accountCenter .editArea');
+
+document.addEventListener('DOMContentLoaded', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』預設打開為訂單查詢
+	orderInquiryBtn.classList.add('focus');
+	editArea.classList.add('hidden');
+});
+
+orderInquiryBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點訂單查詢，右側出現對應內容，取消修改資訊按鈕focus
+	orderInquiryBtn.classList.add('focus');
+	editAreaBtn.classList.remove('focus');
+	orderInquiryArea.classList.remove('hidden');
+	editArea.classList.add('hidden');
+});
+
+editAreaBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點修改資訊，右側出現對應內容，取消訂單查詢按鈕focus
+	orderInquiryBtn.classList.remove('focus');
+	editAreaBtn.classList.add('focus');
+	orderInquiryArea.classList.add('hidden');
+	editArea.classList.remove('hidden');
+});
+
 // 『主要內容區-帳戶中心導覽與內容(修改資訊)』參數宣告
 let editAINav = document.querySelector('.content_accountCenter .editArea .editMenu li:first-child');
 let editPNav = document.querySelector('.content_accountCenter .editArea .editMenu li:last-child');
