@@ -469,13 +469,82 @@
         }
 
         /* 主要內容區-帳戶中心導覽與內容(帳戶登出) */
-        .content_accountCenter div.logoutArea{
-            background: rgb(197, 186, 186);
+        .content_accountCenter div.logoutArea {
             width: 100%;
+            height: 100%;
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .content_accountCenter div.logoutArea.hidden {
+            display: none;
+        }
+
+        .content_accountCenter div.logoutArea .logoutAreaMask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(221 190 169 /.5);
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm {
+            width: 300px;
+            height: 200px;
+            color: #fafafa;
+            background: rgb(19 19 19 / .7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm p {
+            color: #fafafa;
+            margin-bottom: 20px;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm p i {
+            color: #fafafa;
+            font-size: 16px;
+            margin-right: 3px;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm button {
+            height: 35px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: #fffaf2;
+            background: #b48f5e;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .3s ease-in-out;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm button:hover {
+            background: #bb7008;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm>i {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #b48f5e;
+            font-size: 25px;
+            cursor: pointer;
+            transition: background .3s ease-in-out;
+        }
+
+        .content_accountCenter div.logoutArea .logoutConfirm>i:hover {
+            color: #bb7008;
         }
     </style>
 </head>
@@ -717,8 +786,9 @@
             </div>
             <!-- 主要內容區-帳戶中心導覽與內容(帳戶登出) -->
             <div class="logoutArea">
+                <div class="logoutAreaMask"></div>
                 <div class="logoutConfirm">
-                    <p>請問您確定要登出嗎</p>
+                    <p><i class="fas fa-bell"></i>請問您確定要登出嗎</p>
                     <button>確認並登出</button>
                     <i class="fas fa-times-circle"></i>
                 </div>
@@ -774,10 +844,78 @@
 </body>
 <script src="js/accountCenter.js"></script>
 <script>
-    
+    // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』參數宣告
+    let body =document.querySelector('body');
+    let orderInquiryBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:first-child');
+    let editAreaBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:nth-child(2)');
+    let logoutBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:last-child');
+    let logoutYesBtn = document.querySelector('.content_accountCenter .logoutArea .logoutConfirm button');
+    let logoutNoBtn = document.querySelector('.content_accountCenter .logoutArea .logoutConfirm >i');
+    let orderInquiryArea = document.querySelector('.content_accountCenter .orderInquiryArea');
+    let editArea = document.querySelector('.content_accountCenter .editArea');
+    let logoutArea = document.querySelector('.content_accountCenter .logoutArea');
+    let logoutAreaMask = document.querySelector('.content_accountCenter .logoutArea .logoutAreaMask');
 
+    document.addEventListener('DOMContentLoaded', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』預設打開為訂單查詢
+        orderInquiryBtn.classList.add('focus');
+        editArea.classList.add('hidden');
+        logoutArea.classList.add('hidden');
+    });
 
+    orderInquiryBtn.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點訂單查詢，右側出現對應內容，取消其他按鈕focus
+        orderInquiryBtn.classList.add('focus');
+        editAreaBtn.classList.remove('focus');
+        orderInquiryArea.classList.remove('hidden');
+        editArea.classList.add('hidden');
+    });
 
+    editAreaBtn.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點修改資訊，右側出現對應內容，取消其他按鈕focus
+        orderInquiryBtn.classList.remove('focus');
+        editAreaBtn.classList.add('focus');
+        orderInquiryArea.classList.add('hidden');
+        editArea.classList.remove('hidden');
+    });
+
+    logoutBtn.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點帳戶登出，右側出現對應內容，取消其他按鈕focus
+        orderInquiryBtn.classList.remove('focus');
+        editAreaBtn.classList.remove('focus');
+        logoutBtn.classList.add('focus');
+        logoutArea.classList.remove('hidden');
+        body.classList.add('fixed');
+    });
+
+    logoutAreaMask.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框以外的地方，會取消提示，回原本畫面
+        logoutBtn.classList.remove('focus');
+        logoutArea.classList.add('hidden');
+        body.classList.remove('fixed');
+        if(orderInquiryArea.classList.contains('hidden')){
+            editAreaBtn.classList.add('focus')
+        }else{
+            orderInquiryBtn.classList.add('focus');
+        }
+    });
+
+    logoutNoBtn.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框的X，會取消提示，回原本畫面
+        logoutBtn.classList.remove('focus');
+        logoutArea.classList.add('hidden');
+        body.classList.remove('fixed');
+        if(orderInquiryArea.classList.contains('hidden')){
+            editAreaBtn.classList.add('focus')
+        }else{
+            orderInquiryBtn.classList.add('focus');
+        }
+    });
+
+    logoutYesBtn.addEventListener('click', () => {
+        // 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框的確認登出，會到會員登入頁
+        window.location.href='accountLogin.html';
+    });
 
 </script>
 

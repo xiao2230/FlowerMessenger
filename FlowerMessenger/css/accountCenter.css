@@ -13,6 +13,10 @@ body {
     background: #fffaf2;
 }
 
+body.fixed {
+    overflow: hidden;
+}
+
 /* 頂部內容區-導覽列 */
 
 .header_nav {

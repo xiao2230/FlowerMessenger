@@ -1,7 +1,6 @@
 let headerNav = document.querySelector('.header_nav');
 let telInput = document.querySelector('.content_accountLRF .dataArea form .aTel input');
 let submitInput = document.querySelector('.content_accountLRF .dataArea form .aFormSubmit input');
-let checkedIcon02 = document.querySelector('.content_accountLRF .dataArea form .aTel>i');
 let tipMsg04 = document.querySelector('.content_accountLRF .dataArea form .aFormTipMsg04');
 let form = document.querySelector('.content_accountLRF .dataArea form');
 let accountLoginField = document.querySelector('.content_accountLRF > div:first-child');
@@ -50,7 +49,6 @@ telInput.addEventListener('focus', () => {
 	tipMsg04.innerHTML = '手機號碼參考格式：09xxxxxxxx';
 	tipMsg04.classList.add('yellow');
 	tipMsg04.classList.remove('red');
-	checkedIcon02.classList.remove('appear');
 });
 
 telInput.addEventListener('focusout', () => {
@@ -60,7 +58,6 @@ telInput.addEventListener('focusout', () => {
 		tipMsg04.classList.add('red');
 		tipMsg04.classList.remove('yellow');
 	} else {
-		checkedIcon02.classList.add('appear');
 		tipMsg04.innerHTML = '';
 		tipMsg04.classList.remove('yellow');
 	}

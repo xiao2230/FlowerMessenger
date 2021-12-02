@@ -224,7 +224,7 @@ telInput.addEventListener('focusout', () => {
 	}
 });
 
-submitInput.addEventListener('click', () => {
+submitInput.addEventListener('click', (e) => {
 	// 『主要內容區-帳戶登入前內容』送出表單前，再次確認使用者帳號格式是否正確。
 	if (usernameInput.value.length < 6) {
 		usernameInput.value = '';
@@ -251,5 +251,19 @@ submitInput.addEventListener('click', () => {
 	// 『主要內容區-帳戶登入前內容』送出表單前，再次確認手機格式是否正確。
 	if (!/^0[9]\d{8}$/.test(telInput.value)) {
 		telInput.value = '';
+	}
+
+	// 『主要內容區-帳戶登入前內容』若資料都正確，註冊成功，會跳轉到帳戶中心(先取消資料送出的動作)
+	if (
+		usernameInput.value != '' &&
+		passwordInput.value != '' &&
+		confirmPasswordInput.value != '' &&
+		emailInput.value != '' &&
+		telInput.value != '' &&
+		verifyInput.value != ''
+	) {
+		e.preventDefault();
+		window.location.href = 'accountCenter.html';
+		console.log('123');
 	}
 });
