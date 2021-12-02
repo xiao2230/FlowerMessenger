@@ -148,6 +148,10 @@ Vue.createApp({
 			this.bouquetText.num.val =
 				this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val <= 0 ? '' : this.bouquetText.num.val;
 		},
+		// 花束訂購(數量設定)：blur事件，讓數量空值，強制變成1。
+		keyNullValue(){
+			this.bouquetText.num.val = this.bouquetText.num.val == '' ? 1 : this.bouquetText.num.val;
+		},
 		// 花束訂購(數量設定)：額外添增的減少數量按鈕，並設定無法低於1的限制。
 		minus() {
 			this.bouquetText.num.val--;

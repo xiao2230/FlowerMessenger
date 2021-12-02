@@ -83,7 +83,7 @@
                         </label>
                         <span class="minusBtn" @click="minus()">◂</span>
                         <input type="number" v-model="bouquetText.num.val" :id="bouquetText.num.id"
-                            :name="bouquetText.num.name" @keyup="keyRestrict()">
+                            :name="bouquetText.num.name" @keyup="keyRestrict()" @blur="keyNullValue()">
                         <span class="plusBtn" @click="plus()">▸</span>
                     </div>
                     <div class="oBFormOption">
