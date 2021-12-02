@@ -169,7 +169,7 @@ body {
     font-weight: 600;
     font-size: 18px;
     user-select: none;
-    transition: background .3s ease-in-out,box-shadow .3s ease-in-out;
+    transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .content_qNANav li a.focus {
@@ -180,6 +180,12 @@ body {
 .content_qNANav li a:hover {
     background: #b48f5e;
     box-shadow: 0 0 3px 2px #b48f5e;
+}
+
+.content_qNANav li a i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #fffaf2;
 }
 
 /* 主要內容區-常見問題內文區 */
@@ -457,8 +463,20 @@ body {
     }
 
     .content_qNANav li {
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         text-align: center;
+    }
+
+    .content_qNANav li a {
+        justify-content: center;
+        height: 30px;
+        padding: 0;
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .content_qNANav li a i {
+        font-size: 15px;
     }
 
     /* 主要內容區-常見問題內文區 */

@@ -228,16 +228,18 @@ body {
     border-radius: 5px;
     background: #e76f51;
     opacity: 0;
-    z-index: 1;
+    z-index: -1;
 }
 
 .content_accountLRF .dataArea form .aFormRemind.appear01 {
     opacity: 1;
+    z-index: 1;
 }
 
 .content_accountLRF .dataArea form .aFormRemind.appear02 {
     top: 3px;
     opacity: 1;
+    z-index: 1;
 }
 
 .content_accountLRF .dataArea form .aFormRemind::after {

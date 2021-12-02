@@ -317,7 +317,7 @@ body {
 }
 
 .content_oBArea .oBAreaText form .oBFormOption .minusBtn:hover,
-.content_oBArea .oBAreaText form .oBFormOption .plusBtn:hover{
+.content_oBArea .oBAreaText form .oBFormOption .plusBtn:hover {
     background: #b48f5e;
     box-shadow: 0 0 5px 1px #b48f5e;
 }
@@ -357,7 +357,8 @@ input[type=number] {
 
 .content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"] {
     height: 35px;
-    padding: 0 12px;
+    margin-left: 20px;
+    width: 100%;
     border: none;
     border-radius: 4px;
     outline: none;
@@ -672,7 +673,7 @@ input[type=number] {
 
     .content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"] {
         height: 30px;
-        padding: 0 10px;
+        margin-left: 0;
         font-size: 16px;
     }
 

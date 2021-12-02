@@ -14,11 +14,93 @@ document.addEventListener('scroll', () => {
 	}
 });
 
+// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』參數宣告
+let body = document.querySelector('body');
+let orderInquiryBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:first-child');
+let editAreaBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:nth-child(2)');
+let logoutBtn = document.querySelector('.content_accountCenter .accountCenterMenu ul li:last-child');
+let logoutYesBtn = document.querySelector('.content_accountCenter .logoutArea .logoutConfirm button');
+let logoutNoBtn = document.querySelector('.content_accountCenter .logoutArea .logoutConfirm >i');
+let orderInquiryArea = document.querySelector('.content_accountCenter .orderInquiryArea');
+let editArea = document.querySelector('.content_accountCenter .editArea');
+let logoutArea = document.querySelector('.content_accountCenter .logoutArea');
+let logoutAreaMask = document.querySelector('.content_accountCenter .logoutArea .logoutAreaMask');
+
+document.addEventListener('DOMContentLoaded', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』預設打開為訂單查詢
+	orderInquiryBtn.classList.add('focus');
+	editArea.classList.add('hidden');
+	logoutArea.classList.add('hidden');
+});
+
+orderInquiryBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點訂單查詢，右側出現對應內容，取消其他按鈕focus
+	orderInquiryBtn.classList.add('focus');
+	editAreaBtn.classList.remove('focus');
+	orderInquiryArea.classList.remove('hidden');
+	editArea.classList.add('hidden');
+});
+
+editAreaBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點修改資訊，右側出現對應內容，取消其他按鈕focus
+	orderInquiryBtn.classList.remove('focus');
+	editAreaBtn.classList.add('focus');
+	orderInquiryArea.classList.add('hidden');
+	editArea.classList.remove('hidden');
+});
+
+logoutBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點帳戶登出，右側出現對應內容，取消其他按鈕focus
+	orderInquiryBtn.classList.remove('focus');
+	editAreaBtn.classList.remove('focus');
+	logoutBtn.classList.add('focus');
+	logoutArea.classList.remove('hidden');
+	body.classList.add('fixed');
+});
+
+logoutAreaMask.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框以外的地方，會取消提示，回原本畫面
+	logoutBtn.classList.remove('focus');
+	logoutArea.classList.add('hidden');
+	body.classList.remove('fixed');
+	if (orderInquiryArea.classList.contains('hidden')) {
+		editAreaBtn.classList.add('focus');
+	} else {
+		orderInquiryBtn.classList.add('focus');
+	}
+});
+
+logoutNoBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框的X，會取消提示，回原本畫面
+	logoutBtn.classList.remove('focus');
+	logoutArea.classList.add('hidden');
+	body.classList.remove('fixed');
+	if (orderInquiryArea.classList.contains('hidden')) {
+		editAreaBtn.classList.add('focus');
+	} else {
+		orderInquiryBtn.classList.add('focus');
+	}
+});
+
+logoutYesBtn.addEventListener('click', () => {
+	// 『主要內容區-帳戶中心導覽與內容(側邊導覽)』點登出提示框的確認登出，會到會員登入頁
+	window.location.href = 'accountLogin.html';
+});
+
+// 『主要內容區-帳戶中心導覽與內容(訂單查詢)』參數宣告
+let orderInquiryAllNav = document.querySelector('.content_accountCenter .orderInquiryArea .orderInquiryMenu ul li');
+
+document.addEventListener('DOMContentLoaded', () => {
+	// 『主要內容區-帳戶中心導覽與內容(訂單查詢)』預設開啟為全部訂單
+	orderInquiryAllNav.classList.add('focus');
+});
+
 // 『主要內容區-帳戶中心導覽與內容(修改資訊)』參數宣告
 let editAINav = document.querySelector('.content_accountCenter .editArea .editMenu li:first-child');
 let editPNav = document.querySelector('.content_accountCenter .editArea .editMenu li:last-child');
 let editAIArea = document.querySelector('.content_accountCenter .editArea .editAccountInfo');
 let editPArea = document.querySelector('.content_accountCenter .editArea .editpassword');
+let verifyArea = document.querySelector('.content_accountCenter .editArea form .aVerify');
 let aform = document.querySelector('.content_accountCenter .editArea .editAccountInfo form');
 let usernameInput = document.querySelector('.content_accountCenter .editArea form .aUsername input');
 let emailInput = document.querySelector('.content_accountCenter .editArea form .aEmail input');
@@ -40,9 +122,7 @@ let checkedIcon = document.querySelector('.content_accountCenter .editArea form 
 let remind = document.querySelector('.content_accountCenter .editArea form .pFormRemind');
 let passwordEye = document.querySelector('.content_accountCenter .editArea form .pPassword input+label i');
 let newPasswordEye = document.querySelector('.content_accountCenter .editArea form .pNewPassword input+label i');
-let confirmPasswordEye = document.querySelector(
-	'.content_accountCenter .editArea form .pConfirmPassword input+label i'
-);
+let confirmPasswordEye = document.querySelector('.content_accountCenter .editArea form .pConfirmPassword input+label i');
 let submitInput02 = document.querySelector('.content_accountCenter .editArea form .pFormSubmit input');
 
 // 『主要內容區-帳戶中心導覽與內容(修改資訊)』這當作登入後從後台獲取的基本資料
@@ -58,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	realNameInput.value = receiveRealName;
 	telInput.value = receiveTel;
 
-	// 『主要內容區-帳戶中心導覽與內容(修改資訊)』預設修改密碼區隱藏
+	// 『主要內容區-帳戶中心導覽與內容(修改資訊)』預設開啟為修改資料
+	editAINav.classList.add('focus');
 	editPArea.classList.add('hidden');
 
 	// 『主要內容區-帳戶中心導覽與內容(修改資訊)』部分欄位設定必填
@@ -137,6 +218,8 @@ telInput.addEventListener('focusout', () => {
 		verifyInput.classList.add('disabled');
 		verifyInput.value = '';
 		verifyInput.setAttribute('disabled', true);
+		verifyInput.removeAttribute('required');
+		verifyArea.classList.remove('required');
 		verifyBtn.classList.add('disabled');
 		verifyBtn.setAttribute('disabled', true);
 	} else if (telInput.value == receiveTel) {
@@ -145,6 +228,8 @@ telInput.addEventListener('focusout', () => {
 		verifyInput.classList.add('disabled');
 		verifyInput.value = '';
 		verifyInput.setAttribute('disabled', true);
+		verifyInput.removeAttribute('required');
+		verifyArea.classList.remove('required');
 		verifyBtn.classList.add('disabled');
 		verifyBtn.setAttribute('disabled', true);
 	} else {
@@ -152,6 +237,8 @@ telInput.addEventListener('focusout', () => {
 		tipMsg02.classList.remove('yellow');
 		verifyInput.classList.remove('disabled');
 		verifyInput.removeAttribute('disabled');
+		verifyInput.setAttribute('required', true);
+		verifyArea.classList.add('required');
 		verifyBtn.classList.remove('disabled');
 		verifyBtn.removeAttribute('disabled');
 	}

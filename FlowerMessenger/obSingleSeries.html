@@ -81,10 +81,10 @@
                         <label :for="bouquetText.num.id">
                             <p>2. 數量 (每週配送數量)</p>
                         </label>
-                        <div class="minusBtn" @click="minus()"><i class="fas fa-minus"></i></div>
+                        <span class="minusBtn" @click="minus()">◂</span>
                         <input type="number" v-model="bouquetText.num.val" :id="bouquetText.num.id"
                             :name="bouquetText.num.name" @keyup="keyRestrict()">
-                        <span class="plusBtn" @click="plus()"><i class="fas fa-plus"></i></span>
+                        <span class="plusBtn" @click="plus()">▸</span>
                     </div>
                     <div class="oBFormOption">
                         <p>3. 開始配送週</p>
