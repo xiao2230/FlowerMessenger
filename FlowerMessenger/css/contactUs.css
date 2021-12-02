@@ -302,6 +302,18 @@ body {
     margin-bottom: 10px;
 }
 
+.content_cUForm form .cUFormOption label span{
+    position: relative;
+}
+
+.content_cUForm form .cUFormOption.required label span::after {
+    content: '*';
+    position: absolute;
+    left: 100%;
+    font-size: 30px;
+    color: #e76f51;
+}
+
 .content_cUForm form .cUFormOption:nth-child(-n+5) input {
     height: 35px;
     margin: 5px 0;
@@ -356,6 +368,10 @@ body {
 
 .content_cUForm form .cUFormSubmit input[type="checkbox"] {
     display: none;
+}
+
+.content_cUForm form .cUFormSubmit label {
+    cursor: pointer;
 }
 
 .content_cUForm form .cUFormConfirm p a,
