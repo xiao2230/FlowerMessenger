@@ -114,6 +114,22 @@ Vue.createApp({
 					name: 'oBBtnSend',
 					val: '加入購物車'
 				}
+			},
+			// 日曆：資料
+			calendarData:{
+				calMY:'',
+				showCalBtn:'',
+				calMYLeftSwitch:'',
+				calMYRightSwitch:'',
+				days:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+				data01:{
+					mY:'September 2021',
+					d:['','','',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,'']
+				},
+				data02:{
+					mY:'January 2022',
+					d:['','','','','','',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,'','','','','']
+				}
 			}
 		};
 	},
@@ -162,6 +178,38 @@ Vue.createApp({
 		plus() {
 			this.bouquetText.num.val++;
 			this.bouquetText.num.val = this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val;
+		},
+		// 日曆：點擊後打開日期選單
+		showCal(){
+			this.calendarData.showCalBtn = 'appear';
+			this.calendarData.calMY = this.calendarData.data01.mY;
+			this.calendarData.calMYRightSwitch = 'open'
+		},
+		// 日曆：點擊後關閉日期選單
+		hideCal(){
+			this.calendarData.showCalBtn = '';
+		},
+		// 日曆：月/年的表格切換按鈕
+		CalChangeMY(){
+			if(this.calendarData.calMYRightSwitch == 'open'){
+				this.calendarData.calMYLeftSwitch = 'open';
+				this.calendarData.calMYRightSwitch = '';
+				this.calendarData.calMY = this.calendarData.data02.mY;
+			}else{
+				this.calendarData.calMYLeftSwitch = '';
+				this.calendarData.calMYRightSwitch = 'open';
+				this.calendarData.calMY = this.calendarData.data01.mY;
+			}
+		},
+		// 日曆：填入該週的日期
+		decideDatesNum(w){
+			if(this.calendarData.calMYRightSwitch == 'open'){
+				let startIndex = (w-1)*7;
+				return this.calendarData.data01.d.slice(startIndex,startIndex+7);
+			}else{
+				let startIndex = (w-1)*7;
+				return this.calendarData.data02.d.slice(startIndex,startIndex+7);
+			}
 		}
 	},
 	computed: {
@@ -178,6 +226,32 @@ Vue.createApp({
 			let t = this.chooseweek * this.bouquetText.basicPrice * this.bouquetText.num.val;
 			let tString = t.toString();
 			return tString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		},
+		// 日曆：計算週數，並轉為陣列傳回
+		data01WeeksArray(){
+			data01Weeks = this.calendarData.data01.d.length/7;
+			let data01WeeksArray = [];
+			for(i=0;i<data01Weeks;i++){
+				data01WeeksArray.splice(i,0,i+1);
+			}
+			return data01WeeksArray;
+		},
+		// 日曆：計算週數，並轉為陣列傳回
+		data02WeeksArray(){
+			data02Weeks = this.calendarData.data02.d.length/7;
+			let data02WeeksArray = [];
+			for(i=0;i<data02Weeks;i++){
+				data02WeeksArray.splice(i,0,i+1);
+			}
+			return data02WeeksArray;
+		},
+		// 日曆：用來對應月份的週數
+		decideWeeksNum(){
+			if(this.calendarData.calMYRightSwitch == 'open'){
+				return this.data01WeeksArray;
+			}else{
+				return this.data02WeeksArray;
+			}
 		}
 	}
 }).mount('.content_oBArea');

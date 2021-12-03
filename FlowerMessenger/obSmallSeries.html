@@ -12,36 +12,124 @@
     <link rel="stylesheet" href="css/oB.css">
     <link rel="stylesheet" href="css/oBSmallSeries.css">
     <style>
-        .content_oBArea .oBAreaText form .oBFormOption .calendar {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable {
             width: 100%;
             height: 100%;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            display: flex;
             align-items: center;
             justify-content: center;
             z-index: 2;
+            display: none;
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendar .calMask {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable.appear {
+            display: flex;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calMask {
             width: 100%;
             height: 100%;
             position: absolute;
             background: rgba(221 190 169 /.5);
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendar .calPopover {
-            width: 600px;
-            height: 400px;
-            color: #fafafa;
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover {
+            padding: 35px;
             background: rgb(19 19 19 / .9);
-            /* display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; */
             position: relative;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY {
+            color: #fffaf2;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:first-child {
+            position: absolute;
+            left: 0;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:last-child {
+            position: absolute;
+            right: 0;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i {
+            color: #9ba4a4;
+            font-size: 22px;
+            pointer-events: none;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i.open {
+            color: #b48f5e;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:hover i.open {
+            color: #bb7008;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr {
+            height: 40px;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr th {
+            width: 40px;
+            color: #9ba4a4;
+            cursor: default;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td {
+            position: relative;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 34px;
+            color: #9ba4a4;
+            cursor: default;
+            position: relative;
+            transition: color .8s ease-in-out;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2) span {
+            color: #b48f5e;
+            border: 1px solid #b48f5e;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2)::before {
+            content: '';
+            width: 0;
+            height: 34px;
+            background: #b48f5e;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: absolute;
+            transition: width .8s ease-in-out, border-top-right-radius .8s ease-in-out, border-bottom-right-radius .8s ease-in-out;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2):hover span {
+            color: #fffaf2;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2):hover::before {
+            width: 100%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
         }
     </style>
 </head>
@@ -120,13 +208,30 @@
                         <span class="plusBtn" @click="plus()">▸</span>
                     </div>
                     <div class="oBFormOption">
-                        <p>3. 開始配送週</p>
-                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name" readonly>
+                        <label :for="bouquetText.calendar.id">
+                            <p>3. 開始配送週</p>
+                        </label>
+                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name"
+                            @click="showCal()" readonly>
                         <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
-                        <div class="calendar">
-                            <div class="calMask"></div>
+                        <div class="calendarTable" :class="calendarData.showCalBtn">
+                            <div class="calMask" @click="hideCal()"></div>
                             <div class="calPopover">
-
+                                <div class="calMY">
+                                    {{calendarData.calMY}}
+                                    <span><i class="fas fa-chevron-left" :class="calendarData.calMYLeftSwitch"
+                                            @click="CalChangeMY()"></i></span>
+                                    <span><i class="fas fa-chevron-right" :class="calendarData.calMYRightSwitch"
+                                            @click="CalChangeMY()"></i></span>
+                                </div>
+                                <table class="calD">
+                                    <tr>
+                                        <th v-for="day in calendarData.days">{{ day }}</th>
+                                    </tr>
+                                    <tr v-for="weekNum in decideWeeksNum">
+                                        <td v-for="dateNum in decideDatesNum(weekNum)"><span>{{ dateNum }}</span></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
