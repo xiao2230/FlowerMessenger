@@ -101,17 +101,17 @@
             color: #9ba4a4;
             cursor: default;
             position: relative;
-            transition: color .8s ease-in-out;
+            transition: color .5s ease-in-out;
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2) span {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose span {
             color: #b48f5e;
             border: 1px solid #b48f5e;
             font-weight: 600;
             cursor: pointer;
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2)::before {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose::before {
             content: '';
             width: 0;
             height: 34px;
@@ -119,14 +119,14 @@
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
             position: absolute;
-            transition: width .8s ease-in-out, border-top-right-radius .8s ease-in-out, border-bottom-right-radius .8s ease-in-out;
+            transition: width .5s ease-in-out, border-top-right-radius .5s ease-in-out, border-bottom-right-radius .5s ease-in-out;
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2):hover span {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover span {
             color: #fffaf2;
         }
 
-        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td:nth-child(2):hover::before {
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover::before {
             width: 100%;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
@@ -229,7 +229,7 @@
                                         <th v-for="day in calendarData.days">{{ day }}</th>
                                     </tr>
                                     <tr v-for="weekNum in decideWeeksNum">
-                                        <td v-for="dateNum in decideDatesNum(weekNum)"><span>{{ dateNum }}</span></td>
+                                        <td v-for="dateNum in decideDatesNum(weekNum)" :class="dateNum.c"><span>{{ dateNum.d }}</span></td>
                                     </tr>
                                 </table>
                             </div>

@@ -205,12 +205,36 @@ Vue.createApp({
 		decideDatesNum(w){
 			if(this.calendarData.calMYRightSwitch == 'open'){
 				let startIndex = (w-1)*7;
-				return this.calendarData.data01.d.slice(startIndex,startIndex+7);
+				let aWeekDatesArray = [];
+				let dListArray =  this.calendarData.data01.d.slice(startIndex,startIndex+7);
+				for(i=0;i<dListArray.length;i++){
+					aWeekDatesArray.push({
+						d:dListArray[i],
+						c:''
+					})
+					if(i == 1 && dListArray[i] != ''){
+						aWeekDatesArray[i].c = 'choose';
+					}
+				}
+				return aWeekDatesArray;
 			}else{
 				let startIndex = (w-1)*7;
-				return this.calendarData.data02.d.slice(startIndex,startIndex+7);
+				let aWeekDatesArray = [];
+				let dListArray =  this.calendarData.data02.d.slice(startIndex,startIndex+7);
+				for(i=0;i<dListArray.length;i++){
+					aWeekDatesArray.push({
+						d:dListArray[i],
+						c:''
+					})
+					if(i == 1 && dListArray[i] != ''){
+						aWeekDatesArray[i].c = 'choose';
+					}
+				}
+				return aWeekDatesArray;
 			}
-		}
+		},
+		// 月曆：用來決定該日期是不是可以選擇
+
 	},
 	computed: {
 		// 花束訂購(選擇週數)：用於辨別此時被選定的週數(checked=true)為何，對應到的數字是什麼。
