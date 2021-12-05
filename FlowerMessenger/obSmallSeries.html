@@ -212,24 +212,24 @@
                             <p>3. 開始配送週</p>
                         </label>
                         <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name"
-                            @click="showCal()" readonly>
+                            @click="showCal()" v-model="bouquetText.calendar.val" readonly>
                         <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
-                        <div class="calendarTable" :class="calendarData.showCalBtn">
+                        <div class="calendarTable" :class="calendarData.classShowCal">
                             <div class="calMask" @click="hideCal()"></div>
                             <div class="calPopover">
                                 <div class="calMY">
-                                    {{calendarData.calMY}}
-                                    <span><i class="fas fa-chevron-left" :class="calendarData.calMYLeftSwitch"
-                                            @click="CalChangeMY()"></i></span>
-                                    <span><i class="fas fa-chevron-right" :class="calendarData.calMYRightSwitch"
-                                            @click="CalChangeMY()"></i></span>
+                                    {{calendarData.calMonthYear}}
+                                    <span><i class="fas fa-chevron-left" :class="calendarData.classLeftSwitch"
+                                            @click="RLSwitch()"></i></span>
+                                    <span><i class="fas fa-chevron-right" :class="calendarData.classRightSwitch"
+                                            @click="RLSwitch()"></i></span>
                                 </div>
                                 <table class="calD">
                                     <tr>
-                                        <th v-for="day in calendarData.days">{{ day }}</th>
+                                        <th v-for="day in calendarData.calDays">{{ day }}</th>
                                     </tr>
-                                    <tr v-for="weekNum in decideWeeksNum">
-                                        <td v-for="dateNum in decideDatesNum(weekNum)" :class="dateNum.c"><span>{{ dateNum.d }}</span></td>
+                                    <tr v-for="weekNum in weeksArray">
+                                        <td v-for="dateNum in datesNum(weekNum)" :class="dateNum.class" @click="chooseDate(dateNum.num)"><span>{{ dateNum.num }}</span></td>
                                     </tr>
                                 </table>
                             </div>
