@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="css/oB.css">
     <link rel="stylesheet" href="css/oBSmallSeries.css">
     <style>
+        body.fixed {
+            overflow: hidden;
+        }
+
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable {
             width: 100%;
             height: 100%;
@@ -69,13 +73,13 @@
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i.open {
-            color: #b48f5e;
+            color: #fffaf2;
             cursor: pointer;
             pointer-events: all;
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:hover i.open {
-            color: #bb7008;
+            color: #b48f5e;
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr {
@@ -101,14 +105,21 @@
             color: #9ba4a4;
             cursor: default;
             position: relative;
-            transition: color .5s ease-in-out;
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose span {
-            color: #b48f5e;
-            border: 1px solid #b48f5e;
+            color: #fffaf2;
+            border: 1px solid #fffaf2;
             font-weight: 600;
             cursor: pointer;
+            transition: border .5s ease-in-out;
+        }
+
+        .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.chosen span {
+            color: rgb(19 19 19 / .9);
+            background: #fffaf2;
+            font-weight: 600;
+            pointer-events: none;
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose::before {
@@ -123,7 +134,7 @@
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover span {
-            color: #fffaf2;
+            border: 1px solid #b48f5e;
         }
 
         .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover::before {
@@ -212,10 +223,11 @@
                             <p>3. 開始配送週</p>
                         </label>
                         <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name"
-                            @click="showCal()" v-model="bouquetText.calendar.val" readonly>
+                            @click="showCal()" v-model="bouquetText.calendar.val" :class="calendarData.classFocusCal"
+                            required autocomplete="off">
                         <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
                         <div class="calendarTable" :class="calendarData.classShowCal">
-                            <div class="calMask" @click="hideCal()"></div>
+                            <div class="calMask"></div>
                             <div class="calPopover">
                                 <div class="calMY">
                                     {{calendarData.calMonthYear}}
@@ -229,7 +241,8 @@
                                         <th v-for="day in calendarData.calDays">{{ day }}</th>
                                     </tr>
                                     <tr v-for="weekNum in weeksArray">
-                                        <td v-for="dateNum in datesNum(weekNum)" :class="dateNum.class" @click="chooseDate(dateNum.num)"><span>{{ dateNum.num }}</span></td>
+                                        <td v-for="dateNum in datesNum(weekNum)" :class="dateNum.class"
+                                            @click="chooseDate(dateNum)"><span>{{ dateNum.num }}</span></td>
                                     </tr>
                                 </table>
                             </div>

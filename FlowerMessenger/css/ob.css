@@ -202,6 +202,7 @@ body {
 
 .content_oBArea .oBAreaText form .oBFormOption {
     margin-top: 10px;
+    position: relative;
 }
 
 .content_oBArea .oBAreaText form .oBFormOption:nth-child(5) {
@@ -332,27 +333,51 @@ input[type=number] {
 }
 
 .content_oBArea .oBAreaText form .oBFormOption label.calBtn {
-    position: relative;
     cursor: pointer;
+    position: absolute;
+    top: 75%;
+    left: 176px;
+    transform: translateY(-50%);
 }
 
 .content_oBArea .oBAreaText form .oBFormOption label.calBtn i {
     font-size: 22px;
     font-weight: normal;
     color: #9ba4a4;
-    position: absolute;
-    right: 5px;
-    top: 0;
+    transition: color .3s ease-in-out;
 }
 
 .content_oBArea .oBAreaText form .oBFormOption input[type="text"] {
     height: 30px;
+    width: 200px;
     border: 2px solid #9ba4a4;
     border-radius: 5px;
     outline: none;
     background: #fffaf2;
     cursor: pointer;
     margin-top: 5px;
+    color: #242424;
+    font-weight: 600;
+    padding: 10px;
+    transition: color .3s ease-in-out,border .3s ease-in-out;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption input[type="text"]:hover {
+    color: #bb7008;
+    border: 2px solid #b48f5e;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption input[type="text"]:hover+label i {
+    color: #b48f5e;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption input[type="text"].focus {
+    color: #bb7008;
+    border: 2px solid #b48f5e;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption input[type="text"].focus+label i {
+    color: #b48f5e;
 }
 
 .content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"] {
@@ -660,10 +685,18 @@ input[type=number] {
         line-height: 27px;
     }
 
+    .content_oBArea .oBAreaText form .oBFormOption p {
+        line-height: 27px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption label.calBtn {
+        left: 178px;
+        display: flex;
+        align-items: center;
+    }
+
     .content_oBArea .oBAreaText form .oBFormOption label.calBtn i {
         font-size: 19px;
-        top: 50%;
-        transform: translateY(-50%);
     }
 
     .content_oBArea .oBAreaText form .oBFormOption input[type="text"] {
