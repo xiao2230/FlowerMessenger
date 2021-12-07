@@ -11,9 +11,35 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/shoppingCart.css">
     <style>
-        .content {
-            height: 200vh;
-            background: #cee6a1;
+        /* 主要內容區-確認清單 */
+
+        .content_confirmList {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .content_confirmList form {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .content_confirmList form>div {
+            width: 49%;
+            box-shadow: 0 10px 88px 2px rgb(19 19 19 / 20%);
+        }
+
+        .content_confirmList form>div .titArea{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .content_confirmList form>div .titArea span{
+            font-weight: 600;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -54,7 +80,78 @@
         </div>
     </section>
     <!-- 主要內容區 -->
-    <section class="content"></section>
+    <section class="content">
+        <!-- 主要內容區-確認清單 -->
+        <div class="content_confirmList">
+            <form action="" :id="form.id" method="">
+                <input :type="hiddenInput.type" :id="hiddenInput.id" :name="hiddenInput.name" :value="hiddenInput.val">
+                <!-- 主要內容區-確認清單(訂單明細) -->
+                <div class="orderDetails">
+                    <div class="titArea">
+                        <span>{{ orderDetails.title }}</span>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div class="detailArea">
+                        <table>
+                            <tr>
+                                <th>{{ orderDetails.nav.name }}</th>
+                                <th>{{ orderDetails.nav.sum }}</th>
+                            </tr>
+                            <tr v-for="product in orderDetails.products">
+                                <td>
+                                    <span>{{ product.name }}</span>
+                                    <span>配送頻率：{{ product.frequency }}</span>
+                                    <span>數量：{{ product.num }}</span>
+                                    <span>開始配送週：{{ product.begin }}</span>
+                                </td>
+                                <td>{{ addTenPercentilePrice(product.price) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ orderDetails.total.name }}</td>
+                                <td>{{ totalprice }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 主要內容區-確認清單(帳戶資訊) -->
+                <div class="accountInfo">
+                    <div class="titArea">
+                        <span>{{ orderDetails.title }}</span>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div class="detailArea">
+                        <table>
+                            <tr>
+                                <th>{{ orderDetails.nav.name }}</th>
+                                <th>{{ orderDetails.nav.sum }}</th>
+                            </tr>
+                            <tr v-for="product in orderDetails.products">
+                                <td>
+                                    <span>{{ product.name }}</span>
+                                    <span>配送頻率：{{ product.frequency }}</span>
+                                    <span>數量：{{ product.num }}</span>
+                                    <span>開始配送週：{{ product.begin }}</span>
+                                </td>
+                                <td>{{ addTenPercentilePrice(product.price) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ orderDetails.total.name }}</td>
+                                <td>{{ totalprice }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 主要內容區-確認清單(付款資訊) -->
+                <div class="payInfo"></div>
+                <!-- 主要內容區-確認清單(寄送資訊) -->
+                <div class="deliveryInfo"></div>
+                <!-- 主要內容區-確認清單(公司資訊) -->
+                <div class="companyInfo"></div>
+                <!-- 主要內容區-確認清單(注意事項) -->
+                <div class="noticeItem"></div>
+            </form>
+        </div>
+    </section>
     <!-- 底部內容區 -->
     <section class="footer">
         <!-- 底部內容區-店家資訊&店鋪圖片 -->
@@ -102,6 +199,80 @@
         </div>
     </section>
 </body>
+<script src="https://unpkg.com/vue@next"></script>
 <script src="js/shoppingCart.js"></script>
+<script>
+    // 『主要內容區-確認清單』使用Vue框架來實現關注點分離
+
+    Vue.createApp({
+        data() {
+            return {
+                // 主要內容區-確認清單：表單資料
+                form: {
+                    id: 'cLForm'
+                },
+                // 主要內容區-確認清單：隱藏input資料(用來讓後台辨別是哪一個表格送出的資料)
+                hiddenInput: {
+                    type: 'hidden',
+                    id: 'formName',
+                    name: 'formName',
+                    val: '購物車'
+                },
+                // 主要內容區-確認清單(訂單明細)：資料
+                orderDetails: {
+                    title: '訂單明細',
+                    nav: {
+                        name: '商品',
+                        sum: '總計'
+                    },
+                    products: [
+                        {
+                            name: '小花系列 - 1週',
+                            frequency: '每週配送',
+                            num: '1',
+                            begin: '2021/12/27',
+                            price: '300'
+                        },
+                        {
+                            name: '混合系列 - 4週',
+                            frequency: '每週配送',
+                            num: '1',
+                            begin: '2022/1/17',
+                            price: '2000'
+                        },
+                        {
+                            name: '單品系列 - 1週',
+                            frequency: '隔週配送',
+                            num: '4',
+                            begin: '2021/12/20',
+                            price: '1400'
+                        }
+                    ],
+                    total: {
+                        name: '總計',
+                    }
+                }
+            }
+        },
+        computed: {
+            // 主要內容區-確認清單(訂單明細)：計算所有商品金額總和，並加上千分位
+            totalprice() {
+                let tP = 0;
+                for (i = 0; i < this.orderDetails.products.length; i++) {
+                    let p = parseInt(this.orderDetails.products[i].price);
+                    tP += p;
+                }
+                let tPString = tP.toString()
+                return tPString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+        },
+        methods: {
+            // 主要內容區-確認清單(訂單明細)：所有商品金額加上千分位
+            addTenPercentilePrice(p) {
+                return p.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+        }
+    }).mount('.content');
+</script>
 
 </html>
