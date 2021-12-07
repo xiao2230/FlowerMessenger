@@ -1,5 +1,6 @@
 let headerNav = document.querySelector('.header_nav');
 let contentOrderArea = document.querySelector('.content_oBArea');
+let body = document.querySelector('body');
 
 //用來定特效出現的高度參考點
 let content = document.querySelector('.content');
@@ -20,6 +21,8 @@ document.addEventListener('scroll', () => {
 		headerNav.classList.remove('navPlusTop');
 	}
 });
+
+// 『主要內容區-訂購區』使用Vue框架來實現關注點分離
 
 Vue.createApp({
 	data() {
@@ -90,6 +93,7 @@ Vue.createApp({
 					name: 'oBNum'
 				},
 				calendar: {
+					val: '',
 					id: 'oBCal',
 					name: 'oBCal'
 				},
@@ -111,6 +115,106 @@ Vue.createApp({
 					id: 'oBBtnSend',
 					name: 'oBBtnSend',
 					val: '加入購物車'
+				}
+			},
+			// 月曆：資料
+			calendarData: {
+				calMonthYear: '',
+				calDays: [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+				classShowCal: '',
+				classFocusCal: '',
+				classLeftSwitch: '',
+				classRightSwitch: '',
+				data01: {
+					monthYear: 'September 2021',
+					monthYearNum: '2021/12/',
+					date: [
+						'',
+						'',
+						'',
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						''
+					],
+					dataClass: []
+				},
+				data02: {
+					monthYear: 'January 2022',
+					monthYearNum: '2022/1/',
+					date: [
+						'',
+						'',
+						'',
+						'',
+						'',
+						'',
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						'',
+						'',
+						'',
+						'',
+						''
+					],
+					dataClass: []
 				}
 			}
 		};
@@ -161,6 +265,147 @@ Vue.createApp({
 		plus() {
 			this.bouquetText.num.val++;
 			this.bouquetText.num.val = this.bouquetText.num.val > 100 ? 100 : this.bouquetText.num.val;
+		},
+		// 月曆：點擊後打開日期選單，並判定要開啟哪一個月分
+		showCal() {
+			body.classList.add('fixed');
+			this.calendarData.classShowCal = 'appear';
+			this.calendarData.classFocusCal = 'focus';
+
+			if (
+				this.bouquetText.calendar.val.includes(this.calendarData.data01.monthYearNum) ||
+				this.bouquetText.calendar.val == ''
+			) {
+				this.calendarData.calMonthYear = this.calendarData.data01.monthYear;
+				this.calendarData.classRightSwitch = 'open';
+
+				let numstr = this.bouquetText.calendar.val.replace(this.calendarData.data01.monthYearNum, '');
+				let num = parseInt(numstr);
+				let numIndex = this.calendarData.data01.date.indexOf(num);
+				if (numIndex != -1) {
+					this.calendarData.data01.dataClass.splice(numIndex, 1, 'chosen');
+				}
+			} else {
+				this.calendarData.calMonthYear = this.calendarData.data02.monthYear;
+				this.calendarData.classLeftSwitch = 'open';
+
+				let numstr = this.bouquetText.calendar.val.replace(this.calendarData.data02.monthYearNum, '');
+				let num = parseInt(numstr);
+				let numIndex = this.calendarData.data02.date.indexOf(num);
+				if (numIndex != -1) {
+					this.calendarData.data02.dataClass.splice(numIndex, 1, 'chosen');
+				}
+			}
+		},
+		// 月曆：點擊後關閉日期選單
+		hideCal() {
+			body.classList.remove('fixed');
+			this.calendarData.classShowCal = '';
+			this.calendarData.classFocusCal = '';
+		},
+		// 月曆：月/年的表格切換按鈕
+		RLSwitch() {
+			if (this.calendarData.calMonthYear == this.calendarData.data01.monthYear) {
+				this.calendarData.classLeftSwitch = 'open';
+				this.calendarData.classRightSwitch = '';
+				this.calendarData.calMonthYear = this.calendarData.data02.monthYear;
+			} else {
+				this.calendarData.classLeftSwitch = '';
+				this.calendarData.classRightSwitch = 'open';
+				this.calendarData.calMonthYear = this.calendarData.data01.monthYear;
+			}
+		},
+		// 月曆：填入該週的日期，並決定是否可選(加上class)
+		datesNum(w) {
+			if (this.calendarData.calMonthYear == this.calendarData.data01.monthYear) {
+				let startIndex = (w - 1) * 7;
+				let datesArray = this.calendarData.data01.date.slice(startIndex, startIndex + 7);
+				let datesInfoArray = [];
+				for (i = 0; i < datesArray.length; i++) {
+					if (
+						i == 1 &&
+						datesArray[i] != '' &&
+						this.calendarData.data01.dataClass.length < this.calendarData.data01.date.length
+					) {
+						this.calendarData.data01.dataClass.push('choose');
+					} else if (this.calendarData.data01.dataClass.length < this.calendarData.data01.date.length) {
+						this.calendarData.data01.dataClass.push('');
+					}
+
+					datesInfoArray.push({
+						num: datesArray[i],
+						class: this.calendarData.data01.dataClass[i + (w - 1) * 7]
+					});
+				}
+				return datesInfoArray;
+			} else {
+				let startIndex = (w - 1) * 7;
+				let datesArray = this.calendarData.data02.date.slice(startIndex, startIndex + 7);
+				let datesInfoArray = [];
+				for (i = 0; i < datesArray.length; i++) {
+					if (
+						i == 1 &&
+						datesArray[i] != '' &&
+						this.calendarData.data02.dataClass.length < this.calendarData.data02.date.length
+					) {
+						this.calendarData.data02.dataClass.push('choose');
+					} else if (this.calendarData.data02.dataClass.length < this.calendarData.data02.date.length) {
+						this.calendarData.data02.dataClass.push('');
+					}
+
+					datesInfoArray.push({
+						num: datesArray[i],
+						class: this.calendarData.data02.dataClass[i + (w - 1) * 7]
+					});
+				}
+				return datesInfoArray;
+			}
+		},
+		// 月曆：用來將選入的日期，填入開始配送週的欄位，並關閉月曆表格
+		chooseDate(d) {
+			if (this.calendarData.calMonthYear == this.calendarData.data01.monthYear && d.class == 'choose') {
+				this.bouquetText.calendar.val = this.calendarData.data01.monthYearNum + d.num;
+				body.classList.remove('fixed');
+				this.calendarData.classShowCal = '';
+				this.calendarData.classFocusCal = '';
+
+				if (this.calendarData.data01.dataClass.indexOf('chosen') != -1) {
+					this.calendarData.data01.dataClass.splice(
+						this.calendarData.data01.dataClass.indexOf('chosen'),
+						1,
+						'choose'
+					);
+				} else if (this.calendarData.data02.dataClass.indexOf('chosen') != -1) {
+					this.calendarData.data02.dataClass.splice(
+						this.calendarData.data02.dataClass.indexOf('chosen'),
+						1,
+						'choose'
+					);
+				}
+			} else if (this.calendarData.calMonthYear == this.calendarData.data02.monthYear && d.class == 'choose') {
+				this.bouquetText.calendar.val = this.calendarData.data02.monthYearNum + d.num;
+				body.classList.remove('fixed');
+				this.calendarData.classShowCal = '';
+				this.calendarData.classFocusCal = '';
+
+				if (this.calendarData.data01.dataClass.indexOf('chosen') != -1) {
+					this.calendarData.data01.dataClass.splice(
+						this.calendarData.data01.dataClass.indexOf('chosen'),
+						1,
+						'choose'
+					);
+				} else if (this.calendarData.data02.dataClass.indexOf('chosen') != -1) {
+					this.calendarData.data02.dataClass.splice(
+						this.calendarData.data02.dataClass.indexOf('chosen'),
+						1,
+						'choose'
+					);
+				}
+			}
+		},
+		// 月曆：阻止開始配送週被手動輸入
+		readOnly(e) {
+			e.preventDefault();
 		}
 	},
 	computed: {
@@ -177,6 +422,24 @@ Vue.createApp({
 			let t = this.chooseweek * this.bouquetText.basicPrice * this.bouquetText.num.val;
 			let tString = t.toString();
 			return tString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		},
+		// 月曆：計算當月週數，並轉為陣列傳回(例如：12月有5週，則回傳[1,2,3,4,5])，用來產生與週數相同的tr
+		weeksArray() {
+			if (this.calendarData.calMonthYear == this.calendarData.data01.monthYear) {
+				weeksNum = this.calendarData.data01.date.length / 7;
+				let weeksArray = [];
+				for (i = 0; i < weeksNum; i++) {
+					weeksArray.splice(i, 0, i + 1);
+				}
+				return weeksArray;
+			} else {
+				weeksNum = this.calendarData.data02.date.length / 7;
+				let weeksArray = [];
+				for (i = 0; i < weeksNum; i++) {
+					weeksArray.splice(i, 0, i + 1);
+				}
+				return weeksArray;
+			}
 		}
 	}
 }).mount('.content_oBArea');

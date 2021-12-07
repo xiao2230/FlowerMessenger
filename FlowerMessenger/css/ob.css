@@ -13,6 +13,10 @@ body {
     background: #fffaf2;
 }
 
+body.fixed {
+    overflow: hidden;
+}
+
 /* 頂部內容區-導覽列 */
 
 .header_nav {
@@ -209,6 +213,10 @@ body {
     margin-bottom: 40px;
 }
 
+.content_oBArea .oBAreaText form .oBFormOption p {
+    cursor: default;
+}
+
 .content_oBArea .oBAreaText form .oBFormOption p a {
     font-weight: 600;
     color: #ad8316;
@@ -359,6 +367,7 @@ input[type=number] {
     color: #242424;
     font-weight: 600;
     padding: 10px;
+    caret-color: rgba(0, 0, 0, 0);
     transition: color .3s ease-in-out,border .3s ease-in-out;
 }
 
@@ -401,6 +410,136 @@ input[type=number] {
 
 .content_oBArea .oBAreaText form .oBFormSubmit input[type="submit"]:hover {
     background: #bb7008;
+}
+
+/* 主要內容區-訂購區(月曆) */
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    display: none;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable.appear {
+    display: flex;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calMask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(221 190 169 /.5);
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover {
+    padding: 35px;
+    background: rgb(19 19 19 / .9);
+    position: relative;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY {
+    color: #fffaf2;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    cursor: default;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:first-child {
+    position: absolute;
+    left: 0;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:last-child {
+    position: absolute;
+    right: 0;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i {
+    color: #9ba4a4;
+    font-size: 22px;
+    line-height: 40px;
+    pointer-events: none;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i.open {
+    color: #fffaf2;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span:hover i.open {
+    color: #b48f5e;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr {
+    height: 40px;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr th {
+    width: 40px;
+    color: #9ba4a4;
+    cursor: default;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td {
+    position: relative;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 34px;
+    color: #9ba4a4;
+    cursor: default;
+    position: relative;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose span {
+    color: #fffaf2;
+    border: 1px solid #fffaf2;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border .5s ease-in-out;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.chosen span {
+    color: rgb(19 19 19 / .9);
+    background: #fffaf2;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose::before {
+    content: '';
+    width: 0;
+    height: 34px;
+    background: #b48f5e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    transition: width .5s ease-in-out, border-top-right-radius .5s ease-in-out, border-bottom-right-radius .5s ease-in-out;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover span {
+    border: 1px solid #b48f5e;
+}
+
+.content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose:hover::before {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 /* 底部內容區-店家資訊&店鋪圖片 */
@@ -708,6 +847,39 @@ input[type=number] {
         height: 30px;
         margin-left: 0;
         font-size: 16px;
+    }
+
+    /* 主要內容區-訂購區(月曆) */
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover {
+        padding: 20px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calMY span i {
+        font-size: 19px;
+        line-height: 30px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr {
+        height: 30px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr th {
+        width: 30px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td span {
+        width: 30px;
+        height: 27px;
+    }
+
+    .content_oBArea .oBAreaText form .oBFormOption .calendarTable .calPopover .calD tr td.choose::before {
+        height: 27px;
     }
 
     /* 底部內容區-店家資訊&店鋪圖片 */

@@ -264,6 +264,5 @@ submitInput.addEventListener('click', (e) => {
 	) {
 		e.preventDefault();
 		window.location.href = 'accountCenter.html';
-		console.log('123');
 	}
 });

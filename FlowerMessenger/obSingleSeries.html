@@ -78,9 +78,7 @@
                         </span>
                     </div>
                     <div class="oBFormOption">
-                        <label :for="bouquetText.num.id">
-                            <p>2. 數量 (每週配送數量)</p>
-                        </label>
+                        <p>2. 數量 (每週配送數量)</p>
                         <span class="minusBtn" @click="minus()">◂</span>
                         <input type="number" v-model="bouquetText.num.val" :id="bouquetText.num.id"
                             :name="bouquetText.num.name" @keyup="keyRestrict()" @blur="keyNullValue()">
@@ -88,10 +86,30 @@
                     </div>
                     <div class="oBFormOption">
                         <p>3. 開始配送週</p>
-                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name" readonly>
+                        <input type="text" :id="bouquetText.calendar.id" :name="bouquetText.calendar.name"
+                            @click="showCal()" v-model="bouquetText.calendar.val" :class="calendarData.classFocusCal"
+                            required autocomplete="off" @keydown="readOnly($event)">
                         <label :for="bouquetText.calendar.id" class="calBtn"><i class="fas fa-calendar-alt"></i></label>
-                        <div class="calTable">
-                            <!-- 日曆暫緩 -->
+                        <div class="calendarTable" :class="calendarData.classShowCal">
+                            <div class="calMask" @click="hideCal()"></div>
+                            <div class="calPopover">
+                                <div class="calMY">
+                                    {{calendarData.calMonthYear}}
+                                    <span><i class="fas fa-chevron-left" :class="calendarData.classLeftSwitch"
+                                            @click="RLSwitch()"></i></span>
+                                    <span><i class="fas fa-chevron-right" :class="calendarData.classRightSwitch"
+                                            @click="RLSwitch()"></i></span>
+                                </div>
+                                <table class="calD">
+                                    <tr>
+                                        <th v-for="day in calendarData.calDays">{{ day }}</th>
+                                    </tr>
+                                    <tr v-for="weekNum in weeksArray">
+                                        <td v-for="dateNum in datesNum(weekNum)" :class="dateNum.class"
+                                            @click="chooseDate(dateNum)"><span>{{ dateNum.num }}</span></td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="oBFormOption">
