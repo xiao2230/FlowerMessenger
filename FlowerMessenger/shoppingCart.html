@@ -22,24 +22,170 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         .content_confirmList form>div {
             width: 49%;
+        }
+
+        .content_confirmList form>div>div {
+            background: #fafafa;
             box-shadow: 0 10px 88px 2px rgb(19 19 19 / 20%);
         }
 
-        .content_confirmList form>div .titArea{
+        .content_confirmList form>div>div:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        .content_confirmList form .titArea {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
+            padding: 15px;
+            background: #242424;
+            cursor: pointer;
         }
 
-        .content_confirmList form>div .titArea span{
+        .content_confirmList form .titArea span {
+            color: #fffaf2;
             font-weight: 600;
             font-size: 18px;
+        }
+
+        .content_confirmList form .titArea i {
+            color: #fffaf2;
+        }
+
+        .content_confirmList form .detailArea {
+            padding: 20px;
+        }
+
+        .content_confirmList form .detailArea label {
+            line-height: 35px;
+            font-size: 17px;
+        }
+
+        .content_confirmList form .detailArea input[type="text"] {
+            height: 35px;
+            font-size: 17px;
+            padding: 0 10px;
+            font-weight: 600;
+            outline: none;
+            border: 1px solid #9ba4a4;
+            border-radius: 5px;
+            background: #fffaf2;
+        }
+
+        .content_confirmList form .detailArea>div.disabled input[type="text"] {
+            background: #ececec;
+        }
+
+        /* 主要內容區-確認清單(訂單明細) */
+
+        .orderDetails .detailArea table {
+            width: 100%;
+            background: #ececec;
+            border-radius: 10px;
+        }
+
+        .orderDetails .detailArea table tr {
+            position: relative;
+        }
+
+        .orderDetails .detailArea table tr:not(:last-child):after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #fafafa;
+        }
+
+        .orderDetails .detailArea table tr th,
+        .orderDetails .detailArea table tr:last-child td {
+            text-align: left;
+            padding: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            background: #cfcfcf;
+        }
+
+        .orderDetails .detailArea table tr th:first-child {
+            width: 70%;
+        }
+
+        .orderDetails .detailArea table tr td {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .orderDetails .detailArea table tr td span {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 25px;
+            letter-spacing: .5px;
+        }
+
+        .orderDetails .detailArea table tr th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        .orderDetails .detailArea table tr th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .orderDetails .detailArea table tr:last-child td:first-child {
+            border-bottom-left-radius: 8px;
+        }
+
+        .orderDetails .detailArea table tr:last-child td:last-child {
+            border-bottom-right-radius: 8px;
+        }
+
+        /* 主要內容區-確認清單(帳戶資訊) */
+
+        .accountInfo .detailArea .accountField {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accountInfo .detailArea .accountField {
+            margin-bottom: 10px;
+        }
+
+        /* 主要內容區-確認清單(寄送資訊) */
+
+        .deliveryInfo .detailArea .deliveryOption {
+            display: inline-flex;
+            margin-bottom: 20px;
+        }
+
+        .deliveryInfo .detailArea .deliveryOption input {
+            display: none;
+        }
+
+        .deliveryInfo .detailArea .deliveryOption label {
+            color: #242424;
+            background: #ececec;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 8px 10px;
+            margin-right: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .deliveryInfo .detailArea .deliveryOption input:checked+label {
+            background: #cfcfcf;
+            cursor: default;
+        }
+
+        .deliveryInfo .detailArea .deliveryField {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -84,71 +230,100 @@
         <!-- 主要內容區-確認清單 -->
         <div class="content_confirmList">
             <form action="" :id="form.id" method="">
-                <input :type="hiddenInput.type" :id="hiddenInput.id" :name="hiddenInput.name" :value="hiddenInput.val">
-                <!-- 主要內容區-確認清單(訂單明細) -->
-                <div class="orderDetails">
-                    <div class="titArea">
-                        <span>{{ orderDetails.title }}</span>
-                        <i class="fas fa-chevron-up"></i>
+                <input type="hidden" :id="hiddenInput.id" :name="hiddenInput.name" :value="hiddenInput.val">
+                <div class="leftChecked">
+                    <!-- 主要內容區-確認清單(訂單明細) -->
+                    <div class="orderDetails">
+                        <div class="titArea">
+                            <span>{{ orderDetails.title }}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="detailArea">
+                            <table>
+                                <tr>
+                                    <th>{{ orderDetails.nav.name }}</th>
+                                    <th>{{ orderDetails.nav.sum }}</th>
+                                </tr>
+                                <tr v-for="product in orderDetails.products">
+                                    <td>
+                                        <span>{{ product.name }}</span>
+                                        <span>配送頻率：{{ product.frequency }}</span>
+                                        <span>數量：{{ product.num }}</span>
+                                        <span>開始配送週：{{ product.begin }}</span>
+                                    </td>
+                                    <td>{{ addTenPercentilePrice(product.price) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ orderDetails.total.name }}</td>
+                                    <td>{{ totalprice }}</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="detailArea">
-                        <table>
-                            <tr>
-                                <th>{{ orderDetails.nav.name }}</th>
-                                <th>{{ orderDetails.nav.sum }}</th>
-                            </tr>
-                            <tr v-for="product in orderDetails.products">
-                                <td>
-                                    <span>{{ product.name }}</span>
-                                    <span>配送頻率：{{ product.frequency }}</span>
-                                    <span>數量：{{ product.num }}</span>
-                                    <span>開始配送週：{{ product.begin }}</span>
-                                </td>
-                                <td>{{ addTenPercentilePrice(product.price) }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ orderDetails.total.name }}</td>
-                                <td>{{ totalprice }}</td>
-                            </tr>
-                        </table>
+                    <!-- 主要內容區-確認清單(帳戶資訊) -->
+                    <div class="accountInfo">
+                        <div class="titArea">
+                            <span>{{ accountInfo.title }}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="detailArea">
+                            <div class="accountField disabled">
+                                <label for=""><i :class="accountInfo.field.nameClass"></i>{{ accountInfo.field.name
+                                    }}</label>
+                                <input type="text" id="" name="" :value="accountInfo.personalInfo.name" disabled>
+                            </div>
+                            <div class="accountField disabled">
+                                <label for=""><i :class="accountInfo.field.emailClass"></i>{{ accountInfo.field.email
+                                    }}</label>
+                                <input type="text" id="" name="" :value="accountInfo.personalInfo.email" disabled>
+                            </div>
+                            <div class="accountField disabled">
+                                <label for=""><i :class="accountInfo.field.telClass"></i>{{ accountInfo.field.tel
+                                    }}</label>
+                                <input type="text" id="" name="" :value="accountInfo.personalInfo.tel" disabled>
+                            </div>
+                        </div>
                     </div>
+                    <!-- 主要內容區-確認清單(寄送資訊) -->
+                    <div class="deliveryInfo">
+                        <div class="titArea">
+                            <span>{{ deliveryInfo.title }}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="detailArea">
+                            <div class="deliveryOption" v-for="way in deliveryInfo.ways">
+                                <input type="radio" :name="way.name" :id="way.id" :value="way.value"
+                                    :checked="way.checked" @click="chooseDeliveryWay(way.id)">
+                                <label :for="way.id">{{ way.value }}</label>
+                            </div>
+                            <template v-if="deliveryInfo.ways[0].checked == true">
+                                <div class="deliveryField" v-for="receiveText in deliveryInfo.receiveTexts">
+                                    <label :for="receiveText.id"><i :class="receiveText.class"></i>{{ receiveText.label
+                                        }}</label>
+                                    <input type="text" :id="receiveText.id" :name="receiveText.name"
+                                        v-model="receiveText.val" :placeholder="receiveText.placeholder"
+                                        :required="receiveText.required">
+                                </div>
+                            </template>
+                            <template v-else>
+                                <div class="deliveryField" v-for="selfText in deliveryInfo.selfTexts">
+                                    <label :for="selfText.id"><i :class="selfText.class"></i>{{ selfText.label
+                                        }}</label>
+                                    <input type="text" :id="selfText.id" :name="selfText.name" v-model="selfText.val"
+                                        :placeholder="selfText.placeholder" :required="selfText.required">
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- 主要內容區-確認清單(公司資訊) -->
+                    <div class="companyInfo"></div>
                 </div>
-                <!-- 主要內容區-確認清單(帳戶資訊) -->
-                <div class="accountInfo">
-                    <div class="titArea">
-                        <span>{{ orderDetails.title }}</span>
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="detailArea">
-                        <table>
-                            <tr>
-                                <th>{{ orderDetails.nav.name }}</th>
-                                <th>{{ orderDetails.nav.sum }}</th>
-                            </tr>
-                            <tr v-for="product in orderDetails.products">
-                                <td>
-                                    <span>{{ product.name }}</span>
-                                    <span>配送頻率：{{ product.frequency }}</span>
-                                    <span>數量：{{ product.num }}</span>
-                                    <span>開始配送週：{{ product.begin }}</span>
-                                </td>
-                                <td>{{ addTenPercentilePrice(product.price) }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ orderDetails.total.name }}</td>
-                                <td>{{ totalprice }}</td>
-                            </tr>
-                        </table>
-                    </div>
+                <div class="rightChecked">
+                    <!-- 主要內容區-確認清單(注意事項) -->
+                    <div class="noticeItem"></div>
+                    <!-- 主要內容區-確認清單(付款資訊) -->
+                    <div class="payInfo"></div>
                 </div>
-                <!-- 主要內容區-確認清單(付款資訊) -->
-                <div class="payInfo"></div>
-                <!-- 主要內容區-確認清單(寄送資訊) -->
-                <div class="deliveryInfo"></div>
-                <!-- 主要內容區-確認清單(公司資訊) -->
-                <div class="companyInfo"></div>
-                <!-- 主要內容區-確認清單(注意事項) -->
-                <div class="noticeItem"></div>
             </form>
         </div>
     </section>
@@ -213,7 +388,6 @@
                 },
                 // 主要內容區-確認清單：隱藏input資料(用來讓後台辨別是哪一個表格送出的資料)
                 hiddenInput: {
-                    type: 'hidden',
                     id: 'formName',
                     name: 'formName',
                     val: '購物車'
@@ -251,6 +425,90 @@
                     total: {
                         name: '總計',
                     }
+                },
+                // 主要內容區-確認清單(帳戶資訊)：資料
+                accountInfo: {
+                    title: '帳戶資訊',
+                    field: {
+                        name: '使用者名稱',
+                        nameClass: 'fas fa-user',
+                        email: '電子郵件',
+                        emailClass: 'fas fa-envelope',
+                        tel: '手機號碼',
+                        telClass: 'fas fa-mobile-alt'
+                    },
+                    personalInfo: {
+                        name: 'fm666',
+                        email: 'fm666@gmail.com',
+                        tel: '0966666666'
+                    }
+                },
+                // 主要內容區-確認清單(寄送資訊)：資料
+                deliveryInfo: {
+                    title: '寄送資訊',
+                    ways: [
+                        {
+                            name: 'way',
+                            id: 'deliveryReceive',
+                            value: '寄到收件地址',
+                            checked: true
+                        },
+                        {
+                            name: 'way',
+                            id: 'deliverySelf',
+                            value: '到店自取',
+                            checked: false
+                        }
+                    ],
+                    receiveTexts: [
+                        {
+                            label: '收件人姓名',
+                            id: 'receiveName',
+                            name: 'receiveName',
+                            class: 'fas fa-signature',
+                            placeholder: '請輸入收件人姓名',
+                            required: true,
+                            val: ''
+                        },
+                        {
+                            label: '收件人電話',
+                            id: 'receiveTel',
+                            name: 'receiveTel',
+                            class: 'fas fa-phone-alt',
+                            placeholder: '請輸入收件人電話',
+                            required: true,
+                            val: ''
+                        },
+                        {
+                            label: '收件人地址',
+                            id: 'receiveAddress',
+                            name: 'receiveAddress',
+                            class: 'fas fa-map-marker-alt',
+                            placeholder: '請輸入收件人地址',
+                            required: true,
+                            val: ''
+                        }
+                    ],
+                    selfTexts: [
+                        {
+                            label: '取件人姓名',
+                            id: 'selfName',
+                            name: 'selfName',
+                            class: 'fas fa-signature',
+                            placeholder: '請輸入取件人姓名',
+                            required: true,
+                            val: ''
+                        },
+                        {
+                            label: '取件人電話',
+                            id: 'selfTel',
+                            name: 'selfTel',
+                            class: 'fas fa-phone-alt',
+                            placeholder: '請輸入取件人電話',
+                            required: true,
+                            val: ''
+                        }
+                    ]
                 }
             }
         },
@@ -263,13 +521,23 @@
                     tP += p;
                 }
                 let tPString = tP.toString()
-                return tPString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                return 'NT$ ' + tPString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             }
         },
         methods: {
             // 主要內容區-確認清單(訂單明細)：所有商品金額加上千分位
             addTenPercentilePrice(p) {
-                return p.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                return 'NT$ ' + p.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            },
+            // 主要內容區-確認清單(寄送資訊)：切換寄送/自取
+            chooseDeliveryWay(i) {
+                if (i == 'deliveryReceive') {
+                    this.deliveryInfo.ways[0].checked = true;
+                    this.deliveryInfo.ways[1].checked = false;
+                } else {
+                    this.deliveryInfo.ways[0].checked = false;
+                    this.deliveryInfo.ways[1].checked = true;
+                }
             }
         }
     }).mount('.content');

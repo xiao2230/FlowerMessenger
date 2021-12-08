@@ -314,7 +314,7 @@ body {
     color: #e76f51;
 }
 
-.content_cUForm form .cUFormOption:nth-child(-n+5) input {
+.content_cUForm form .cUFormOption:nth-child(-n+6) input {
     height: 35px;
     margin: 5px 0;
     border: 1px solid #9ba4a4;
@@ -324,7 +324,7 @@ body {
     font-weight: 600;
 }
 
-.content_cUForm form .cUFormOption:nth-child(-n+5) input:focus,
+.content_cUForm form .cUFormOption:nth-child(-n+6) input:focus,
 .content_cUForm form .cUFormOption textarea:focus {
     border: 2px solid #b48f5e;
     color: #bb7008;
@@ -702,7 +702,7 @@ body {
         margin-bottom: 35px;
     }
 
-    .content_cUForm form .cUFormOption:nth-child(-n+5) input {
+    .content_cUForm form .cUFormOption:nth-child(-n+6) input {
         height: 30px;
         border-radius: 8px;
         padding: 0 10px;
