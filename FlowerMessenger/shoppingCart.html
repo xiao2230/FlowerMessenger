@@ -163,7 +163,7 @@
             border-radius: 5px;
             background: #fffaf2;
         }
-        
+
         .content_confirmList form .detailArea .field textarea:focus {
             border: 2px solid #b48f5e;
             color: #bb7008;
@@ -174,14 +174,21 @@
             margin-top: 20px;
         }
 
+        .content_confirmList form .detailArea .tickMark {
+            position: relative;
+        }
+
         .content_confirmList form .detailArea .tickMark input[type="checkbox"] {
-            display: none;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
         }
 
         .content_confirmList form .detailArea .tickMark label {
             line-height: 24px;
             cursor: pointer;
-            position: relative;
         }
 
         .content_confirmList form .detailArea .tickMark label div {
@@ -310,6 +317,25 @@
             background: #242424;
             pointer-events: none;
         }
+
+        /* 主要內容區-確認清單(提交表單) */
+
+        .submit input {
+            height: 35px;
+            width: 100%;
+            font-weight: 600;
+            color: #fffaf2;
+            background: #b48f5e;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: background .3s ease-in-out;
+        }
+
+        .submit input:hover {
+            background: #bb7008;
+        }
     </style>
 </head>
 
@@ -353,6 +379,7 @@
         <!-- 主要內容區-確認清單 -->
         <div class="content_confirmList">
             <form action="" :id="form.id" method="">
+                <!-- 主要內容區-確認清單(隱藏按鈕) -->
                 <input type="hidden" :id="hiddenInput.id" :name="hiddenInput.name" :value="hiddenInput.val">
                 <div class="leftChecked">
                     <!-- 主要內容區-確認清單(帳戶資訊) -->
@@ -481,18 +508,33 @@
                         <div class="detailArea" :class="noticeItem.title.show">
                             <p v-for="script in noticeItem.scripts">{{ script }}</p>
                             <div class="tickMark" :class="requiredClass(noticeItem.checkbox.required)">
-                                <input type="checkbox" :id="noticeItem.checkbox.id" :name="noticeItem.checkbox.name"
-                                    :checked="noticeItem.checkbox.checked" :required="noticeItem.checkbox.required"
-                                    @click="agreeChecked(noticeItem.checkbox.checked)">
+                                <input type="checkbox" :id="noticeItem.checkbox.id" :name="noticeItem.checkbox.name" :checked="noticeItem.checkbox.checked" :required="noticeItem.checkbox.required" @click="agreeChecked(noticeItem.checkbox.checked)">
                                 <label :for="noticeItem.checkbox.id">
-                                    <div></div><span>{{ noticeItem.checkbox.label
-                                        }}</span>
+                                    <div></div><span>{{ noticeItem.checkbox.label }}</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <!-- 主要內容區-確認清單(付款資訊) -->
-                    <div class="payInfo"></div>
+                    <div class="payInfo">
+                        <div class="titArea" :class="payInfo.title.show" @click="showDetailArea(payInfo.title.word)">
+                            <span>{{ payInfo.title.word }}</span>
+                            <i :class="payInfo.title.icon"></i>
+                        </div>
+                        <div class="detailArea" :class="payInfo.title.show">
+                            <p>{{ payInfo.script }}</p>
+                            <div class="field" v-for="text in payInfo.texts" :class="requiredClass(text.required)">
+                                <label :for="text.id"><i :class="text.icon"></i><span>{{ text.label }}</span></label>
+                                <input type="text" :class="disabledClass(text.disabled)" :id="text.id" :name="text.name"
+                                    v-model="text.val" :placeholder="text.placeholder" :required="text.required"
+                                    :disabled="text.disabled">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 主要內容區-確認清單(提交表單) -->
+                    <span class="submit">
+                        <input type="submit" :id="submitInput.id" :name="submitInput.name" :value="submitInput.val">
+                    </span>
                 </div>
             </form>
         </div>
@@ -556,7 +598,7 @@
                 form: {
                     id: 'cLForm'
                 },
-                // 主要內容區-確認清單：隱藏的input資料(用來讓後台辨別是哪一個表格送出的資料)
+                // 主要內容區-確認清單(隱藏按鈕)：資料(用來讓後台辨別是哪一個表格送出的資料)
                 hiddenInput: {
                     id: 'formName',
                     name: 'formName',
@@ -796,6 +838,63 @@
                         checked: false
                     }
                 },
+                // 主要內容區-確認清單(付款資訊)：資料
+                payInfo: {
+                    title: {
+                        word: '付款資訊',
+                        icon: 'fas fa-chevron-down',
+                        show: 'appear'
+                    },
+                    script: '信用卡/金融卡支付',
+                    texts: [
+                        {
+                            label: '持卡人姓名',
+                            id: 'cardHolder',
+                            name: 'cardHolder',
+                            icon: 'fas fa-id-card',
+                            placeholder: '請輸入持卡人姓名',
+                            required: true,
+                            disabled: false,
+                            val: ''
+                        },
+                        {
+                            label: '卡片號碼',
+                            id: 'cardNumber',
+                            name: 'cardNumber',
+                            icon: 'fas fa-credit-card',
+                            placeholder: '請輸入卡片號碼',
+                            required: true,
+                            disabled: false,
+                            val: ''
+                        },
+                        {
+                            label: '到期日（MM/YY）',
+                            id: 'cardExpireDate',
+                            name: 'cardExpireDate',
+                            icon: 'fab fa-empire',
+                            placeholder: '請輸入到期日（MM/YY）',
+                            required: true,
+                            disabled: false,
+                            val: ''
+                        },
+                        {
+                            label: '安全驗證碼（CCV）',
+                            id: 'cardCCV',
+                            name: 'cardCCV',
+                            icon: 'fas fa-shield-alt',
+                            placeholder: '請輸入安全驗證碼（CCV）',
+                            required: true,
+                            disabled: false,
+                            val: ''
+                        },
+                    ]
+                },
+                // 主要內容區-確認清單(提交表單)：資料
+                submitInput: {
+                    id: 'sendBtn',
+                    name: 'sendBtn',
+                    val: '立即結帳'
+                }
             }
         },
         computed: {
@@ -832,6 +931,8 @@
                 t == this.orderDetails.title.word ? this.orderDetails.title.show == 'appear' ? (this.orderDetails.title.show = '', this.orderDetails.title.icon = 'fas fa-chevron-up') : (this.orderDetails.title.show = 'appear', this.orderDetails.title.icon = 'fas fa-chevron-down') : '';
 
                 t == this.noticeItem.title.word ? this.noticeItem.title.show == 'appear' ? (this.noticeItem.title.show = '', this.noticeItem.title.icon = 'fas fa-chevron-up') : (this.noticeItem.title.show = 'appear', this.noticeItem.title.icon = 'fas fa-chevron-down') : '';
+
+                t == this.payInfo.title.word ? this.payInfo.title.show == 'appear' ? (this.payInfo.title.show = '', this.payInfo.title.icon = 'fas fa-chevron-up') : (this.payInfo.title.show = 'appear', this.payInfo.title.icon = 'fas fa-chevron-down') : '';
             },
             // 主要內容區-確認清單(訂單明細)：所有商品金額加上千分位
             addTenPercentilePrice(p) {
