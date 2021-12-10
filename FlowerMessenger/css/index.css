@@ -237,7 +237,7 @@ body {
 .content_aboutUs p {
     line-height: 30px;
     position: relative;
-    top: -50px;
+    top: 50px;
     left: -300px;
     opacity: 0;
     transition: top 1.5s ease-in-out, left 1.5s ease-in-out, opacity 1.5s ease-in-out;
@@ -328,15 +328,18 @@ body {
         left: -50%;
         bottom: -20%;
     }
+
     40% {
         left: 6%;
         bottom: 5%;
     }
+
     52.5% {
         left: 6%;
         bottom: 5%;
         opacity: 1;
     }
+
     100% {
         left: 110%;
         bottom: 55%;
@@ -350,15 +353,18 @@ body {
         bottom: -10%;
         opacity: 1;
     }
+
     78.5% {
         left: 85%;
         bottom: 55%;
     }
+
     90% {
         left: 85%;
         bottom: 55%;
         opacity: .7;
     }
+
     100% {
         left: 110%;
         bottom: 75%;
@@ -808,14 +814,17 @@ h2.appear {
 }
 
 @media screen and (max-width:767px) {
+
     /* 頂部內容區-小工具 */
     .header_tool {
         display: none;
     }
+
     /* 頂部內容區-LOGO */
     .header_logo {
         height: 100vh;
     }
+
     /* 頂部內容區-導覽列 */
     .header_nav, .header_nav.navFixedBg {
         height: 10vh;
@@ -831,6 +840,7 @@ h2.appear {
         box-shadow: 0 0 8px #fafafa;
         z-index: 4;
     }
+
     .header_nav .navContent a img {
         position: absolute;
         top: 50%;
@@ -839,6 +849,7 @@ h2.appear {
         margin-left: 10px;
         display: flex;
     }
+
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -850,6 +861,7 @@ h2.appear {
         cursor: pointer;
         z-index: 4;
     }
+
     .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
@@ -858,20 +870,25 @@ h2.appear {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
+
     .header_nav .navContent label::before {
         top: 0;
     }
+
     .header_nav .navContent label::after {
         top: 100%;
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
+
     .header_nav .navContent ul, .header_nav.navFixedBg .navContent ul {
         width: 95%;
         height: 0;
@@ -888,165 +905,209 @@ h2.appear {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
+
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
+
     .header_nav .navContent ul li, .header_nav.navFixedBg .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
+
     .header_nav .navContent ul li a::before, .header_nav.navFixedBg .navContent ul li a::before {
         content: none;
     }
+
     .header_nav .navContent ul li a, .header_nav.navFixedBg .navContent ul li a {
         color: #fafafa;
         padding: 5px;
         transition: box-shadow .3s ease-in-out, border-radius .3s ease-in-out;
     }
+
     .header_nav .navContent ul li:hover a {
         box-shadow: 0 0 10px #fafafa;
         border-radius: 5px;
     }
+
     .header_nav .navContent ul li.navContentTool {
         display: block;
         margin: 0;
     }
+
     .header_nav .navContent ul li.navContentTool a {
         padding: 0;
     }
+
     .header_nav .navContent ul li.navContentTool:hover a {
         box-shadow: none;
     }
+
     .header_nav .navContent ul li.navContentTool a i {
         color: #fafafa;
         font-size: 20px;
         padding: 5px;
         margin: 5px 3px;
     }
+
     .header_nav .navContent ul li.navContentTool a i:hover {
         box-shadow: 0 0 10px #fafafa;
         border-radius: 5px;
     }
+
     /* 主要內容區-關於我們 */
     .content_aboutUs.appear::before {
         width: 70%;
     }
+
     .content_aboutUs p {
         line-height: 25px;
         font-size: 15px;
     }
+
     .content_aboutUs p:last-child {
         width: 105px;
         line-height: 25px;
     }
+
     .content_aboutUs p:last-child a {
         font-size: 15px;
     }
+
     .content_aboutUs p:last-child a::after {
         width: 30px;
     }
+
     /* 主要內容區-商品類別 */
     .content_orderBouquet ul {
         justify-content: center;
     }
+
     .content_orderBouquet ul li {
         width: 95%;
     }
+
     .content_orderBouquet ul li div.orderBouquet {
         margin: 10px 0;
     }
+
     .content_orderBouquet ul li:nth-child(2n) div.orderBouquet {
         position: relative;
         top: 0px;
     }
+
     .content_orderBouquet ul li div.orderBouquet a img:first-child {
         position: relative;
         top: -10px;
     }
+
     .content_orderBouquet ul li div.orderBouquet a img:last-child {
         position: relative;
         top: 10px;
     }
+
     .content_orderBouquet ul li div.orderBouquet a:hover img:first-child {
         transform: translate3d(0, 10px, 0);
     }
+
     .content_orderBouquet ul li div.orderBouquet a:hover img:last-child {
         transform: translate3d(0, -10px, 0);
     }
+
     .orderBouquetText {
         height: auto;
         padding: 30px 20px 80px;
     }
+
     .orderBouquetText span:nth-child(2) {
         font-size: 18px;
     }
+
     .orderBouquetText h3 {
         font-size: 20px;
     }
+
     .orderBouquetText p, .orderBouquetText p a {
         font-size: 15px;
     }
+
     .orderBouquetText p:last-child a {
         padding: 2px 5px;
     }
+
     .orderBouquetText p:last-child a::after {
         width: 30px;
         height: 18px;
     }
+
     /* 主要內容區-花朵照護 */
     .nurseryText {
         width: 100%;
         padding-top: 50px;
     }
+
     .nurseryText p {
         font-size: 15px;
     }
+
     .nurseryText p:last-child a {
         font-size: 15px;
-        padding: 5px 3px 35px ;
+        padding: 5px 3px 35px;
     }
+
     .nurseryText p:last-child a::after {
         width: 21px;
         height: 30px;
     }
+
     .nurseryPic {
         width: 85%;
     }
+
     .nurseryPic div {
         width: 100%;
         height: 400px;
     }
+
     .nurseryPic span {
         font-size: 20px;
     }
+
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
+
     .detailText {
         width: 85%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
+
     .detailText p {
         text-align: center;
     }
+
     .detailText01 {
         margin-top: 5%;
     }
+
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
+
     .detailText03 {
         margin-top: 5%;
     }
+
     .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
         font-size: 15px;
     }
+
     .detailPic {
         width: 70%;
         padding-right: 0;
