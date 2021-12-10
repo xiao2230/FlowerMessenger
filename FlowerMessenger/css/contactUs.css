@@ -320,7 +320,7 @@ body {
     border: 1px solid #9ba4a4;
     outline: none;
     border-radius: 5px;
-    padding: 0 15px;
+    padding: 0 10px;
     font-weight: 600;
 }
 
@@ -337,7 +337,7 @@ body {
     border: 1px solid #9ba4a4;
     outline: none;
     border-radius: 5px;
-    padding: 0 15px;
+    padding: 0 10px;
     line-height: 2;
     font-weight: 600;
 }
@@ -705,13 +705,11 @@ body {
     .content_cUForm form .cUFormOption:nth-child(-n+6) input {
         height: 30px;
         border-radius: 8px;
-        padding: 0 10px;
     }
 
     .content_cUForm form .cUFormOption textarea {
         height: 250px;
         border-radius: 8px;
-        padding: 0 10px;
     }
 
     .content_cUForm .cUFormOption:nth-child(7) p {

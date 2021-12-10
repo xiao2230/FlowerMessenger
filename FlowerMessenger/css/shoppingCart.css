@@ -133,6 +133,331 @@ body {
     padding: 0 15px;
 }
 
+/* 主要內容區-確認清單 */
+
+.content_confirmList {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content_confirmList form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content_confirmList form>div {
+    width: 49%;
+}
+
+.content_confirmList form>div>div {
+    background: #fafafa;
+    box-shadow: 0 0 20px 1px rgb(19 19 19 / 20%);
+}
+
+.content_confirmList form>div>div:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.content_confirmList form .titArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: color .8s ease-in-out;
+}
+
+.content_confirmList form .titArea span {
+    color: #777777;
+    font-weight: 600;
+    font-size: 19px;
+    transition: color .3s ease-in-out;
+}
+
+.content_confirmList form .titArea i {
+    color: #777777;
+}
+
+.content_confirmList form .titArea:hover span {
+    color: #bb7008;
+}
+
+.content_confirmList form .titArea:hover i {
+    color: #bb7008;
+}
+
+.content_confirmList form .titArea.appear span {
+    color: #242424;
+}
+
+.content_confirmList form .titArea.appear i {
+    color: #242424;
+}
+
+.content_confirmList form .titArea.appear:hover span {
+    color: #b48f5e;
+}
+
+.content_confirmList form .titArea.appear:hover i {
+    color: #b48f5e;
+}
+
+.content_confirmList form .detailArea {
+    overflow: hidden;
+    padding: 0 20px;
+    max-height: 0;
+    opacity: 0;
+    transition: padding .7s ease-in-out, max-height .7s ease-in-out, opacity 1s ease-in-out;
+}
+
+.content_confirmList form .detailArea.appear {
+    padding: 20px;
+    max-height: 670px;
+    opacity: 1;
+}
+
+.content_confirmList form .detailArea .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.content_confirmList form .detailArea .field label span {
+    font-size: 17px;
+    position: relative;
+}
+
+.content_confirmList form .detailArea .field.required label span::after,
+.content_confirmList form .detailArea .tickMark.required label span::after {
+    content: '*';
+    padding-left: 2px;
+    position: absolute;
+    left: 100%;
+    font-size: 30px;
+    color: #e76f51;
+
+}
+
+.content_confirmList form .detailArea .field label i {
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+.content_confirmList form .detailArea .field input[type="text"] {
+    line-height: 33px;
+    font-size: 17px;
+    padding: 0 10px;
+    margin: 5px 0;
+    font-weight: 600;
+    outline: none;
+    border: 1px solid #9ba4a4;
+    border-radius: 5px;
+    background: #fffaf2;
+}
+
+.content_confirmList form .detailArea .field input[type="text"]:focus {
+    border: 2px solid #b48f5e;
+    color: #bb7008;
+    box-shadow: 0 0 5px 1px #b48f5e;
+}
+
+.content_confirmList form .detailArea .field input[type="text"].disabled {
+    background: #ececec;
+}
+
+.content_confirmList form .detailArea p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.content_confirmList form .detailArea .field textarea {
+    height: 150px;
+    line-height: 33px;
+    font-size: 17px;
+    padding: 0 10px;
+    font-weight: 600;
+    outline: none;
+    border: 1px solid #9ba4a4;
+    border-radius: 5px;
+    background: #fffaf2;
+}
+
+.content_confirmList form .detailArea .field textarea:focus {
+    border: 2px solid #b48f5e;
+    color: #bb7008;
+    box-shadow: 0 0 5px 1px #b48f5e;
+}
+
+.content_confirmList form .detailArea .tickMark {
+    margin-top: 20px;
+}
+
+.content_confirmList form .detailArea .tickMark {
+    position: relative;
+}
+
+.content_confirmList form .detailArea .tickMark input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.content_confirmList form .detailArea .tickMark label {
+    cursor: pointer;
+}
+
+.content_confirmList form .detailArea .tickMark label div {
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 3px;
+    margin-right: 5px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content_confirmList form .detailArea .tickMark input:checked+label div::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: #b48f5e;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+}
+
+.content_confirmList form .detailArea .tickMark label span {
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+    left: 20px;
+}
+
+/* 主要內容區-確認清單(訂單明細) */
+
+.orderDetails .detailArea table {
+    width: 100%;
+    background: #ececec;
+    border-radius: 8px;
+    border-spacing: 0;
+}
+
+.orderDetails .detailArea table tr {
+    position: relative;
+}
+
+.orderDetails .detailArea table tr:not(:last-child):after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fafafa;
+}
+
+.orderDetails .detailArea table tr th,
+.orderDetails .detailArea table tr:last-child td {
+    text-align: left;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #cfcfcf;
+}
+
+.orderDetails .detailArea table tr th:first-child {
+    width: 70%;
+}
+
+.orderDetails .detailArea table tr td {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.orderDetails .detailArea table tr td span {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: .5px;
+}
+
+.orderDetails .detailArea table tr th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.orderDetails .detailArea table tr th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.orderDetails .detailArea table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.orderDetails .detailArea table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+/* 主要內容區-確認清單(寄送資訊) */
+
+.deliveryInfo .detailArea .option {
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+
+.deliveryInfo .detailArea .option input {
+    display: none;
+}
+
+.deliveryInfo .detailArea .option label {
+    color: #fffaf2;
+    background: #9ba4a4;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 8px 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.deliveryInfo .detailArea .option label:hover {
+    background: #b48f5e;
+    box-shadow: 0 0 5px 1px #b48f5e;
+}
+
+.deliveryInfo .detailArea .option input:checked+label {
+    background: #242424;
+    pointer-events: none;
+}
+
+/* 主要內容區-確認清單(提交表單) */
+
+.submit input {
+    height: 35px;
+    width: 100%;
+    font-weight: 600;
+    color: #fffaf2;
+    background: #b48f5e;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: background .3s ease-in-out;
+}
+
+.submit input:hover {
+    background: #bb7008;
+}
+
 /* 底部內容區-店家資訊&店鋪圖片 */
 
 .footer {
@@ -233,6 +558,7 @@ body {
 }
 
 @media screen and (max-width:767px) {
+
     /* 頂部內容區-導覽列 */
     .header_nav {
         width: 90%;
@@ -242,6 +568,7 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 0 8px #fafafa;
     }
+
     .header_nav .navContent label {
         display: flex;
         position: absolute;
@@ -252,6 +579,7 @@ body {
         height: 30%;
         cursor: pointer;
     }
+
     .header_nav .navContent label::before, .header_nav .navContent label::after {
         content: '';
         width: 100%;
@@ -260,20 +588,25 @@ body {
         position: absolute;
         transition: transform .3s ease-in-out, top .3s ease-in-out;
     }
+
     .header_nav .navContent label::before {
         top: 0;
     }
+
     .header_nav .navContent label::after {
         top: 100%;
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::before {
         top: 50%;
         transform: rotate(-35deg);
     }
+
     .header_nav .navContent input[type=checkbox]:checked+label::after {
         top: 50%;
         transform: rotate(35deg);
     }
+
     .header_nav .navContent ul {
         width: 95%;
         height: 0;
@@ -290,66 +623,207 @@ body {
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 8px #fafafa;
     }
+
     .header_nav .navContent input[type=checkbox]:checked~ul {
         height: auto;
         padding: 20px 0;
     }
+
     .header_nav .navContent ul li {
         margin: 10px 0;
         text-align: center;
     }
+
     .header_nav .navContent ul li.navContentTool {
         margin: 5px 0;
     }
+
     .header_nav .navContent ul li.navContentTool a i {
         margin: 0 3px;
     }
+
     /* 頂部內容區-背景圖&分頁標題註記 */
     .header_bannerTitle {
         height: 30vh;
         margin-bottom: 5vh;
     }
+
     .header_bannerTitle .tt1 {
         bottom: -30px;
         right: 0;
     }
+
     .header_bannerTitle .tt1 span {
         line-height: 30px;
     }
+
     .header_bannerTitle .tt1 span.tt1-1 span {
         padding: 5px 10px;
         font-size: 20px;
     }
+
     .header_bannerTitle .tt1 span.tt1-2 span {
         padding: 0 10px;
     }
+
+    /* 主要內容區-確認清單 */
+
+    .content_confirmList form {
+        justify-content: center;
+    }
+
+    .content_confirmList form>div {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .content_confirmList form>div>div:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .content_confirmList form .detailArea.appear {
+        max-height: 720px;
+    }
+
+    .content_confirmList form .titArea span {
+        font-size: 18px;
+    }
+
+    .content_confirmList form .detailArea .field label span {
+        font-size: 16px;
+    }
+
+    .content_confirmList form .detailArea .field label i {
+        font-size: 16px;
+    }
+
+    .content_confirmList form .detailArea .field input[type="text"] {
+        line-height: 28px;
+        font-size: 16px;
+    }
+
+    .content_confirmList form .detailArea p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 8px;
+    }
+
+    .content_confirmList form .detailArea .field textarea {
+        height: 120px;
+        line-height: 28px;
+        font-size: 16px;
+    }
+
+    .content_confirmList form .detailArea .tickMark {
+        margin-top: 15px;
+    }
+
+    .content_confirmList form .detailArea .tickMark label div {
+        width: 13px;
+        height: 13px;
+        border-radius: 2px;
+        margin-right: 3px;
+    }
+
+    .content_confirmList form .detailArea .tickMark input:checked+label div::after {
+        width: 9px;
+        height: 9px;
+    }
+
+    .content_confirmList form .detailArea .tickMark label span {
+        font-size: 15px;
+        left: 17px;
+    }
+
+    /* 主要內容區-確認清單(訂單明細) */
+
+    .orderDetails .detailArea table {
+        border-radius: 5px;
+    }
+
+    .orderDetails .detailArea table tr th,
+    .orderDetails .detailArea table tr:last-child td {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .orderDetails .detailArea table tr td {
+        font-size: 15px;
+    }
+
+    .orderDetails .detailArea table tr td span {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .orderDetails .detailArea table tr th:first-child {
+        border-top-left-radius: 5px;
+    }
+
+    .orderDetails .detailArea table tr th:last-child {
+        border-top-right-radius: 5px;
+    }
+
+    .orderDetails .detailArea table tr:last-child td:first-child {
+        border-bottom-left-radius: 5px;
+    }
+
+    .orderDetails .detailArea table tr:last-child td:last-child {
+        border-bottom-right-radius: 5px;
+    }
+
+    /* 主要內容區-確認清單(寄送資訊) */
+
+    .deliveryInfo .detailArea .option {
+        margin-bottom: 15px;
+    }
+
+    .deliveryInfo .detailArea .option label {
+        font-size: 16px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+
+    /* 主要內容區-確認清單(提交表單) */
+
+    .submit input {
+        height: 30px;
+    }
+    
     /* 底部內容區-店家資訊&店鋪圖片 */
     .footer_detail {
         display: flex;
         flex-direction: column-reverse;
     }
+
     .detailText {
         width: 85%;
         padding-left: 0;
         margin: 0 auto;
         margin-top: 5%;
     }
+
     .detailText p {
         text-align: center;
     }
+
     .detailText01 {
         margin-top: 5%;
     }
+
     .detailText02 {
         padding: 0;
         margin-top: 5%;
     }
+
     .detailText03 {
         margin-top: 5%;
     }
+
     .detailText .detailText01 span, .detailText .detailText02 ul li a, .detailText .detailText03 span {
         font-size: 15px;
     }
+
     .detailPic {
         width: 70%;
         padding-right: 0;
